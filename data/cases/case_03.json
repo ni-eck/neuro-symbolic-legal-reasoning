@@ -1,0 +1,13 @@
+  {
+    "id": "case003",
+    "title_of_original": "State Aid SA.115160 (2024/NN) - Germany Measures concerning Haitec AG, Flughafen Frankfurt Hahn GmbH, and Ryanair",
+    "decided_by": "European Commission",
+    "case_description": "Fly Smooth Airline alleges that the Region Upper Austria established in 2009 a special purpose entity to market parcels of land for the regional airport operator Upper Austria Airport GmbH ('UAA'). This special purpose entity is named Upper Austria Development GmbH (“UAD”). Allegedly, the Region Upper Austria injected EUR 12 million of equity into the company. Initially, it had allegedly been foreseen that UAD might invest up to EUR 48.5 million into the acquisition of land plots, with the purpose of developing them. The airline claims that UAD concluded in 2009 a contract with UAA, under which it acquired an exclusive option to buy land parcels owned by UAA. The contract was terminated on 31 December 2010. Based on UAA's annual reports, Fly Smooth claims that UAD paid a total of EUR 9 million to UAA over 2009 and 2010 (2009: EUR 5.1 million; 2010: EUR 3.9 million). Austria confirmed in its communication dated 22 December 2016 that UAD was incorporated on 7 May 2009. Its shareholders include the Region Upper Austria (62%), other public shareholders (6%), and private shareholders (32%), the latter being three land development firms. Austira also confirmed the conclusion of the exclusive land option contract, and that it stipulated a payment of EUR 4.5 million in the first year and EUR 3.8 million in the following year. The termination of the contract on 31 December 2010 was also confirmed. Authorities submitted that UAD terminated the agreement promptly once it became clear that the initial objectives would not be achieved, particularly in the context of the 2008/2009 financial crisis and the resulting economic downturn.",
+    "gold_parsing": [
+        "financial_situation_after(UAA, optionfee, 8300000, 0, 0, 0, 0, 0).",
+        "direct_transfer(UAA, optionfee).",
+        "more..."
+        ],
+    "type_of_measure": "Option Fee",
+    "state_aid": "False"
+  }
