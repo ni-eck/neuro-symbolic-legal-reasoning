@@ -1,0 +1,32 @@
+  {
+    "id": "case010",
+    "title_of_original": "SA.20350 – (C 17/2008) (ex NN 1/2006) implemented by the Czech Republic for several regional bus services operators in the Ústí Region",
+    "decided_by": "European Commission",
+    "case_description": "[1] In early 2018, the Puglia Regional Authorities in Italy had to ensure the continued operation of regional bus services [2] due to contracts with service providers ending at the end of the year. [3 ]To this end, they concluded formal amendments to extend existing contracts with several established bus operators. [4] These contracts provided compensation for the performance of public service obligations in regional passenger transport. [5] The contracts set out specific service requirements, including assigned routes, fixed timetables and minimum frequency standards. [6] As many of the services operated in sparsely populated or low-demand areas, they were not expected to be economically viable without public financial support. [7] The legal framework for the compensation scheme was based on Article 12 of the Italian Public Transport Code from 2012, [8] which authorises regional authorities to enter into public service contracts with operators and reimburse them for any 'demonstrable loss'. [9] This loss was defined as the difference between the total economically justified costs of service delivery, including a reasonable profit, and the revenue collected from passengers, primarily through ticket sales. [10] Reasonable profit was defined as no more than 12.5% of the value of the bus fleet used, adjusted to reflect depreciation and certain approved capital expenditure. [11] Operators were obliged to submit advance estimates of their anticipated losses, [12] supported by documentation from an independent accounting expert. [13] These estimates were regarded as mandatory limits on compensation. [14] The scheme also permitted the reimbursement of 'unforeseeable costs', such as changes in national tax rates or new regulatory obligations, under strict conditions. [15] It is imperative that these costs be considered as external to the operator's control, [16] with substantiating evidence being provided to support this assertion. [17] Following a thorough review and validation process, [18] the Puglia Region authorities proceeded to formally extend the service contracts with the participating ten operators. [19] In 2019, ten bus operators received compensation from the regional budget under the scheme, [20] paid by the regional authorities. [21] The contracts stipulated the projected price per kilometre, the anticipated passenger revenues, and the corresponding loss eligible for compensation. [22] For instance, Trasporti Puglia SRL was compensated for approximately 890,000 kilometres at a rate of EUR 1.39 per kilometre, [23] while Mobilità Bari S.p.A. received EUR 1.54 per kilometre for approximately 705,000 kilometres. [24] At the conclusion of the fiscal year, the actual compensation disbursed was corroborated against the forecasted figures. [25] In the event that an operator's actual losses were found to be less than the projected amount, [26] reimbursement was limited to the actual losses incurred. [27] In instances where losses were more substantial, no supplementary compensation was provided, [28] with the exception of costs that were proven to be unforeseeable and thus valid." ,
+    "number_of_chunks": 28,
+    "gold_parsing": [
+        "parsed_money_received('trasporti puglia srl', 'public service contract', 1237100). % [22]",
+        "parsed_money_received('mobilita bari spa', 'public service contract', 1086700). % [23]",
+        "parsed_value_granted_services('trasporti puglia srl', 'public service contract', 1237100). % [22]",
+        "parsed_value_granted_services('mobilita bari spa', 'public service contract', 1086700). % [23]",
+        "compensation_for_obligation('public service contract', 'trasporti puglia srl', 'regional passenger transport'). % [4],[23]",
+        "compensation_for_obligation('public service contract', 'mobilita bari spa', 'regional passenger transport'). % [4],[24]",
+        "compensation_for_obligation('public service contract', 'ten bus companies' ,'regional passenger transport'). % [4],[19]",
+        "public_service_obligation('regional passenger transport'). % [4];[8]",
+        "direct_targeting('public service contract', 'trasporti puglia srl'). % [-];[4];[22]",
+        "direct_targeting('public service contract', 'mobilita bari spa'). % [-];[4];[23]",
+        "direct_targeting('public service contract', 'ten bus companies'). % [-];[4];[18]",
+        "clearly_defined('regional passenger transport'). % [5]",
+        "compensation_params_predefined('public service contract', 'regional passenger transport'). % [7]",
+        "compensation_params_objective('public service contract', 'regional passenger transport'). % [9],[10]",
+        "compensation_params_transparent('public service contract', 'regional passenger transport'). % [7]",
+        "textual_evidence_compensation_does_not_exceed_necessary_costs_plus_reasonable_profit('public service contract'). % [9],[10],[24],[25],[26],[27]",
+        "active_resource_flow('public service contract', 'public capital'). % [-];[19]",
+        "resource_of_intrastate_entity('public capital'). %[-];[19]",
+        "adopted_by('public service contract', 'puglia regional authorities'). % [18]",
+        "public_intra_state_authority('puglia regional authorities', 'puglia'). %[-];[1];[18]",
+        "intrastate_of('puglia', 'italy'). %[-];[1]"
+        ],
+    "type_of_measure": "Compensation for Public Service Obligation",
+    "state_aid": "True"
+  }

@@ -1,0 +1,19 @@
+  {
+    "id": "case020",
+    "title_of_original": "Judgment of the General Court of 5 April 2006, Deutsche Bahn AG v Commission, T-351/02, ECLI:EU:T:2006:104",
+    "decided_by": "Court of Justice of the European Union",
+    "case_description": "[1] In October 2021, the Hungarian Országgyűlés (National Assembly) adopted a new excise duty exemption for marine fuel used in commercial maritime transport. [2] The rule was stated in Section 7(2)(c) of the Hungarian Excise Tax Act (Jövedéki törvény) [3] and provided that no excise duty shall be levied on marine fuel supplied for use in vessels engaged in the commercial transport of goods or passengers on inland waterways or international shipping routes. [4] This provision transposed Article 14(1)(c) of Council Directive 2003/96/EC, [5] which required Member States to exempt energy products used for navigation in Community waters from harmonised energy taxation. [6] The Directive left no discretion as to whether the exemption should be granted, [7] although it allowed Member States to lay down conditions to prevent tax evasion, avoidance, or abuse. [8] The exemption also reflected Hungary’s obligations under international maritime conventions, [9] including provisions of the Budapest Convention on the Contract for the Carriage of Goods by Inland Waterways (CMNI) and associated bilateral shipping agreements. [10] As a consequence, marine fuel became cheaper for commercial shipping operators." ,
+    "number_of_chunks": 10,
+    "gold_parsing": [
+        "textual_evidence_of_improved_financial_situation('commercial shipping operators', 'tax exemption'). % [10]",
+        "tax_exemption('tax exemption'). % [-];[1];[3]",
+        "direct_targeting('tax exemption', 'commercial shipping operators'). % [-];[3];[10]",
+        "exemptions_reductions_taxes('tax exemption'). % [-];[1];[3]",
+        "adopted_by('tax exemption', 'Hungarian Országgyűlés'). % [1]",
+        "public_state_authority('Hungarian Országgyűlés', 'Hungary'). % [-];[1]",
+        "implementation_obligation('Tax Exemption', 'Council Directive'). % [5]",
+        "no_member_state_discretion('Tax Exemption'). % [6]"
+        ],
+    "type_of_measure": "Tax Exemption",
+    "state_aid": "False"
+  }

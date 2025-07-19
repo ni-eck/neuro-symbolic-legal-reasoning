@@ -1,0 +1,19 @@
+  {
+    "id": "case021",
+    "title_of_original": "Fictional case",
+    "decided_by": "-",
+    "case_description": "[1] Under Portuguese law, the maritime public domain is managed according to the General Framework for Use of Maritime Public Domain (GFUMPD), [2] which regulates access to and commercial use of maritime areas within the exclusive economic zone. [3] The GFUMPD applies uniformly to undertakings seeking to exploit maritime space for offshore energy production. [4] Access to maritime areas under the GFUMPD is open to all undertakings that meet the applicable legal and technical criteria, subject to availability of space and compliance with planning procedures. [5] Under this framework, undertakings are generally required to pay an annual base fee of 150,000 euros per year and an additional variable fee of 3,000 euros per installed megawatt of capacity for the right to develop and operate an offshore wind farm. [6] The fees collected under the GFUMPD are transferred to the national state budget. [7] On 4 January 2023, the Portuguese Ministry for Maritime Infrastructure entered into an agreement with Portum Energia S.A. (hereinafter Portum Energia), [8] granting the company the exclusive right to develop and operate an offshore wind farm in Zone E7 of the Portuguese exclusive economic zone. [9] The area in question lies approximately 30 kilometers off the coast of Sines and [10] forms part of the maritime public domain as defined by national legislation. [11] The agreement gave Portum Energia access to the designated maritime area for a period of 15 years. [12] The agreement set a reduced annual base fee of 75,000 euros and a variable fee of 1,000 euros per installed megawatt. [13] The project foresees the installation of up to 2 gigawatts of offshore wind capacity over the duration of the agreement. [14] The Ministry justified the reduced rates on the basis of Portugal's objectives to speed up green energy investment." ,
+    "number_of_chunks": 14,
+    "gold_parsing": [
+        "parsed_money_spent('portum energia', 'off shore agreement', 3075000). % 13",
+        "parsed_value_received_rights_licenses('portum energia', 'off shore agreement', 6150000). % [5]",
+        "granting_access_to_public_domain_resources_special_or_exclusive_rights('off shore agreement'). % [-];[8]",
+        "direct_targeting('off shore agreement', 'portum energia'). % [-];[7];[8]",
+        "sell_price_domain_resources_rights('off shore agreement', 3075000). % [13]",
+        "system_price_domain_resources_rights('off shore agreement', 6150000). % [5]",
+        "adopted_by('off shore agreement', 'Ministry for Maritime Infrastructure'). % [6]",
+        "public_state_authority('Ministry for Maritime Infrastructure', 'Portugal'). % [-]"
+        ],
+    "type_of_measure": "Special Rights",
+    "state_aid": "True"
+  }

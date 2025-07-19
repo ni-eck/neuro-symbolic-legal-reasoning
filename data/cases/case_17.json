@@ -1,0 +1,21 @@
+  {
+    "id": "case017",
+    "title_of_original": "Commission Decision of 22 November 2006 on State aid N 157/06, United Kingdom South Yorkshire Digital Region Broadband Project",
+    "decided_by": "European Commission",
+    "case_description": "[1] In January 2025, the Greek Ministry of Digital Governance approved Grant No. 27/2025, [2] authorizing KritiNet S.A. (hereinafter KritiNet) to implement and operate high-speed broadband infrastructure under the \"Crete Next-Gen Connectivity Project.\" [3] The project targets underserved rural and mountainous areas across the island of Crete and [4] forms part of Greece's operational programme for digital development and regional cohesion. [5] The total eligible investment costs of the project were set at EUR 42,000,000. [6] The Greek Ministry of Digital Governance decided that the project would be co-financed by the European Regional Development Fund (ERDF). [6] The ERDF contributes EUR 30,000,000, [7] while the remaining EUR 12,000,000 is provided from the Greek state budget. [8] The Ministry awarded the funding to KritiNet through direct administrative designation, [9] citing the company's prior local experience. [10] Under the grant terms, KritiNet receives the full amount of public financing as a non-repayable capital grant. [11] The company will own the infrastructure and is authorized to operate it commercially for a minimum period of 10 years. [12] The grant decision does not include a clawback mechanism, [13] nor does it impose binding obligations to provide wholesale access to third-party service providers. [14] Pricing conditions, access terms, and performance benchmarks were not specified in the award decision. [15] No formal monitoring structure or public service obligations were foreseen." ,
+    "number_of_chunks": 15,
+    "gold_parsing": [
+        "parsed_money_received('KritiNet', 'grant', 42000000). % [5],([6];[7];[8];[10],None)",
+        "monetary_subsidy('grant'). % [-];[11]",
+        "direct_targeting('grant', 'KritiNet'). % [-];[11]",
+        "active_resource_flow('grant', 'state capital'). % [-];[11]",
+        "active_resource_flow('grant', 'ERDF capital'). % [-];[11]",
+        "resource_of_central_state_entity('state capital'). % [8]",
+        "resource_from_international_or_union_fund('ERDF capital'). % [7]",
+        "discretion_by_national_authorities('ERDF capital'). % [6]",
+        "adopted_by('grant', 'ministry of digital governance'). % [1]",
+        "public_state_authority('ministry of digital governance', 'greece'). % [-]"
+        ],
+    "type_of_measure": "Grant",
+    "state_aid": "True"
+  }

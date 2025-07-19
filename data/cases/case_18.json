@@ -1,0 +1,21 @@
+  {
+    "id": "case018",
+    "title_of_original": "Fictional case",
+    "decided_by": "-",
+    "case_description": "[1] In the cross-border region between North Rhine-Westphalia in Germany and Wallonia in Belgium, [2] a growing number of small businesses such as bakeries, craft workshops, and repair services face closure due to the lack of suitable successors. [3] The regional governments of North Rhine-Westphalia and Wallonia, concerned about the potential long-term deterioration of local economic activity, employment, and service provision, [4] decided to take coordinated action. [5] Given the shared language and integrated regional economy, [6] the two governments opted to jointly implement a public measure to support the transfer of existing businesses to new owners. [7] To this end, they created the Euregion Succession Fund, [8] a jointly administered body tasked with implementing the measure and managing the associated resources. [9] The fund operates under arrangements established by both governments and receives its financing from their respective budgets. [10] EUR 125 million was allocated from North Rhine-Westphalia and EUR 75 million from Wallonia. [11] These amounts were paid into a central fund account overseen by a joint committee. [12] The committee is composed of senior officials from both regions and takes all grant decisions under jointly agreed procedures. [13] The fund provides non-repayable grants covering up to 15 percent of eligible business transfer costs for undertakings operating in the defined cross-border region. [14] To qualify, applicants must meet certain criteria relating to residence, business continuity, and local employment retention. [15] GutesBrot GmbH, a German bakery chain, applied for a grant to take over several bakeries in Eupen. [16] After confirming compliance with the eligibility criteria, the committee approved a grant of EUR 300,000. [17] The amount was disbursed from the fund’s account to cover legal fees, inventory purchases, and refurbishment costs." ,
+    "number_of_chunks": 17,
+    "gold_parsing": [
+        "parsed_money_received('GutesBrot', 'grant', 300000). % [16]",
+        "monetary_subsidy('grant'). % [-];[13];[17]",
+        "direct_targeting('grant', 'GutesBrot'). % [-];[13];[17]",
+        "active_resource_flow('grant', 'fund capital'). % [-];[13];[17]",
+        "resource_of_body_appointed_by_state_to_administer_measure('fund capital'). % [8]",
+        "administered_by('Euregion Succession Fund', 'grant'). % [8];[13]",
+        "public_intra_state_authority('Euregion Succession Fund', 'nrw administration', 'nrw'). % [7];[9]",
+        "public_intra_state_authority('Euregion Succession Fund', 'wallonia administration', 'wallonia'). % [7];[9]", 
+        "intrastate_of('nrw', 'germany'). % [-]",
+        "intrastate_of('wallonia', 'belgium'). % [-]"
+        ],
+    "type_of_measure": "Grant",
+    "state_aid": "True"
+  }

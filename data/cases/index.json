@@ -1,0 +1,226 @@
+[
+  {
+    "id": "case001",
+    "title_of_original": "State Aid SA.38330 (2016/FC) – Poland Alleged unlawful regional investment aid to PCC MCAA sp. Zo.o (PCC)",
+    "link_to_original": "https://ec.europa.eu/competition/state_aid/cases1/202016/282908_2148733_65_2.pdf",
+    "decided_by": "European Commission",
+    "type_of_measure": "Grant",
+    "state_aid": "False",
+    "selected_because": "simple general case",
+    "Preprocessing": "-"
+  },
+  {
+    "id": "case002",
+    "title_of_original": "State Aid SA.38330 (2016/FC) – Poland Alleged unlawful regional investment aid to PCC MCAA sp. Zo.o (PCC)",
+    "link_to_original": "https://ec.europa.eu/competition/state_aid/cases1/202016/282908_2148733_65_2.pdf",    
+    "decided_by": "European Commission",
+    "type_of_measure": "Tax Exemption",
+    "state_aid": "False",
+    "selected_because": "simple general case",
+    "Preprocessing": "-"
+  },
+  {
+    "id": "case003",
+    "title_of_original": "State Aid SA.115160 (2024/NN) - Germany Measures concerning Haitec AG, Flughafen Frankfurt Hahn GmbH, and Ryanair",
+    "link_to_original": "https://ec.europa.eu/competition/state_aid/cases1/202442/SA_115160_16.pdf",    
+    "decided_by": "European Commission",
+    "type_of_measure": "Buying Option",
+    "state_aid": "False",
+    "selected_because": "Market Economy Operator Test",
+    "Preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  },
+  {
+    "id": "case004",
+    "title_of_original": "State Aid SA.58880 (2020/FC) – Sweden – Aid to recapitalise Swedavia",
+    "link_to_original": "https://ec.europa.eu/competition/state_aid/cases1/20255/SA_57025_363.pdf",    
+    "decided_by": "European Commission",
+    "type_of_measure": "Capital Injection",
+    "state_aid": "True",
+    "selected_because": "Market Economy Operator Test", 
+    "Preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  },
+  {
+    "id": "case005",
+    "title_of_original": "(2006/638/EC) Commision Decision on the aid scheme implemented by Italy for certain undertakings for collective investment in transferable securities specialised in shares of small- and medium-capitalisation companies listed on regulated markets",
+    "link_to_original": "https://eur-lex.europa.eu/eli/dec/2006/638/oj/eng",    
+    "decided_by": "European Commission",
+    "type_of_measure": "Tax Policy",
+    "state_aid": "True",
+    "selected_because": "Indirect Advantage",
+    "Preprocessing": "Case Description Paraphrased with ChatGPT 4o",
+    "comment": "contains indirect advantages for two types of undertakings"
+  },
+  {
+    "id": "case006",
+    "title_of_original": "",
+    "link_to_original": "https://eur-lex.europa.eu/legal-content/en/TXT/?uri=CELEX:61999CJ0382",    
+    "decided_by": "Court of Justice of the European Union",
+    "type_of_measure": "Grant",
+    "state_aid": "True",
+    "selected_because": "Indirect Advantage",
+    "Preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  },
+  {
+    "id": "case007",
+    "title_of_original": "no original - fictional case",
+    "link_to_original": "-",    
+    "decided_by": "-",
+    "type_of_measure": "Tax Write off",
+    "state_aid": "False",
+    "selected_because": ["Acting as shareholder", "Market Economy Operator Test"],
+    "Preprocessing": "Case facts inventend and ChatGPT 4o used for language"
+  },
+  {
+    "id": "case008",
+    "title_of_original": "State aid SA.34155 (2013/N) (ex 2011/PN) – Germany Regional law on the compensation of school bus transport in the Land Rhineland-Palatinate ",
+    "link_to_original": "https://ec.europa.eu/competition/state_aid/cases/249123/249123_1526826_204_2.pdf",    
+    "decided_by": "European Commission",
+    "type_of_measure": "Compensation for Public Service Obligation",
+    "state_aid": "True",
+    "selected_because": ["Compensation for Public Service Obligation", "Altmark"],
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  },
+  {
+    "id": "case009",
+    "title_of_original": "Case 61/79 - Amministrazione delle finanze dello Stato v Denkavit italiana Srl.",
+    "link_to_original": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:61979CJ0061",    
+    "decided_by": "Court of Justice of the European Union",
+    "type_of_measure": "Charge Reimbursment",
+    "state_aid": "False",
+    "selected_because": ["Exception Advantage", "Reimbursment Fees"],
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  },
+  {
+    "id": "case010",
+    "title_of_original": "SA.20350 – (C 17/2008) (ex NN 1/2006) implemented by the Czech Republic for several regional bus services operators in the Ústí Region",
+    "link_to_original": "https://ec.europa.eu/competition/state_aid/cases/225289/225289_1579206_82_2.pdf",    
+    "decided_by": "European Commission",
+    "type_of_measure": "Compensation for Public Service Obligation",
+    "state_aid": "True",
+    "selected_because": ["Compensation for Public Service Obligation", "Altmark"],
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  },
+  {
+    "id": "case011",
+    "title_of_original": "SA.20350 – (C 17/2008) (ex NN 1/2006) implemented by the Czech Republic for several regional bus services operators in the Ústí Region",
+    "link_to_original": "https://ec.europa.eu/competition/state_aid/cases/225289/225289_1579206_82_2.pdf",    
+    "decided_by": "European Commission",
+    "type_of_measure": "Compensation for Public Service Obligation",
+    "state_aid": "Flase",
+    "selected_because": ["Compensation for Public Service Obligation", "Altmark"],
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  },
+  {
+    "id": "case012",
+    "title_of_original": "no original - fictional case",
+    "link_to_original": "-",    
+    "decided_by": "-",
+    "type_of_measure": "Firm and Concrete Commitment to Invest",
+    "state_aid": "True",
+    "selected_because": ["Transfer of State Resources", "Firm and Concrete Commitment to Invest"],
+    "preprocessing": "Case facts inventend and ChatGPT 4o used for language"
+  }, 
+  {
+    "id": "case013",
+    "title_of_original": "Judgment of the Court of Justice of 17 July 2008, Essent Netwerk Noord, C-206/06",
+    "link_to_original": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:62006CJ0206",    
+    "decided_by": "Court of Justice of the European Union",
+    "type_of_measure": "Levy Mechanism",
+    "state_aid": "True",
+    "selected_because": ["Transfer of State Resources", "Resources of a private body", "Control over Resources"],
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o",
+    "comment": "Strictly looking at the case. Only a part of the payment is state aid. The other part is compensation for a public service obligation."
+  },
+  {
+    "id": "case014",
+    "title_of_original": "Judgment of the Court of Justice of 24 January 1978, Van Tiggele, 82/77",
+    "link_to_original": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:61977CJ0082",    
+    "decided_by": "Court of Justice of the European Union",
+    "type_of_measure": "Regulatory Act",
+    "state_aid": "False",
+    "selected_because": ["Transfer of State Resources"],
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o",
+    "comment": "Minimum retail price does not entail a transfer of state resources"
+  },
+  {
+    "id": "case015",
+    "title_of_original": "Italy and SIM 2 Multimedia SpA v Commission, Joined Cases C-328/99 and C-399/00",
+    "link_to_original": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:61999CJ0328",    
+    "decided_by": "Court of Justice of the European Union",
+    "type_of_measure": ["Captial Injection", "Loan-to-equity conversion", "debt waiver"],
+    "state_aid": "True",
+    "selected_because": ["Resource of Public Undertaking", "Imputability"],
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  },
+  {
+    "id": "case016",
+    "title_of_original": "Judgment of the Court (First Chamber) of 9 November 2017 - European Commission v TV2/Danmark A/S.",
+    "link_to_original": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:62015CJ0656",    
+    "decided_by": "Court of Justice of the European Union",
+    "type_of_measure": "Transfer of Advertising and Digital Service Revenue",
+    "state_aid": "True",
+    "selected_because": ["Altmark", "Public Entity administered by State"],
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  },
+  {
+    "id": "case017",
+    "title_of_original": "Commission Decision of 22 November 2006 on State aid N 157/06, United Kingdom South Yorkshire Digital Region Broadband Project",
+    "link_to_original": "https://ec.europa.eu/competition/state_aid/cases/204313/204313_655838_46_2.pdf",    
+    "decided_by": "European Commission",
+    "type_of_measure": "Grant",
+    "state_aid": "True",
+    "selected_because": ["Resource from International or Union Fund"],
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  },  
+  {
+    "id": "case018",
+    "title_of_original": "no original - fictional case",
+    "link_to_original": "-",    
+    "decided_by": "-",
+    "type_of_measure": "Grant",
+    "state_aid": "True",
+    "selected_because": ["Imputability several countries"],
+    "preprocessing": "Case facts inventend and ChatGPT 4o used for language"
+  }, 
+  {
+    "id": "case019",
+    "title_of_original": "SA.39182 (2017/C) (ex 2017/NN) (ex 2014/CP) Alleged illegal aid to Tartu Agro AS implemented by Estonia",
+    "link_to_original": "https://ec.europa.eu/competition/state_aid/cases1/20256/SA_39182_284.pdf",    
+    "decided_by": "European Commission",
+    "type_of_measure": "Lease Agreement",
+    "state_aid": "True",
+    "selected_because": ["Goods or services priced below market value"],
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  },
+  {
+    "id": "case020",
+    "title_of_original": "Judgment of the General Court of 5 April 2006, Deutsche Bahn AG v Commission, T-351/02, ECLI:EU:T:2006:104",
+    "link_to_original": "https://curia.europa.eu/juris/showPdf.jsf?text=&docid=55528&pageIndex=0&doclang=EN&mode=lst&dir=&occ=first&part=1&cid=1364636",    
+    "decided_by": "Court of Justice of the European Union",
+    "type_of_measure": "Tax Exemption",
+    "state_aid": "False",
+    "selected_because": ["Imputability Exception"],
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  },  
+  {
+    "id": "case021",
+    "title_of_original": "no original - fictional case",
+    "link_to_original": "-",    
+    "decided_by": "-",
+    "type_of_measure": "Special Rights",
+    "state_aid": "True",
+    "selected_because": ["Sale of rights or resources below general system rates"],
+    "preprocessing": "Case facts inventend and ChatGPT 4o used for language"
+  },
+  {
+    "id": "case022",
+    "title_of_original": "Case C-279/08 P - Judgment of the Court (Third Chamber) of 8 September 2011. European Commission v Kingdom of the Netherlands.",
+    "link_to_original": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:62008CJ0279",    
+    "decided_by": "Court of Justice of the European Union",
+    "type_of_measure": "Granting of Rights",
+    "state_aid": "True",
+    "selected_because": ["Access to public domain, natural resources or special or exclusive rights", "acting as a regulator"],
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+  }
+]
+

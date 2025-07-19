@@ -1,0 +1,19 @@
+  {
+    "id": "case007",
+    "title_of_original": "no original - fictional case",
+    "decided_by": "-",
+    "case_description": "[1] In 2013, the Slovak Republic's tax authorities reached a settlement with Cargo & Person Rail S.R.O. (C&P-R), [2] a fully state-owned rail operator, [3] concerning the company’s outstanding tax debt of approximately €250 million. [4] The debt had accumulated over several years during which C&P-R was financially successful, but had miscalculated depreciation allowances, [5] leading to an underestimation of its tax liabilities. [6] In subsequent years, the company’s passenger division faced mounting pressure from private rail competitors and low-cost bus operators, [7] resulting in operational losses and an inability to pay the taxes owed. [8] Under the settlement, the tax authority agreed to write off €175 million of the debt, [9] while the remaining €75 million was to be repaid over five years starting in 2015, with interest. [10] The agreement was tied to a restructuring plan that included selling non-core assets and cutting unprofitable passenger routes. [11] In its public statement, the tax authority cited an internal financial analysis indicating that C&P-R would likely face insolvency if forced to repay the full amount immediately. [11] The write-off and restructuring were justified as measures to preserve the company’s viability. [12] To support its position, the Slovak government engaged two independent investment banks to assess C&P-R’s viability. [13] Both concluded that, conditional on the debt relief and full implementation of the restructuring plan, [14] the company could return to sustained profitability within two years. [15] The €175 million write-off was recorded as a direct loss to the Slovak central budget." ,
+    "number_of_chunks": 11,
+    "gold_parsing": [
+        "parsed_cost_relieved_obligations('C&P-R', 'tax write off', 175000000). % [8]",
+        "tax_exemption('tax cut'). % [-]",
+        "acting_entity_follows_shareholder_objectives('tax write off', 'C&P-R'). % [11]",
+        "acting_entity_is_shareholder('C&P-R'). %[12]",
+        "direct_targeting('tax write off', 'C&P-R'). % [-];[1];[8]",
+        "exemptions_reductions_taxes('tax write off'). % [-]",
+        "adopted_by('tax write off', 'tax authorities'). % [1]",
+        "public_state_authority('tax authorities', 'slovakia'). % [-]"
+        ],
+    "type_of_measure": "Tax Cut",
+    "state_aid": "Flase"
+  }

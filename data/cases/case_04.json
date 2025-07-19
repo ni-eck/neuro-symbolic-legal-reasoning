@@ -1,0 +1,23 @@
+  {
+    "id": "case003",
+    "title_of_original": "State Aid SA.58880 (2020/FC) – Sweden – Aid to recapitalise Swedavia",
+    "decided_by": "European Commission",
+    "case_description": "[1] Aarhus Midtjylland Airport A/S (“AMA”), a privately owned operator of Aarhus Midtjylland Airport in eastern Jutland, [2] lodged a formal complaint under EU State aid rules. [3] The complaint concerned an alleged State aid measure granted by the Danish State to Dansk Luftfart A/S (\"DL A/S\"), [4] a fully state-owned company operating a network of five airports across Denmark. [5] The act in question was a payment of DKK 2.6 billion (approximately EUR 250 million), [6] carried out on 5 November 2020, following a decision by the Danish Government on 26 October 2020. [7] In its decision, the government stated that it wanted to add capital to the company to overcome a period of liquidity shortfall that Dansk Luftfart was suffering from [8] due to COVID-19-related travel restrictions since 14 March 2020. [9] These restrictions were significantly affecting air traffic, [10] including routes operated or planned to be operated at Dansk Luftfart’s airports. [11] The payment was made by the Danish Agency for Public Finance and Management (Statens Administration) pursuant to Danish Law 2020:145 [12] and was financed from the general budget of the Danish State. [13] Given the uncertainty of the COVID-19 situation, and under the assumption that restrictions would be even stricter in the upcoming 2020 winter, [14] experts doubted that the payment would help resolve the liquidity issues and return the company to profitability. [15] A possible return of the payment, if even possible, could take at least ten years. [16] This risk and return horizon are far below the threshold a private investor would accept. [17] On 8 November 2022, Denmark informed the European Commission that it had recovered part of the payment from Dansk Luftfart. [18] Specifically, it had recovered DKK 935.2 million, [19] which included DKK 915.8 million of the principal and DKK 19.4 million in interest. [20]On 20 November 2024, Denmark notified the Commission of an additional recovery of DKK 211.5 million (plus interest).",
+    "number_of_chunks": 20, 
+    "gold_parsing": [
+          "parsed_money_received('DL A/S', 'payment', 250000000). % [5]", 
+          "acting_entity_follows_shareholder_objectives('payment', 'DL A/S'). % [7]", 
+          "acting_entity_is_shareholder('DL A/S'). % [4]",
+          "captial_injection('payment'). % [-]",
+          "expert_evaluation_on_measure_or_similar_action('doubting', 'experts', 'payment'). % [14];[15];[16]",
+          "ex_ante_evaluation('doubting', 'payment'). [14]",
+          "not_in_favour_of_measure_or_similar_action('doubting', 'payment'). % [16]",
+          "direct_targeting('payment', 'DL A/S'). % [5];[11]",
+          "active_resource_flow('payment', 'public capital'). % [-];[5];[11]",
+          "resource_of_central_state_entity('public capital'). % [12]",
+          "adopted_by('payment', 'danish government'). % [6] ",
+          "public_state_authority('danish government', 'denmark'). % [-]"
+        ],
+    "type_of_measure": "Insert Type of Measure",
+    "state_aid": "True"
+  }
