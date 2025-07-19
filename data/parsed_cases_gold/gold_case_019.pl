@@ -1,0 +1,12 @@
+% Case facts
+parsed_money_spent('AgroBaltic', 'lease agreement', 336000). % [2],[10],[15]
+parsed_value_received_rights_licenses('AgroBaltic', 'lease agreement', 2240000). % [15],[18]
+sell_lease_rent_similar('lease agreement'). % [-]
+tender_used('lease agreement', 'restricted lease tender 2013'). % [2]
+expert_financial_expectation('lease agreement', 40). % [18]
+measure_financial_terms('lease agreement', 6). % [10]
+direct_targeting('lease agreement', 'AgroBaltic'). % [-];[15]
+actual_price_goods_service('lease agreement', 6). % [10],[15] 
+market_price_goods_service('lease agreement', 40). % [18]
+adopted_by('lease agreement', 'Ministry of Agriculture'). %[1];[23]
+public_state_authority('Ministry of Agriculture', 'Lithunia'). % [-]

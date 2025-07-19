@@ -1,0 +1,12 @@
+% Case facts
+textual_evidence_of_improved_financial_valuation('Specialised Investment Vehicles', 'tax reduction'). % [19];[20]
+textual_evidence_of_improved_financial_valuation('Small and Midsized Companies', 'tax reduction'). % [21];[22]
+tax_policy('tax reduction'). % [-]
+direct_targeting('tax reduction', 'Specialised Investment Vehicles'). % [13]
+channeled_secondary_effects('tax reduction', 'Specialised Investment Vehicles', 'increased demand for shares'). % [19]
+channeled_secondary_effects('tax reduction', 'Small and Midsized Companies', 'increased investment and liquidity in market segment'). %[21],[22]
+group_of_undertakings('Specialised Investment Vehicles', 'increased demand for shares'). % [5]
+group_of_undertakings('Small and Midsized Companies', 'increased investment and liquidity in market segment'). % [6]
+exemptions_reductions_taxes('tax reduction'). % [-]
+adopted_by('tax reduction', 'government of france'). % [1]
+public_state_authority('government of france', 'france'). % [-]

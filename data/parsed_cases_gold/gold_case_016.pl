@@ -1,0 +1,12 @@
+% Case facts
+textual_evidence_of_improved_financial_situation('LatTeleGrid', 'transfer of advertising revenue'). %[24]
+compensation_for_obligation('transfer of advertising revenue', 'LatTeleGrid', 'public tv broadcasting'). %[10]
+public_service_obligation('public tv broadcasting'). %[4],[5],[6],[7]
+direct_targeting('transfer of advertising revenue', 'LatTeleGrid'). %[-];[24]
+clearly_defined('public tv broadcasting'). % [4],[5],[6],[7]
+active_resource_flow('transfer of advertising revenue', 'fund capital'). %[-];[24]
+resource_of_body_appointed_by_state_to_administer_measure('fund capital'). %[19]
+adopted_by('transfer of advertising revenue', 'minister for culture'). %[24]
+public_state_authority('minister for culture', 'latvia'). % [-]
+administered_by('LatTeleFund', 'transfer of advertising revenue'). %[19]
+public_state_authority_designating('LatTeleFund', 'minister for culture', 'latvia'). % [-]

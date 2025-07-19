@@ -1,0 +1,11 @@
+% Case facts
+parsed_money_received('GutesBrot', 'grant', 300000). % [16]
+monetary_subsidy('grant'). % [-];[13];[17]
+direct_targeting('grant', 'GutesBrot'). % [-];[13];[17]
+active_resource_flow('grant', 'fund capital'). % [-];[13];[17]
+resource_of_body_appointed_by_state_to_administer_measure('fund capital'). % [8]
+administered_by('Euregion Succession Fund', 'grant'). % [8];[13]
+public_intra_state_authority('Euregion Succession Fund', 'nrw administration', 'nrw'). % [7];[9]
+public_intra_state_authority('Euregion Succession Fund', 'wallonia administration', 'wallonia'). % [7];[9] 
+intrastate_of('nrw', 'germany'). % [-]
+intrastate_of('wallonia', 'belgium'). % [-]

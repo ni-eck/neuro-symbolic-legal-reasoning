@@ -1,0 +1,13 @@
+% Case facts
+parsed_money_received('DL AS', 'payment', 250000000). % [5] 
+acting_entity_follows_shareholder_objectives('payment', 'DL AS'). % [7] 
+acting_entity_is_shareholder('DL AS'). % [4]
+captial_injection('payment'). % [-]
+expert_evaluation_on_measure_or_similar_action('doubting', 'experts', 'payment'). % [14];[15];[16]
+ex_ante_evaluation('doubting', 'payment'). % [14]
+not_in_favour_of_measure_or_similar_action('doubting', 'payment'). % [16]
+direct_targeting('payment', 'DL AS'). % [5];[11]
+active_resource_flow('payment', 'public capital'). % [-];[5];[11]
+resource_of_central_state_entity('public capital'). % [12]
+adopted_by('payment', 'danish government'). % [6] 
+public_state_authority('danish government', 'denmark'). % [-]
