@@ -60,15 +60,8 @@ economic_benefit(Undertaking, Measure) :-
 % ------------------------------------------------------------------
 % This predicate holds if the undertaking has a measurably improved financial situation
 % due to the measure. Improvement is determined by one of:
-% 1. A calculated net financial gain based on:
-%    - Income received
-%    - Spending avoided
-%    - Value of assets gained or lost
-%    - Liabilities incurred
-%    - Value of rights or licenses received
-%    - Value of services received
-%    - Cost relief from lifted obligations
-%    - Other costs saved
+% 1. A calculated net financial
+
 % 2. An increase in company valuation, causally linked to the measure
 % 3. Textual evidence from the case record indicating an improvement
 %    in financial position or valuation, even in the absence of numeric data
@@ -77,15 +70,17 @@ improves_financial_position(Undertaking, Measure) :-
     (
         financial_situation_after(
             Undertaking, Measure,
-            MoneyReceived, MoneySpend,
-            AssetsGained, AssetsLost, LiabilitiesIncurred,
+            MoneyReceived, MoneySpent,
+            AssetsGained, AssetsLost,
             ValueReceivedRightsLicenses, ValueReceivedServices,
-            CostRelievedObligations, OtherCostsSaved
+            ValueGrantedRightsLicenses, ValueGrantedServices,
+            CostRelievedObligations, OtherCostsSaved, OtherLiabilitiesIncurred
         ),
-        NetChange is MoneyReceived - MoneySpend
-                  + AssetsGained - AssetsLost - LiabilitiesIncurred
-                  + ValueReceivedRightsLicenses + ValueReceivedServices
-                  + CostRelievedObligations + OtherCostsSaved,
+        NetChange is MoneyReceived - MoneySpent
+                  + AssetsGained - AssetsLost
+                  + ValueReceivedRightsLicenses + ValueReceivedServices 
+                  - ValueGrantedRightsLicenses  - ValueGrantedServices
+                  + CostRelievedObligations + OtherCostsSaved - OtherLiabilitiesIncurred,
         NetChange > 0
     )
     ;
@@ -99,6 +94,119 @@ improves_financial_position(Undertaking, Measure) :-
     )
     ;
     textual_evidence_of_improved_financial_valuation(Undertaking, Measure).
+
+% ------------------------------------------------------------------
+% Financial Situation After the Measure
+% ------------------------------------------------------------------
+% The financial situation after the measure looks at:
+%    - Income received
+%    - Spending avoided
+%    - Value of assets gained or lost
+%    - Value of rights or licenses received
+%    - Value of services received
+%    - Value of rights or licenses granted to grant
+%    - Value of services granted or to grant
+%    - Cost relief from lifted obligations
+%    - Other costs saved
+%    - Other Liabilities incurred
+%
+% It only succeeds if at least one relevant financial component was
+% actually parsed (not just defaulted to zero).
+%
+% Missing components fall back to zero and do not block evaluation.
+% This rule does *not* by itself determine whether aid exists—it simply
+% prepares the data for further evaluation.
+% ------------------------------------------------------------------
+
+financial_situation_after(
+    Undertaking, Measure,
+    MoneyReceived, MoneySpent,
+    AssetsGained, AssetsLost,
+    ValueReceivedRightsLicenses, ValueReceivedServices,
+    ValueGrantedRightsLicenses, ValueGrantedServices,
+    CostRelievedObligations, OtherCostsSaved, OtherLiabilitiesIncurred
+) :-
+    financial_data_parsed(Undertaking, Measure),
+    money_received(Undertaking, Measure, MoneyReceived),
+    money_spent(Undertaking, Measure, MoneySpent),
+    assets_gained(Undertaking, Measure, AssetsGained),
+    assets_lost(Undertaking, Measure, AssetsLost),
+    value_received_rights_licenses(Undertaking, Measure, ValueReceivedRightsLicenses),
+    value_received_services(Undertaking, Measure, ValueReceivedServices),
+    value_granted_rights_licenses(Undertaking, Measure, ValueGrantedRightsLicenses),
+    value_granted_services(Undertaking, Measure, ValueGrantedServices),
+    cost_relieved_obligations(Undertaking, Measure, CostRelievedObligations),
+    other_costs_saved(Undertaking, Measure, OtherCostsSaved),
+    other_liabilities_incurred(Undertaking, Measure, OtherLiabilitiesIncurred).
+
+% ------------------------------------------------------------------
+% Fallbacks with parsed/default separation
+% ------------------------------------------------------------------
+
+money_received(Undertaking, Measure, Value) :-
+    parsed_money_received(Undertaking, Measure, Value), !.
+money_received(_, _, 0).
+
+money_spent(Undertaking, Measure, Value) :-
+    parsed_money_spent(Undertaking, Measure, Value), !.
+money_spent(_, _, 0).
+
+assets_gained(Undertaking, Measure, Value) :-
+    parsed_assets_gained(Undertaking, Measure, Value), !.
+assets_gained(_, _, 0).
+
+assets_lost(Undertaking, Measure, Value) :-
+    parsed_assets_lost(Undertaking, Measure, Value), !.
+assets_lost(_, _, 0).
+
+value_received_rights_licenses(Undertaking, Measure, Value) :-
+    parsed_value_received_rights_licenses(Undertaking, Measure, Value), !.
+value_received_rights_licenses(_, _, 0).
+
+value_received_services(Undertaking, Measure, Value) :-
+    parsed_value_received_services(Undertaking, Measure, Value), !.
+value_received_services(_, _, 0).
+
+value_granted_rights_licenses(Undertaking, Measure, Value) :-
+    parsed_value_granted_rights_licenses(Undertaking, Measure, Value), !.
+value_granted_rights_licenses(_, _, 0).    
+
+value_granted_services(Undertaking, Measure, Value) :-
+    parsed_value_granted_services(Undertaking, Measure, Value), !.
+value_granted_services(_, _, 0).
+
+cost_relieved_obligations(Undertaking, Measure, Value) :-
+    parsed_cost_relieved_obligations(Undertaking, Measure, Value), !.
+cost_relieved_obligations(_, _, 0).
+
+other_costs_saved(Undertaking, Measure, Value) :-
+    parsed_other_costs_saved(Undertaking, Measure, Value), !.
+other_costs_saved(_, _, 0).
+
+other_liabilities_incurred(Undertaking, Measure, Value) :-
+    parsed_other_liabilities_incurred(Undertaking, Measure, Value), !.
+other_liabilities_incurred(_, _, 0).
+
+% ------------------------------------------------------------------
+% Check that at least one real financial component was parsed, that can lead to an economical benefit
+% ------------------------------------------------------------------
+
+financial_data_parsed(Undertaking, Measure) :-
+    parsed_money_received(Undertaking, Measure, _)
+    ;
+    parsed_assets_gained(Undertaking, Measure, _)
+    ;
+    parsed_assets_lost(Undertaking, Measure, _)
+    ;
+    parsed_value_received_rights_licenses(Undertaking, Measure, _)
+    ;
+    parsed_value_received_services(Undertaking, Measure, _)
+    ;
+    parsed_cost_relieved_obligations(Undertaking, Measure, _)
+    ;
+    parsed_other_costs_saved(Undertaking, Measure, _).
+
+
 
 % ------------------------------------------------------------------
 % Compensation for Public Service Obligations
@@ -140,15 +248,18 @@ not_obtained_under_normal_market_conditions(Measure) :-
 % ------------------------------------------------------------------
 exercise_of_public_power(Measure) :-
     (
-        subsidy(Measure);
+        monetary_subsidy(Measure);
         tax_exemption(Measure);
         tax_policy(Measure);
         payment_of_unemployment_benefits(Measure);
         social_security_benefits(Measure);
         social_policy(Measure);
-        aid_for_restructuring_of_industrial_infrastructure(Measure);
-        compensatory_payment(Measure);
-        regulatory_intervention(Measure);
+        compensation_for_public_service_obligation(Measure, Undertaking, Obligation);
+        granting_access_to_public_domain_resources_special_or_exclusive_rights(Measure);
+        reimbursement_of_illegally_levied_charges_or_dues(Measure);
+        compensation_for_damage(Measure);
+        compensation_for_an_expropriation(Measure);
+        regulatory_capacity(Measure);
         further_option_of_public_authority(Measure)
     ),
     \+ acting_with_shareholder_objectives(Measure),
@@ -156,8 +267,8 @@ exercise_of_public_power(Measure) :-
 
 
 acting_with_shareholder_objectives(Measure) :-
-    acting_authority_follows_shareholder_objectives(Measure, Undertaking),
-    acting_authority_is_shareholder(Undertaking).
+    acting_entity_follows_shareholder_objectives(Measure, Undertaking),
+    acting_entity_is_shareholder(Undertaking).
 
 % ------------------------------------------------------------------
 % Act of economic nature
@@ -169,10 +280,11 @@ acting_with_shareholder_objectives(Measure) :-
 % ------------------------------------------------------------------
 act_of_economic_nature(Measure) :-
     loan(Measure);
-    capital_injection(Measure);
-    share_purchase(Measure);
-    sale_of_goods_or_services(Measure);
-    acquisition_or_lease_of_goods(Measure);
+    captial_injection(Measure);
+    purchase_lease_rent_similar(Measure);
+    sell_lease_rent_similar(Measure);
+    waiver_private_law_claims(Measure); 
+    converting_private_law_claims(Measure);
     acting_with_shareholder_objectives(Measure);
     economic_objective_similarly_pursued_by_private_investor(Measure);
     fallback_act_of_economic_nature(Measure).
@@ -223,7 +335,8 @@ directly_established_compliance_with_market_conditions(Measure) :-
 %       not merely symbolic.
 %   (d) Comparability: public and private actors start from a comparable
 %       position, e.g. in terms of prior exposure, transaction costs, or
-%       synergy potential.
+%       synergy potential. 
+%       As the normal case is that the starting point is similar, this will be modeled with NAF
 % ------------------------------------------------------------------
 
 pari_passu(Measure, PublicBody, PrivateOperator) :-
@@ -231,7 +344,9 @@ pari_passu(Measure, PublicBody, PrivateOperator) :-
     intervention_carried_at_same_time(Measure, PublicBody, PrivateOperator),    
     same_terms_and_conditions(Measure, PublicBody, PrivateOperator),
     intervention_is_significant(PrivateOperator),
-    comparable_starting_position(Measure, PublicBody, PrivateOperator).
+    \+ not_comparable_starting_position(Measure, PublicBody, PrivateOperator).
+
+
 
 % ------------------------------------------------------------------
 % Qualifying tender procedure
@@ -246,8 +361,8 @@ pari_passu(Measure, PublicBody, PrivateOperator) :-
 
 qualifying_tender_procedure(Measure) :-
     (
-        sale_of_assets_goods_services_or_similar(Measure);
-        purchase_of_assets_goods_services_similar(Measure)
+        sell_lease_rent_similar(Measure);
+        purchase_lease_rent_similar(Measure)
     ),
     tender_used(Measure, Tender),
     competitive(Measure, Tender),
@@ -345,11 +460,11 @@ direct(Measure, Undertaking) :-
 % A measure involves an indirect advantage if it channels secondary effects to identifiable undertakings or groups.
 % ------------------------------------------------------------------
 indirect(Measure, Undertaking) :-
-    channeled_secondary_effects(Measure, Undertaking),
+    channeled_secondary_effects(Measure, Undertaking, Effect),
     (
-        identifiable_undertaking(Undertaking)
+        identifiable_undertakings(Undertaking, Effect)
     ;
-        part_of_group_of_undertakings(Undertaking)
+        group_of_undertakings(Undertaking, Effect)
     ).
 
 % ------------------------------------------------------------------
@@ -377,6 +492,12 @@ exception_advantage(Measure) :-
 %    to discharge, and the obligations must be clearly defined.
 % (2)The parameters for calculating the compensation must be established 
 %    in advance, in an objective and transparent manner.
+%     - *Advance Establishment*: Parameters must be set before service delivery 
+%       to prevent retroactive adjustments that might distort competition.
+%     - *Objectivity*: The method should rely on verifiable and measurable 
+%       factors (e.g. cost formulas, output metrics), not discretionary judgment.
+%     - *Transparency*: The method must be publicly accessible and clearly 
+%       communicated to enable scrutiny and accountability.
 % (3)The compensation must not exceed what is necessary to cover the 
 %    costs of discharging the public service obligations, taking into account 
 %    the relevant receipts and a reasonable profit.
@@ -392,9 +513,9 @@ altmark(Measure) :-
     compensation_for_public_service_obligation(Measure, Undertaking, Obligation),
     clearly_defined(Obligation),
     % Criterion 2: Transparent, objective, advance calculation of parameters
-    calculated_in_advance(CompensationParameters, Measure),
-    calculated_objectively(CompensationParameters, Measure),
-    calculated_transparently(CompensationParameters, Measure),
+    compensation_params_predefined(Measure, Obligation),
+    compensation_params_objective(Measure, Obligation),
+    compensation_params_transparent(Measure, Obligation),
     % Criterion 3: Compensation does not exceed necessary costs + reasonable profit
     (
         ( compensation_amount(Measure, Amount),
@@ -407,13 +528,14 @@ altmark(Measure) :-
     ),
     % Criterion 4: Either public procurement, or benchmarking to a typical efficient firm
     (
-        public_procurement_procedure(Measure)
+        public_procurement_procedure_used(Measure, ProcurementProcedure),
+        designed_to_minimise_cost_to_community(ProcurementProcedure)
         ;
         (
             ( compensation_amount(Measure, Amount),
-              hypothetical_cost(Measure, HypotheticalCosts),
-              reasonable_profit(Measure, Profit),
-              Amount =< HypotheticalCosts + Profit
+            hypothetical_cost(Measure, HypotheticalCosts),
+            reasonable_profit(Measure, Profit),
+            Amount =< HypotheticalCosts + Profit
             )
             ;
             textual_evidence_that_compensation_is_based_on_cost_structure_of_wellrun_plus_reasonable_profit(Measure)
@@ -453,7 +575,7 @@ transfer_of_resources(Measure) :-
             ;
             firm_and_concrete_commitment_to_make_resources_available_at_later_point(Measure, Resource)
         ),
-        state_resource(Resource, Measure)
+        state_resource(Resource)
     )
     ;
     foregoing_state_revenue(Measure).
@@ -464,33 +586,39 @@ transfer_of_resources(Measure) :-
 % Includes:
 % (a) Resources of the public sector
 % (b) Resources of public undertakings
+%       A public undertaking is defined by reference to Commission Directive 2006/111/EC, of 16 November 2006, 
+%       on the transparency of financial relations between Member States and public undertakings as well as on financial transparency within certain undertakings
 % (c) Resources of private bodies, when the resources are under public control prior to transfer
 % (d) Resources of public or private bodies appointed by the state to administer aid
 % (e) Resources under joint control with other Member States
 % (f) Resources from the EU, EIB, EIF, IMF, EBRD, or similar, where national authorities have discretion over their use.
 % ------------------------------------------------------------------------------
-state_resource(Resource, Measure) :-
+state_resource(Resource) :-
+    resource_of_public_sector(Resource)
+    ;
     (
-        resource_of_public_sector(Resource, Measure)
-        ;
-        resource_of_public_undertaking(Resource, Measure)
-        ;
-        (resource_of_private_body(Resource, Measure), under_public_control(Resource))
-        ;
-        resource_of_body_appointed_by_state_to_administer_aid(Resource, Measure)
-        ;
-        resource_under_joint_control_with_other_member_states(Resource, Measure)
-        ;
-        (resource_from_international_or_union_fund(Resource, Measure),
-         discretion_by_national_authorities(Resource, Measure))
+        resource_of_undertaking(Resource, ActingUndertaking),
+        is_public_undertaking(ActingUndertaking)
+    )
+    ;
+    (
+        resource_of_private_body(Resource),
+        under_public_control(Resource)
+    )
+    ;
+    resource_of_body_appointed_by_state_to_administer_measure(Resource)
+    ;
+    (
+        resource_from_international_or_union_fund(Resource),
+        discretion_by_national_authorities(Resource)
     ).
 
 % ------------------------------------------------------------------------------
 % Public sector resources include central and intra-state (federal, regional) resources
 % ------------------------------------------------------------------------------
-resource_of_public_sector(Resource, Measure) :- 
-    resource_of_central_state_entity(Resource, Measure);
-    resource_of_intrastate_entity(Resource, Measure).
+resource_of_public_sector(Resource) :- 
+    resource_of_central_state_entity(Resource);
+    resource_of_intrastate_entity(Resource).
 
 % ------------------------------------------------------------------------------
 % Foregoing State Revenue
@@ -536,7 +664,7 @@ foregoing_state_revenue(Measure) :-
     (
         % Case 4a: Sale of rights or resources below general system rates
         sell_price_domain_resources_rights(Measure, SellPrice),
-        actual_price_domain_resources_rights(Measure, SystemRates),
+        system_price_domain_resources_rights(Measure, SystemRates),
         SellPrice < SystemRates
     );
     (
@@ -545,8 +673,9 @@ foregoing_state_revenue(Measure) :-
     )
     ;
     (
-        % Case 5: Failure to enforce private law claims (e.g. debt waivers, conversions) contrary to MEOT
-        stop_enforcing_private_law_claims(Measure), negative_market_economy_operator_test(Measure)
+        % Case 5: waiving or converting private law claims (e.g. debt waivers) contrary to MEOT
+        (waiver_private_law_claims(Measure); converting_private_law_claims(Measure)),
+        negative_market_economy_operator_test(Measure)
     ).
 
 % ------------------------------------------------------------------------------
@@ -595,7 +724,7 @@ revenue_forfeited_for_regulatory_purpose(Measure) :-
 % attributed to a public authority of the Member State. This includes:
 %
 % (1) Measures adopted directly by a public authority (regardless of its degree of autonomy);
-% (2) Measures implemented by a body (public or private) that was designated by a public authority;
+% (2) Measures administered by a body (public or private) that was designated by a public authority;
 % (3) Measures adopted by a public undertaking, where indicators show State or Intrastate involvement in the decision.
 %
 % Exception: A measure is not imputable if the Member State was under a binding
@@ -603,32 +732,43 @@ revenue_forfeited_for_regulatory_purpose(Measure) :-
 % ------------------------------------------------------------------------------
 imputable_to_state(Measure, State) :-
     (
-        adopted_by(Measure, Entity),
         (
-            public_state_authority(Entity, State)
-            ;
-            (public_intra_state_authority(Entity, IntraState), intrastate_of(IntraState, State))
+            adopted_by(Measure, Entity),
+            (
+                public_state_authority(Entity, State)
+                ;
+                (
+                    public_intra_state_authority(Entity, IntraState),
+                    intrastate_of(IntraState, State)
+                )
+            )
         )
-    )
-    ;
-    (
-        implemented_by(Measure, Implementer),
-        designated_by(Implementer, DesignatingAuthority),
+        ;
         (
-            public_state_authority(DesignatingAuthority, State)
-            ;
-            (public_intra_state_authority(DesignatingAuthority, IntraState), intrastate_of(IntraState, State))
+            administered_by(Body, Measure),
+            (
+                public_state_authority_designating(Body, DesignatingAuthority, State)
+                ;
+                (
+                    public_intra_state_authority(Body, DesignatingAuthority, IntraState),
+                    intrastate_of(IntraState, State)
+                )
+            )
         )
-    )
-    ;
-    (
-        adopted_by(Measure, PublicUndertaking),
+        ;
         (
-            public_undertaking_state(PublicUndertaking, State)
-            ;
-            (public_undertaking_intra_state(PublicUndertaking, IntraState), intrastate_of(IntraState, State))
-        ),
-        indicator_of_state_or_intra_state_involvement(PublicUndertaking, Measure)
+            adopted_by(Measure, ActingUndertaking),
+            is_public_undertaking(ActingUndertaking),
+            (
+                public_undertaking_of_state(ActingUndertaking, State)
+                ;
+                (
+                    public_undertaking_intra_state(ActingUndertaking, IntraState),
+                    intrastate_of(IntraState, State)
+                )
+            ),
+            indicator_of_state_or_intra_state_involvement(ActingUndertaking, Measure)
+        )
     ),
     \+ imputability_exception(Measure).
 
@@ -645,19 +785,24 @@ imputable_to_state(Measure, State) :-
 % (a) factors of an organic nature which link the public undertaking to the State
 % (b) integration of the public undertaking into the structures of the public administration
 % (c) operates in a strategic sector and does not face normal market competition
+% 
+% The parsing will be restrictive here, because ‘the fact that the public authorities may exercise directly or indirectly a
+% dominant influence does not prove that they actually exercised that influence in a given
+% case.
 % ------------------------------------------------------------------------------
-indicator_of_state_or_intra_state_involvement(PublicUndertaking, Measure) :-
-    decision_dependence_on_state_or_intra_state(PublicUndertaking, Measure);
-    acted_on_government_directives(PublicUndertaking, Measure);
-    measure_scope_indicates_involvement(PublicUndertaking, Measure);
-    other_indicators_of_public_involvement(PublicUndertaking, Measure).
+indicator_of_state_or_intra_state_involvement(ActingUndertaking, Measure) :-
+    decision_dependence_on_state_or_intra_state(ActingUndertaking, Measure);
+    acted_on_government_directives(ActingUndertaking, Measure);
+    strong_public_supervision(ActingUndertaking, Measure);
+    measure_scope_indicates_involvement(ActingUndertaking, Measure);
+    other_indicators_of_public_involvement(ActingUndertaking, Measure).
 
-indicator_of_state_or_intra_state_involvement(PublicUndertaking, _) :-
-    organic_link_with_state_or_intra_state(PublicUndertaking);
-    integrated_into_public_administration(PublicUndertaking);
-    (strategic_sector(PublicUndertaking),
-    not_competing_under_normal_conditions(PublicUndertaking));
-    strong_public_supervision(PublicUndertaking).
+indicator_of_state_or_intra_state_involvement(ActingUndertaking, _) :-
+    organic_link_with_state_or_intra_state(ActingUndertaking);
+    integrated_into_public_administration(ActingUndertaking);
+    (strategic_sector(ActingUndertaking),
+    not_competing_under_normal_conditions(ActingUndertaking)).
+    
 
 % ------------------------------------------------------------------------------
 % Exception: No imputability where the Member State is under a Union law obligation and has no discretion in implementing the measure
