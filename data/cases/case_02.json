@@ -3,10 +3,11 @@
     "title_of_original": "State Aid SA.38330 (2016/FC) - Poland Alleged unlawful regional investment aid to PCC MCAA sp. Zo.o (PCC)",
     "source": "European Commission",
     "case_description": "[1] On the 1st of March 2016 the Portuguese Ministry of Economy released permit NO 134. [2] This permit entitled XCA Lda (hereinafter XCA) to conduct business activities in the “FUTURE-PARK” Alentejo Special Economic Zone and [3] invoked an exemption from corporate income tax for income from the investment. [4] The permit specified the maximum amount of eligible investment costs as 69 999 999 €. [5] The maximum amount of the tax exemption was not stated in the permit. [6] The Portuguese authorities later published a calculation, [7] stating that the maximum value of the corporate income tax exemption amounts to EUR 7543234 €.",
+    "word_count": 97,
     "number_of_chunks": 7,
     "gold_parsing": [
-        "parsed_cost_relieved_obligations('XCA', 'tax exemption', 7543234). % [7]",
-        "tax_exemption('tax exemption'). % [-]",
+        "parsed_costs_relieved_monetary_obligations('XCA', 'tax exemption', 7543234). % [7]",
+        "tax_exemption('tax exemption'). % [-];[3]",
         "direct_targeting('tax exemption', 'XCA'). % [3]",
         "exemptions_reductions_taxes('tax exemption'). % [-]",
         "adopted_by('tax exemption', 'portuguese ministry of economy'). % [1]",

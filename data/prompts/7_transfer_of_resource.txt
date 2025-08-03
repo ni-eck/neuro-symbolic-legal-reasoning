@@ -1,0 +1,81 @@
+Special Instruction: For this parsing task, internal knowledge might be required. Also be aware that some predicates might be more specific than others, which leads to exclusivity that needs to be obeyed. Exclusivity will be given after the definition. 
+Special Instruction: The argument Resource should be filled with the Resource that is used for the Measure.
+List of possible target predicates:
+
+% Definition: The Measure involves an active flow of resources to the beneficiary. 
+% Exclusive: When this predicate is parsed, none of the others can be parsed.
+active_resource_flow(Measure, Resource).
+
+% Definition: The Measure is a firm and concrete commitment to make resources available at a later point.
+% Exclusive: When this predicate is parsed, none of the others can be parsed.
+firm_and_concrete_commitment_to_make_resources_available_at_later_point(Measure, Resource).
+
+% Definition: The Measure is an exemption or reduction in taxes.
+exemptions_reductions_taxes(Measure).
+
+% Definition: The Measure is an exemption or reduction in social security contributions.
+exemptions_reductions_social_security(Measure).
+
+% Definition: The Measure is an exemption from the obligation to pay fines.
+exemptions_fines(Measure).
+
+% Definition: The Measure is an exemption from the obligation to pay pecuniary penalties.
+exemptions_pecuniary_penalties(Measure).
+
+% Definition: The Measure waives or reduces revenue that would otherwise be due under public or criminal law obligations.
+% Exclusive: The predicates exemptions_reductions_taxes(Measure), exemptions_reductions_social_security(Measure), exemptions_fines(Measure), and exemptions_pecuniary_penalties(Measure) capture more specific cases. This predicate can only be parsed when exemptions_reductions_taxes(Measure), exemptions_reductions_social_security(Measure), exemptions_fines(Measure), and exemptions_pecuniary_penalties(Measure) were not parsed for the same Measure argument.
+general_waiving_revenue_public_or_criminal_law(Measure).
+
+% Definition: The actual price charged for goods or services under the Measure.
+actual_price_goods_service(Measure, ActualPrice).
+
+% Definition: The market price of the goods or services provided under the Measure.
+market_price_goods_service(Measure, MarketPrice).
+
+% Definition: The Measure involves pricing of goods or services below market value, inferred from textual evidence.
+% Exclusive: This predicate should only be parsed when no numerical evidence is available. It can only be parsed when actual_price_goods_service(Measure, ActualPrice) AND market_price_goods_service(Measure, MarketPrice) were not parsed for the same Measure argument.
+goods_or_services_priced_below_market_value_textual_evidence(Measure).
+
+% Definition: The paid price for access to public domain, natural resources, or special/exclusive rights under the Measure.
+access_domain_resources_rights(Measure, AccessPrice).
+
+% Definition: The market value of public domain, natural resources, or special/exclusive rights accessed under the Measure.
+market_value_domain_resources_rights(Measure, MarketValue).
+
+% Definition: The Measure provides access to domain/resources/rights below market rates, inferred from textual evidence.
+% Exclusive: This predicate should only be parsed when no numerical evidence is available. It can only be parsed when access_domain_resources_rights(Measure, AccessPrice) AND market_value_domain_resources_rights(Measure, MarketValue) were not parsed for the same Measure argument.
+domain_resources_rights_priced_below_market_rate_textual_evidence(Measure).
+
+% Definition: The price charged for access to public domain, natural resources, or special/exclusive rights under the Measure.
+sell_price_domain_resources_rights(Measure, SellPrice).
+
+% Definition: The standard rate for access to public domain, natural resources, or special/exclusive rights under the authority’s general system.
+system_price_domain_resources_rights(Measure, SystemRates).
+
+% Definition: The Measure provides access to domain/resources/rights below the general system rate, inferred from textual evidence.
+% Exclusive: This predicate should only be parsed when no numerical evidence is available. It can only be parsed when system_price_domain_resources_rights(Measure, SystemRates) AND sell_price_domain_resources_rights(Measure, SellPrice) were not parsed for the same Measure argument.
+domain_resources_rights_priced_below_system_rate_textual_evidence(Measure).
+
+% Definition: The Measure involves a selection process.
+selection_process_for_measure(Measure, Process).
+
+% Definition: The selection process was based on qualitative criteria.
+qualitative_selection_criteria(Process).
+
+% Definition: The selection criteria were established ex ante, transparently, and in a non-discriminatory manner.
+establishing_of_selection_criteria(Process).
+
+% Definition: The selection criteria were established ex ante.
+ex_ante(Criteria, Process).
+
+% Definition: The selection criteria were transparent.
+transparent(Criteria, Process).
+
+% Definition: The selection criteria were non-discriminatory.
+non_discriminatory(Criteria, Process).
+
+% Definition: The Measure is used to achieve a policy objective.
+achieving_policy_objective(Measure, RegulatoryPurpose).
+
+% Definition: The revenue loss under the Measure was needed to achieve the policy objective.
+revenue_loss_is_justified_by_policy(RegulatoryPurpose).

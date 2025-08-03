@@ -1,0 +1,1 @@
+Instructions: Only output Prolog predicates from the list above, one per line, each with its source chunk as a comment (e.g., % [1]). Do not output comments, explanations, or predicate definitions—only Prolog predicates with the source chunk. If no predicate can be parsed, output exactly one line: % nothing

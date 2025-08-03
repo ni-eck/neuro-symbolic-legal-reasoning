@@ -3,13 +3,14 @@
     "title_of_original": "State Aid SA.38330 (2016/FC) – Poland Alleged unlawful regional investment aid to PCC MCAA sp. Zo.o (PCC)",
     "decided_by": "European Commission",
     "case_description": "[1] On the 10th of May 2015 the Portuguese Ministry of Economy awarded a direct grant to XCA Lda (hereinafter XCA) in the amount of 15983927.91 €, [2] for an initial investment into a new facility for manufacturing high-purity monochloroacetic acid in Sines, in Alentejo. [3] The eligible costs of this investment project were around 54012345 €. [4] The grant was financed through the general budget of the state." ,
+    "word_count": 65,
     "number_of_chunks": 4,
     "gold_parsing": [
-        "money_received('XCA', 'grant', 15983927.91). %[1]",
-        "monetary_subsidy('grant'). % [-]",
+        "parsed_money_received('XCA', 'grant', 15983927.91). %[1]",
+        "monetary_subsidy('grant'). % [-];[1]",
         "direct_targeting('XCA', 'grant'). % [1]",
         "active_resource_flow('grant', 'public capital'). % [-];[1]",
-        "resource_of_central_state('public capital'). % [4]",
+        "resource_of_central_state_entity('public capital'). % [4]",
         "adopted_by('grant', 'portuguese ministry of economy'). % [1]",
         "public_state_authority('portuguese ministry of economy', 'portugal'). % [-]"
         ],

@@ -3,6 +3,7 @@
     "title_of_original": "Case C-382/99 - Kingdom of the Netherlands v Commission of the European Communities",
     "decided_by": "Court of Justice of the European Union",
     "case_description": "[1] On 15 March 2021, the Polish Government decided to increase excise duties on petrol starting from 1 April 2021 [2] and introduced a temporary subsidy for petrol sales at service stations near the Czech border, [3] aimed at maintaining price competitiveness. [4] Operators located within 20 km of the border received PLN 0.08 per litre [5] and those located 20–40 km from the border received PLN 0.04 per litre. [6] The subsidy was granted per service station, allowing operators with multiple stations to receive multiple payments. [6] The total amount was capped at EUR 100,000 over three years [7] and financed from the state budget. [8] Many service stations in the border region have exclusive purchasing agreements with oil companies. [9] These agreements include price management clauses [10] that require oil companies to bear the cost of forecourt discounts in response to market conditions, including competition with Czech fuel prices. [11] In practice, where subsidies were paid, oil companies covered only the remaining part of the discount beyond the amount covered by the aid." ,
+    "word_count": 165,
     "number_of_chunks": 11,
     "gold_parsing": [
         "textual_evidence_of_improved_financial_situation('oil companies', 'subsidy'). % [11]",
@@ -15,6 +16,6 @@
         "adopted_by('subsidy', 'government of poland'). % [1];[2]",
         "public_state_authority('government of poland', 'poland'). %[-]"
         ],
-    "type_of_measure": "Subsidy",
+    "type_of_measure": "Grant",
     "state_aid": "True"
   }

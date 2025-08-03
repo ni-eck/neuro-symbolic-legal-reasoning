@@ -1,0 +1,17 @@
+Special Instruction: All value-based predicates must use gross amounts. Parsing or interpreting net values is strictly prohibited. This includes any figures adjusted for costs, expenses, liabilities, or other deductions. Do not apply economic, financial, or accounting reasoning to reduce values. Each predicate must reflect the full, unadjusted amount directly resulting from the Measure—no offsets, no balancing, no exceptions.
+List of possible target predicates:
+
+% Definition: The financial valuation of the Undertaking(s) after the Measure. This refers exclusively to valuation changes driven by expectations about future performance, such as anticipated demand or strategic opportunities. It does not refer to accounting-based changes in the financial balance sheet.
+financial_valuation_after(Undertaking, Measure, AfterVal).
+
+% Definition: The financial valuation of the Undertaking(s) before the Measure.
+% As above, this reflects a forward-looking valuation, excluding changes based on accounting data.
+financial_valuation_before(Undertaking, Measure, BeforeVal).
+
+% Definition: The Measure caused a change in the Undertaking's financial valuation. 
+% This refers solely to valuation shifts caused by altered expectations about the Undertaking's future, not by balance sheet movements.
+caused_change_of_financial_value(Undertaking, Measure).
+
+% Exclusive: The following predicate is exclusive from the previous one and can only be parsed if none of the previous one was parsed.
+% Definition: The text provides evidence of improved financial valuation for the Undertaking(s) as a causal consequence of the Measure. This includes improved expectations about future performance (e.g., increased demand or market positioning), but excludes accounting-based improvements.
+textual_evidence_of_improved_financial_valuation(Undertaking, Measure).

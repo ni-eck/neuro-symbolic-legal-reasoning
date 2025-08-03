@@ -7,7 +7,7 @@
     "type_of_measure": "Grant",
     "state_aid": "False",
     "selected_because": "simple general case",
-    "Preprocessing": "-"
+    "preprocessing": "-"
   },
   {
     "id": "case002",
@@ -17,7 +17,7 @@
     "type_of_measure": "Tax Exemption",
     "state_aid": "False",
     "selected_because": "simple general case",
-    "Preprocessing": "-"
+    "preprocessing": "-"
   },
   {
     "id": "case003",
@@ -27,7 +27,7 @@
     "type_of_measure": "Buying Option",
     "state_aid": "False",
     "selected_because": "Market Economy Operator Test",
-    "Preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
   },
   {
     "id": "case004",
@@ -37,7 +37,7 @@
     "type_of_measure": "Capital Injection",
     "state_aid": "True",
     "selected_because": "Market Economy Operator Test", 
-    "Preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
   },
   {
     "id": "case005",
@@ -47,28 +47,28 @@
     "type_of_measure": "Tax Policy",
     "state_aid": "True",
     "selected_because": "Indirect Advantage",
-    "Preprocessing": "Case Description Paraphrased with ChatGPT 4o",
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o",
     "comment": "contains indirect advantages for two types of undertakings"
   },
   {
     "id": "case006",
-    "title_of_original": "",
+    "title_of_original": "Case C-382/99 - Kingdom of the Netherlands v Commission of the European Communities",
     "link_to_original": "https://eur-lex.europa.eu/legal-content/en/TXT/?uri=CELEX:61999CJ0382",    
     "decided_by": "Court of Justice of the European Union",
     "type_of_measure": "Grant",
     "state_aid": "True",
     "selected_because": "Indirect Advantage",
-    "Preprocessing": "Case Description Paraphrased with ChatGPT 4o"
+    "preprocessing": "Case Description Paraphrased with ChatGPT 4o"
   },
   {
     "id": "case007",
-    "title_of_original": "no original - fictional case",
+    "title_of_original": "fictional case",
     "link_to_original": "-",    
     "decided_by": "-",
     "type_of_measure": "Tax Write off",
     "state_aid": "False",
     "selected_because": ["Acting as shareholder", "Market Economy Operator Test"],
-    "Preprocessing": "Case facts inventend and ChatGPT 4o used for language"
+    "preprocessing": "Case facts inventend and ChatGPT 4o used for language"
   },
   {
     "id": "case008",
@@ -112,7 +112,7 @@
   },
   {
     "id": "case012",
-    "title_of_original": "no original - fictional case",
+    "title_of_original": "fictional case",
     "link_to_original": "-",    
     "decided_by": "-",
     "type_of_measure": "Firm and Concrete Commitment to Invest",
@@ -174,7 +174,7 @@
   },  
   {
     "id": "case018",
-    "title_of_original": "no original - fictional case",
+    "title_of_original": "fictional case",
     "link_to_original": "-",    
     "decided_by": "-",
     "type_of_measure": "Grant",
@@ -196,7 +196,7 @@
     "id": "case020",
     "title_of_original": "Judgment of the General Court of 5 April 2006, Deutsche Bahn AG v Commission, T-351/02, ECLI:EU:T:2006:104",
     "link_to_original": "https://curia.europa.eu/juris/showPdf.jsf?text=&docid=55528&pageIndex=0&doclang=EN&mode=lst&dir=&occ=first&part=1&cid=1364636",    
-    "decided_by": "Court of Justice of the European Union",
+    "decided_by": "General Court",
     "type_of_measure": "Tax Exemption",
     "state_aid": "False",
     "selected_because": ["Imputability Exception"],
@@ -204,7 +204,7 @@
   },  
   {
     "id": "case021",
-    "title_of_original": "no original - fictional case",
+    "title_of_original": "fictional case",
     "link_to_original": "-",    
     "decided_by": "-",
     "type_of_measure": "Special Rights",

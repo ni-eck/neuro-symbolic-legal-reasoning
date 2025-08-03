@@ -1,0 +1,67 @@
+Special Instruction: For this parsing task, internal knowledge might be required. Also be aware that some predicates might be more specific than others, which leads to exclusivity that needs to be obeyed. Exclusivity will be given after the definition.
+List of possible target predicates:
+
+% Definition: The Measure was adopted by an entity.
+adopted_by(Measure, Entity).
+
+% Definition: The Measure is administered by a public or private body.
+administered_by(Body, Measure).
+
+% Definition: The adopting or administering entity is a public authority of the central State.
+public_state_authority(Entity, State).
+
+% Definition: The adopting or administering entity is an intra-State authority (e.g. regional or local).
+public_intra_state_authority(Entity, IntraState).
+
+% Definition: The intra-State authority belongs to a specific central State.
+intrastate_of(IntraState, State).
+
+% Definition: The body administering the Measure was designated by a public authority of the central State.
+public_state_authority_designating(Body, DesignatingAuthority, State).
+
+% Definition: The body administering the Measure was designated by an intra-State authority.
+public_intra_state_authority_designating(Body, DesignatingAuthority, IntraState).
+
+% Definition: The public undertaking belongs to the central State.
+public_undertaking_of_state(ActingUndertaking, State).
+
+% Definition: The public undertaking belongs to an intra-State authority.
+public_undertaking_intra_state(ActingUndertaking, IntraState).
+
+% Definition: The decision of the public undertaking was not taken independently of requirements set out by public authorities.
+decision_dependence_on_state_or_intra_state(ActingUndertaking, Measure).
+
+% Definition: The public undertaking acted on official directives issued by public authorities.
+acted_on_government_directives(ActingUndertaking, Measure).
+
+% Definition: The public undertaking was subject to strong supervision by public authorities. "Supervision" refers to continuous and active oversight by public authorities. This may include monitoring of operations, enforcement of reporting obligations, or prior approval of decisions, even without issuing explicit directives.
+strong_public_supervision(ActingUndertaking, Measure).
+
+% Definition: The scope of the Measure suggests involvement by public authorities (e.g. it pursues public objectives).
+measure_scope_indicates_involvement(ActingUndertaking, Measure).
+
+% Definition: Other indicators show public authority involvement in adopting the Measure (e.g. informal influence through public actors). 
+% This predicate should be used only when the following, more specific predicates were not parsed for the same Measure:
+% - decision_dependence_on_state_or_intra_state/2
+% - acted_on_government_directives/2
+% - strong_public_supervision/2
+% - measure_scope_indicates_involvement/2
+other_indicators_of_public_involvement(ActingUndertaking, Measure).
+
+% Definition: The public undertaking has an organic link with the State or an intra-State authority.
+organic_link_with_state_or_intra_state(ActingUndertaking).
+
+% Definition: The public undertaking is integrated into the structures of public administration.
+integrated_into_public_administration(ActingUndertaking).
+
+% Definition: The public undertaking operates in a strategic sector.
+strategic_sector(ActingUndertaking).
+
+% Definition: The public undertaking does not compete under normal market conditions.
+not_competing_under_normal_conditions(ActingUndertaking).
+
+% Definition: The Measure implements an obligation under Union law.
+implementation_obligation(Measure, UnionLaw).
+
+% Definition: The Member State had no discretion in implementing the Measure.
+no_member_state_discretion(Measure).
