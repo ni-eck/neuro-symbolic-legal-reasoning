@@ -1,0 +1,9 @@
+% Case facts
+parsed_money_spent('portum energia', 'off shore agreement', 3075000). % 13
+parsed_value_received_rights_licenses('portum energia', 'off shore agreement', 6150000). % [5]
+granting_access_to_public_domain_resources_special_or_exclusive_rights('off shore agreement'). % [-];[8]
+direct_targeting('off shore agreement', 'portum energia'). % [-];[7];[8]
+sell_price_domain_resources_rights('off shore agreement', 3075000). % [13]
+system_price_domain_resources_rights('off shore agreement', 6150000). % [5]
+adopted_or_administered_by('off shore agreement', 'Ministry for Maritime Infrastructure'). % [6]
+public_state_authority('Ministry for Maritime Infrastructure', 'Portugal'). % [-]

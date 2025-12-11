@@ -1,0 +1,77 @@
+name: foregoing_revenue
+description:
+  This prompt contains predicates of foregoing revenue of state resources
+
+role: user
+prompt: |
+  *Special instructions and information:*
+    - You may rely on internal knowledge to classify the resources when needed.
+
+  *List of possible target predicates:*
+  
+  % Definition: The Measure is an exemption or reduction in taxes.
+  exemptions_reductions_taxes(Measure).
+  
+  % Definition: The Measure is an exemption or reduction in social security contributions.
+  exemptions_reductions_social_security(Measure).
+  
+  % Definition: The Measure is an exemption from the obligation to pay fines.
+  exemptions_fines(Measure).
+  
+  % Definition: The Measure is an exemption from the obligation to pay pecuniary penalties.
+  exemptions_pecuniary_penalties(Measure).
+
+  % Definition: The Measure waives or reduces revenue that would otherwise be due under public or criminal law obligations. 
+  % This is a fallback and shall only be parsed if the previous, more specific predicates cannot be parsed.
+  general_waiving_revenue_public_or_criminal_law(Measure).
+  
+  % Definition: The actual price charged for goods or services under the Measure.
+  actual_price_goods_service(Measure, -> number: ActualPrice).
+
+  % Definition: The market price of the goods or services provided under the Measure.
+  market_price_goods_service(Measure, -> number: MarketPrice).
+
+  % Definition: The Measure involves pricing goods or services below market value, inferred from textual evidence. 
+  % This shall only be parsed when no numerical information is available.
+  goods_or_services_priced_below_market_value_textual_evidence(Measure).
+
+  % Definition: The paid price for access to public domain, natural resources, or special/exclusive rights under the Measure.
+  access_domain_resources_rights(Measure, -> number: AccessValue).
+
+  % Definition: The market value of public domain, natural resources, or special/exclusive rights accessed under the Measure.
+  market_value_domain_resources_rights(Measure, -> number: MarketValue).
+
+  % Definition: The Measure provides access to public domain, natural resources, or special/exclusive rights below market rates, inferred from textual evidence. 
+  % This shall only be parsed when no numerical information is available.
+  domain_resources_rights_priced_below_market_rate_textual_evidence(Measure).
+
+  % Definition: The price charged for access to public domain, natural resources, or special/exclusive rights under the Measure.
+  sell_price_domain_resources_rights(Measure, SellPrice).
+  
+  % Definition: The standard rate for access to public domain, natural resources, or special/exclusive rights under the authority’s general system.
+  system_price_domain_resources_rights(Measure, SystemRatesPrice).
+
+  % Definition: The Measure provides access to public domain, natural resources, or special/exclusive rights below the general system rate, inferred from textual evidence. 
+  % This shall only be parsed when no numerical information is available.
+  domain_resources_rights_priced_below_system_rate_textual_evidence(Measure).
+
+  % Definition: Before the Measure, a selection process was used to determine the beneficiary.
+  selection_process_for_measure(Measure, Process).
+
+  % Definition: The selection process was based on qualitative criteria.
+  qualitative_selection_criteria(Process).
+  
+  % Definition: The selection criteria were established ex ante.
+  ex_ante(Criteria, Process).
+
+  % Definition: The selection criteria were transparent.
+  transparent(Criteria, Process).
+
+  % Definition: The selection criteria were non-discriminatory.
+  non_discriminatory(Criteria, Process).
+
+  % Definition: The Measure is used to achieve a policy objective.
+  achieving_policy_objective(Measure, RegulatoryPurpose).
+
+  % Definition: The revenue loss under the Measure was necessary to achieve the policy objective.
+  revenue_loss_is_justified_by_policy(RegulatoryPurpose).

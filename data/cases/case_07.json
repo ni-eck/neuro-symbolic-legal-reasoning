@@ -7,13 +7,13 @@
     "number_of_chunks": 15,
     "gold_parsing": [
         "parsed_costs_relieved_monetary_obligations('C&P-R', 'tax write off', 175000000). % [8]",
-        "tax_exemption('tax cut'). % [-]",
-        "acting_entity_follows_shareholder_objectives('tax write off', 'C&P-R'). % [11]",
-        "acting_entity_is_shareholder('C&P-R'). %[12]",
+        "tax_related('tax write off'). % [-];[8]",
+        "follows_shareholder_objectives('tax authorities', 'tax write off'). % [11]",
+        "parent_is_shareholder_of('tax authorities', 'slovakia', 'C&P-R'). %[12]",
         "direct_targeting('tax write off', 'C&P-R'). % [-];[1];[8]",
-        "exemptions_reductions_taxes('tax write off'). % [-]",
-        "adopted_by('tax write off', 'tax authorities'). % [1]",
-        "public_state_authority('tax authorities', 'slovakia'). % [-]"
+        "exemptions_reductions_taxes('tax write off'). % [-];[8]",
+        "adopted_or_administered_by('tax write off', 'tax authorities'). % [1]",
+        "public_state_authority('tax authorities', 'slovakia'). % [-];[1]"
         ],
     "type_of_measure": "Tax Cut",
     "state_aid": "Flase"

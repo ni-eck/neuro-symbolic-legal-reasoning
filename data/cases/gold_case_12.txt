@@ -1,0 +1,12 @@
+% Case facts
+textual_evidence_of_improved_financial_situation('FastChargeAG', 'planned capital injection'). % [22];[24]
+textual_evidence_of_improved_financial_valuation('FastChargeAG', 'planned capital injection'). % [23]
+capital_injection('planned capital injection'). % [-];[18]
+expert_evaluation_on_measure_or_similar_action('investor analysis 2023', 'VCs', 'planned capital injection'). % [4],[5],[6]
+ex_ante_evaluation('investor analysis 2023', 'planned capital injection'). % [4];[17]
+not_in_favour_of_measure_or_similar_action('investor analysis 2023', 'planned capital injection'). % [6]
+direct_targeting('planned capital injection', 'FastChargeAG'). % [-];[18]
+firm_and_concrete_commitment_to_make_resources_available_at_later_point('planned capital injection', 'public capital'). % [18]
+resource_of_central_state_entity('public capital'). % [17]
+adopted_or_administered_by('planned capital injection', 'bundestag'). % [17]
+public_state_authority('bundestag', 'germany'). % [-]

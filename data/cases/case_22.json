@@ -15,9 +15,9 @@
         "transparent('capacity_over_15000_m3_per_day', 'pumping_capacity_selection'). %[-];[12]",
         "non_discriminatory('capacity_over_15000_m3_per_day', 'pumping_capacity_selection'). %[8]",
         "achieving_policy_objective('certificates', 'water reserves protection'). %[3];[13]",
-        "adopted_by('certificates', 'romanian government'). % [3]",
+        "adopted_or_administered_by('certificates', 'romanian government'). % [3]",
         "public_state_authority('romanian government', 'romania'). % [-];[3]",
-        "implementation_obligation('certificates', 'Directive (EU) 2020/1743'). %[1]"
+        "is_implementation_of('certificates', 'Directive (EU) 2020/1743'). %[1]"
         ],
     "type_of_measure": "Access to public resources",
     "state_aid": "True"

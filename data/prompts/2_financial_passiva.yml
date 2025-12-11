@@ -1,0 +1,25 @@
+name: financial_passiva
+description:
+   Parses all outgoing financial effects of the Measure — costs, payments, losses, services provided, rights granted, and liabilities incurred by the Beneficiary. 
+
+role: user
+prompt: |
+  *Special Instruction and information:* 
+    - This parsing round captures the outgoing financial effects for the Beneficiary. It includes money spent, assets lost, services provided, rights or licenses granted, and liabilities incurred as a causal consequence of the Measure. 
+    - All value-based predicates must use gross amounts. Parsing or interpreting net values is strictly prohibited. This includes any figures adjusted for costs, expenses, liabilities, or other deductions. Do not apply economic, financial, or accounting reasoning to reduce values. Each predicate must reflect the full, unadjusted amount directly resulting from the Measure—no offsets, no balancing, no exceptions.
+
+  *List of available target predicates:*
+  % Definition: The amount of money the Beneficiary spent in connection with the Measure. This should not include money the Beneficiary spent as part of an activity or investment that is supported by the Measure.   
+  parsed_money_spent(Beneficiary, Measure, -> number: Value)
+  
+  % Definition: The value of assets (not money) the Beneficiary lost in connection with the Measure.
+  parsed_assets_lost(Beneficiary, Measure, -> number: Value)
+  
+  % Definition: The value of the rights or licenses the Beneficiary granted in connection with the Measure.
+  parsed_value_granted_rights_licenses(Beneficiary, Measure, -> number: Value)
+  
+  % Definition: The value of the services the Beneficiary provided in connection with the Measure.
+  parsed_value_granted_services(Beneficiary, Measure, -> number: Value)
+  
+  % Definition: The value of other liabilities the Beneficiary incurred as a causal consequence of the Measure.
+  parsed_other_liabilities_incurred(Beneficiary, Measure, -> number: Value)

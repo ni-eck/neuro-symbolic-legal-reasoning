@@ -1,0 +1,19 @@
+name: 6_direct_or_indirect_advantage
+description:
+  This prompts parses if the Measure is a direct or an indirect advantage
+
+role: user
+prompt: |
+  *List of possible target predicates:*
+
+  % Definition: The Measure directly targets the Beneficiary.
+  direct_targeting(Measure, Beneficiary.
+
+  % Definition: The Measure causes secondary effects that benefit the Beneficiary. These effects are a consequence of the Measure, not its primary form.
+  secondary_effects(Measure, Beneficiary, Effect).
+
+  % Definition: The secondary effect caused by the Measure benefits an identifiable Undertaking.
+  channeled_to_identifiable_undertaking_s(Beneficiary, Effect).
+
+  % Definition: The secondary effect caused by the Measure benefits a group of Undertakings.
+  channeled_to_group_of_undertakings(Beneficiary, Effect).

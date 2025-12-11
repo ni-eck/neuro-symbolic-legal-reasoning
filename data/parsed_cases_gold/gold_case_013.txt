@@ -1,9 +1,0 @@
-% Case facts
-parsed_money_received('LUSELEC SA', 'compensation mechanism', 423840000). % [47]
-regulatory_capacity('compensation mechanism'). % [-]
-direct_targeting('compensation mechanism', 'LUSELEC SA'). % [-];[44];[45]
-active_resource_flow('compensation mechanism', 'surcharges'). % [-];[44];[45]
-resource_of_private_body('surcharges'). % [44]
-under_public_control('surcharges'). % [50],[51],[52],[53],[54]
-adopted_by('compensation mechanism', 'portuguese legislature'). %[39]
-public_state_authority('portuguese legislature', 'portugal'). %[-];[39]
