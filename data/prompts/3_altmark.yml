@@ -1,4 +1,4 @@
-name: system_prompt
+name: altmark
 description:
   This prompt parses the predicates that represent the Altmark criteria.
 

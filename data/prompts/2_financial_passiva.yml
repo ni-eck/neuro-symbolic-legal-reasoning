@@ -10,16 +10,16 @@ prompt: |
 
   *List of available target predicates:*
   % Definition: The amount of money the Beneficiary spent in connection with the Measure. This should not include money the Beneficiary spent as part of an activity or investment that is supported by the Measure.   
-  parsed_money_spent(Beneficiary, Measure, -> number: Value)
+  parsed_money_spent(Beneficiary, Measure, -> number: Value).
   
   % Definition: The value of assets (not money) the Beneficiary lost in connection with the Measure.
-  parsed_assets_lost(Beneficiary, Measure, -> number: Value)
+  parsed_assets_lost(Beneficiary, Measure, -> number: Value).
   
   % Definition: The value of the rights or licenses the Beneficiary granted in connection with the Measure.
-  parsed_value_granted_rights_licenses(Beneficiary, Measure, -> number: Value)
+  parsed_value_granted_rights_licenses(Beneficiary, Measure, -> number: Value).
   
   % Definition: The value of the services the Beneficiary provided in connection with the Measure.
-  parsed_value_granted_services(Beneficiary, Measure, -> number: Value)
+  parsed_value_granted_services(Beneficiary, Measure, -> number: Value).
   
   % Definition: The value of other liabilities the Beneficiary incurred as a causal consequence of the Measure.
-  parsed_other_liabilities_incurred(Beneficiary, Measure, -> number: Value)
+  parsed_other_liabilities_incurred(Beneficiary, Measure, -> number: Value).
