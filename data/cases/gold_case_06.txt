@@ -1,0 +1,10 @@
+% Case facts
+textual_evidence_of_improved_financial_situation('oil companies', 'subsidy'). % [12]
+monetary_subsidy('subsidy'). % [-];[2];[4];[5];[6]
+direct_targeting('subsidy', 'petrol stations'). % [4];([5],None)
+secondary_effects('subsidy', 'oil companies', 'saved costs from pmc'). % [12]
+channeled_to_group_of_undertakings('oil companies', 'saved costs from pmc'). % [12]
+active_resource_flow('subsidy', 'public capital'). % [-]
+resource_of_central_state_entity('public capital'). % [8]
+adopted_or_administered_by('subsidy', 'government of poland'). % [1];[2]
+public_state_authority('government of poland', 'poland'). %[-];[1]

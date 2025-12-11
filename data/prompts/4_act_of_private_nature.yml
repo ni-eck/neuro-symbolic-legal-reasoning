@@ -1,0 +1,45 @@
+name: act_of_private_nature
+description:
+  This prompt contains all predicates indicating that the Measure was an act of a private nature. 
+
+role: user
+prompt: |
+  *Special instructions and information:*
+    - You may rely on internal knowledge to classify the measure when needed.
+
+  *List of available target predicates:*
+
+  % Definition: The Measure is a loan or similar construct.
+  loan(Measure).
+
+  % Definition: The Measure is a capital injection.
+  capital_injection(Measure).
+
+  % Definition: The Measure consists in purchasing, leasing, renting, or a similar market-facing acquisition.
+  purchase_lease_rent_similar(Measure).
+
+  % Definition: The Measure consists in selling, leasing, renting, or a similar market-facing provision.
+  sell_lease_rent_similar(Measure).
+
+  % Definition: The Measure waives a private-law claim.
+  waiver_private_law_claims(Measure).
+
+  % Definition: The Measure converts a private-law claim into another legal form.
+  converting_private_law_claims(Measure).
+
+  % Definition: The actor implementing the Measure follows shareholder objectives for an undertaking,
+  % such as profit maximization or return on investment.
+  follows_shareholder_objectives(Actor, Measure).
+
+  % Definition: The actor is a shareholder of the beneficiary.
+  is_shareholder_of(Actor, Beneficiary).
+
+  % Definition: The actor's parent is a shareholder of the beneficiary.
+  parent_is_shareholder_of(Actor, Parent, Beneficiary).
+
+  % Definition: The Measure pursues an economic objective of the kind a private investor might also pursue.
+  economic_objective_similar_to_private_investor(Measure).
+
+  % Definition: The Measure is an act of the nature of a private actor.
+  % This is a fallback predicate and can only be parsed if none of the previous predicates was parsed for the same measure.
+  fallback_act_of_economic_nature(Measure).

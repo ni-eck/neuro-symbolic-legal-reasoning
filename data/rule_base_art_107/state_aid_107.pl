@@ -9,7 +9,7 @@
 % - affects trade between Member States and distorts or threatens to distort competition
 % ------------------------------------------------------------------
 state_aid(Measure, State) :-
-    advantage(Measure, Undertaking),
+    advantage(Measure, Beneficiary),
     state_origin(Measure, State).
 %    selectivity(Measure),
 %    effect_on_trade_and_competition(Measure).
@@ -23,13 +23,13 @@ state_aid(Measure, State) :-
 % - the measure directly or indirectly favours undertaking(s),
 % - and no relevant exception applies.
 % ------------------------------------------------------------------
-advantage(Measure, Undertaking) :-
-    economic_benefit(Undertaking, Measure),
+advantage(Measure, Beneficiary) :-
+    economic_benefit(Beneficiary, Measure),
     not_obtained_under_normal_market_conditions(Measure),
     (
-        direct(Measure, Undertaking)
+        direct(Measure, Beneficiary)
     ;
-        indirect(Measure, Undertaking)
+        indirect(Measure, Beneficiary)
     ),
     \+ exception_advantage(Measure).
 
@@ -61,39 +61,46 @@ economic_benefit(Undertaking, Measure) :-
 % This predicate holds if the undertaking has a measurably improved financial situation
 % due to the measure. Improvement is determined by one of:
 % 1. A calculated net financial
-
 % 2. An increase in company valuation, causally linked to the measure
 % 3. Textual evidence from the case record indicating an improvement
 %    in financial position or valuation, even in the absence of numeric data
 % ------------------------------------------------------------------
-improves_financial_position(Undertaking, Measure) :-
+improves_financial_position(Beneficiary, Measure) :-
     (
         financial_situation_after(
-            Undertaking, Measure,
+            Beneficiary, Measure,
             MoneyReceived, MoneySpent,
             AssetsGained, AssetsLost,
             ValueReceivedRightsLicenses, ValueReceivedServices,
             ValueGrantedRightsLicenses, ValueGrantedServices,
             CostRelievedObligations, OtherCostsSaved, OtherLiabilitiesIncurred
         ),
+        number(MoneyReceived), number(MoneySpent),
+        number(AssetsGained), number(AssetsLost),
+        number(ValueReceivedRightsLicenses), number(ValueReceivedServices),
+        number(ValueGrantedRightsLicenses), number(ValueGrantedServices),
+        number(CostRelievedObligations), number(OtherCostsSaved),
+        number(OtherLiabilitiesIncurred),
         NetChange is MoneyReceived - MoneySpent
                   + AssetsGained - AssetsLost
-                  + ValueReceivedRightsLicenses + ValueReceivedServices 
-                  - ValueGrantedRightsLicenses  - ValueGrantedServices
-                  + CostRelievedObligations + OtherCostsSaved - OtherLiabilitiesIncurred,
+                  + ValueReceivedRightsLicenses + ValueReceivedServices
+                  - ValueGrantedRightsLicenses - ValueGrantedServices
+                  + CostRelievedObligations + OtherCostsSaved
+                  - OtherLiabilitiesIncurred,
         NetChange > 0
     )
     ;
-    textual_evidence_of_improved_financial_situation(Undertaking, Measure)
+    textual_evidence_of_improved_financial_situation(Beneficiary, Measure)
     ;
     (
-        financial_valuation_after(Undertaking, Measure, AfterVal),
-        financial_valuation_before(Undertaking, Measure, BeforeVal),
-        caused_change_of_financial_value(Undertaking, Measure),
+        financial_valuation_after(Beneficiary, Measure, AfterVal),
+        financial_valuation_before(Beneficiary, Measure, BeforeVal),
+        number(AfterVal), number(BeforeVal),
+        caused_change_of_financial_value(Beneficiary, Measure),
         AfterVal > BeforeVal
     )
     ;
-    textual_evidence_of_improved_financial_valuation(Undertaking, Measure).
+    textual_evidence_of_improved_financial_valuation(Beneficiary, Measure).
 
 % ------------------------------------------------------------------
 % Financial Situation After the Measure
@@ -119,93 +126,92 @@ improves_financial_position(Undertaking, Measure) :-
 % ------------------------------------------------------------------
 
 financial_situation_after(
-    Undertaking, Measure,
+    Beneficiary, Measure,
     MoneyReceived, MoneySpent,
     AssetsGained, AssetsLost,
     ValueReceivedRightsLicenses, ValueReceivedServices,
     ValueGrantedRightsLicenses, ValueGrantedServices,
     CostRelievedObligations, OtherCostsSaved, OtherLiabilitiesIncurred
 ) :-
-    financial_data_parsed(Undertaking, Measure),
-    money_received(Undertaking, Measure, MoneyReceived),
-    money_spent(Undertaking, Measure, MoneySpent),
-    assets_gained(Undertaking, Measure, AssetsGained),
-    assets_lost(Undertaking, Measure, AssetsLost),
-    value_received_rights_licenses(Undertaking, Measure, ValueReceivedRightsLicenses),
-    value_received_services(Undertaking, Measure, ValueReceivedServices),
-    value_granted_rights_licenses(Undertaking, Measure, ValueGrantedRightsLicenses),
-    value_granted_services(Undertaking, Measure, ValueGrantedServices),
-    cost_relieved_legal_obligations(Undertaking, Measure, CostRelievedObligations),
-    costs_relieved_monetary_obligations(Undertaking, Measure, OtherCostsSaved),
-    other_liabilities_incurred(Undertaking, Measure, OtherLiabilitiesIncurred).
+    financial_data_parsed(Beneficiary, Measure),
+    money_received(Beneficiary, Measure, MoneyReceived),
+    money_spent(Beneficiary, Measure, MoneySpent),
+    assets_gained(Beneficiary, Measure, AssetsGained),
+    assets_lost(Beneficiary, Measure, AssetsLost),
+    value_received_rights_licenses(Beneficiary, Measure, ValueReceivedRightsLicenses),
+    value_received_services(Beneficiary, Measure, ValueReceivedServices),
+    value_granted_rights_licenses(Beneficiary, Measure, ValueGrantedRightsLicenses),
+    value_granted_services(Beneficiary, Measure, ValueGrantedServices),
+    cost_relieved_legal_obligations(Beneficiary, Measure, CostRelievedObligations),
+    costs_relieved_monetary_obligations(Beneficiary, Measure, OtherCostsSaved),
+    other_liabilities_incurred(Beneficiary, Measure, OtherLiabilitiesIncurred).
 
 % ------------------------------------------------------------------
 % Fallbacks with parsed/default separation
 % ------------------------------------------------------------------
 
-money_received(Undertaking, Measure, Value) :-
-    parsed_money_received(Undertaking, Measure, Value), !.
+money_received(Beneficiary, Measure, Value) :-
+    parsed_money_received(Beneficiary, Measure, Value), !.
 money_received(_, _, 0).
 
-money_spent(Undertaking, Measure, Value) :-
-    parsed_money_spent(Undertaking, Measure, Value), !.
+money_spent(Beneficiary, Measure, Value) :-
+    parsed_money_spent(Beneficiary, Measure, Value), !.
 money_spent(_, _, 0).
 
-assets_gained(Undertaking, Measure, Value) :-
-    parsed_assets_gained(Undertaking, Measure, Value), !.
+assets_gained(Beneficiary, Measure, Value) :-
+    parsed_assets_gained(Beneficiary, Measure, Value), !.
 assets_gained(_, _, 0).
 
-assets_lost(Undertaking, Measure, Value) :-
-    parsed_assets_lost(Undertaking, Measure, Value), !.
+assets_lost(Beneficiary, Measure, Value) :-
+    parsed_assets_lost(Beneficiary, Measure, Value), !.
 assets_lost(_, _, 0).
 
-value_received_rights_licenses(Undertaking, Measure, Value) :-
-    parsed_value_received_rights_licenses(Undertaking, Measure, Value), !.
+value_received_rights_licenses(Beneficiary, Measure, Value) :-
+    parsed_value_received_rights_licenses(Beneficiary, Measure, Value), !.
 value_received_rights_licenses(_, _, 0).
 
-value_received_services(Undertaking, Measure, Value) :-
-    parsed_value_received_services(Undertaking, Measure, Value), !.
+value_received_services(Beneficiary, Measure, Value) :-
+    parsed_value_received_services(Beneficiary, Measure, Value), !.
 value_received_services(_, _, 0).
 
-value_granted_rights_licenses(Undertaking, Measure, Value) :-
-    parsed_value_granted_rights_licenses(Undertaking, Measure, Value), !.
+value_granted_rights_licenses(Beneficiary, Measure, Value) :-
+    parsed_value_granted_rights_licenses(Beneficiary, Measure, Value), !.
 value_granted_rights_licenses(_, _, 0).    
 
-value_granted_services(Undertaking, Measure, Value) :-
-    parsed_value_granted_services(Undertaking, Measure, Value), !.
+value_granted_services(Beneficiary, Measure, Value) :-
+    parsed_value_granted_services(Beneficiary, Measure, Value), !.
 value_granted_services(_, _, 0).
 
-cost_relieved_legal_obligations(Undertaking, Measure, Value) :-
-    parsed_cost_relieved_legal_obligations(Undertaking, Measure, Value), !.
-cost_relieved_obligations(_, _, 0).
+cost_relieved_legal_obligations(Beneficiary, Measure, Value) :-
+    parsed_cost_relieved_legal_obligations(Beneficiary, Measure, Value), !.
+cost_relieved_legal_obligations(_, _, 0).
 
-costs_relieved_monetary_obligations(Undertaking, Measure, Value) :-
-    parsed_costs_relieved_monetary_obligations(Undertaking, Measure, Value), !.
+costs_relieved_monetary_obligations(Beneficiary, Measure, Value) :-
+    parsed_costs_relieved_monetary_obligations(Beneficiary, Measure, Value), !.
 costs_relieved_monetary_obligations(_, _, 0).
 
-other_liabilities_incurred(Undertaking, Measure, Value) :-
-    parsed_other_liabilities_incurred(Undertaking, Measure, Value), !.
+other_liabilities_incurred(Beneficiary, Measure, Value) :-
+    parsed_other_liabilities_incurred(Beneficiary, Measure, Value), !.
 other_liabilities_incurred(_, _, 0).
 
 % ------------------------------------------------------------------
 % Check that at least one real financial component was parsed, that can lead to an economical benefit
 % ------------------------------------------------------------------
 
-financial_data_parsed(Undertaking, Measure) :-
-    parsed_money_received(Undertaking, Measure, _)
+financial_data_parsed(Beneficiary, Measure) :-
+    parsed_money_received(Beneficiary, Measure, _)
     ;
-    parsed_assets_gained(Undertaking, Measure, _)
+    parsed_assets_gained(Beneficiary, Measure, _)
     ;
-    parsed_assets_lost(Undertaking, Measure, _)
+    parsed_assets_lost(Beneficiary, Measure, _)
     ;
-    parsed_value_received_rights_licenses(Undertaking, Measure, _)
+    parsed_value_received_rights_licenses(Beneficiary, Measure, _)
     ;
-    parsed_value_received_services(Undertaking, Measure, _)
+    parsed_value_received_services(Beneficiary, Measure, _)
     ;
-    parsed_cost_relieved_legal_obligations(Undertaking, Measure, _)
+    parsed_cost_relieved_legal_obligations(Beneficiary, Measure, _)
     ;
-    parsed_costs_relieved_monetary_obligations(Undertaking, Measure, _).
-
+    parsed_costs_relieved_monetary_obligations(Beneficiary, Measure, _).
 
 
 % ------------------------------------------------------------------
@@ -214,9 +220,9 @@ financial_data_parsed(Undertaking, Measure) :-
 % This predicate holds if the measure compensates for the cost of fulfilling 
 % a legally defined public service obligation.
 % ------------------------------------------------------------------
-compensation_for_public_service_obligation(Measure, Undertaking, Obligation) :-
-    compensation_for_obligation(Measure, Undertaking, Obligation),
-    public_service_obligation(Obligation).
+compensation_for_public_service_obligation(Measure, Beneficiary, Obligation) :-
+    compensation_for_obligation(Measure, Beneficiary, Obligation),
+    is_public_service_obligation(Obligation).
 
 % ------------------------------------------------------------------
 % Not obtained under normal market conditions
@@ -249,8 +255,7 @@ not_obtained_under_normal_market_conditions(Measure) :-
 exercise_of_public_power(Measure) :-
     (
         monetary_subsidy(Measure);
-        tax_exemption(Measure);
-        tax_policy(Measure);
+        tax_related(Measure);
         payment_of_unemployment_benefits(Measure);
         social_security_benefits(Measure);
         social_policy(Measure);
@@ -262,13 +267,18 @@ exercise_of_public_power(Measure) :-
         regulatory_capacity(Measure);
         further_option_of_public_authority(Measure)
     ),
-    \+ acting_with_shareholder_objectives(Measure),
-    \+ economic_objective_similarly_pursued_by_private_investor(Measure).
+    \+ acting_with_shareholder_objectives(Actor, Measure),
+    \+ economic_objective_similar_to_private_investor(Measure).
 
 
-acting_with_shareholder_objectives(Measure) :-
-    acting_entity_follows_shareholder_objectives(Measure, Undertaking),
-    acting_entity_is_shareholder(Undertaking).
+acting_with_shareholder_objectives(Actor, Measure) :-
+    follows_shareholder_objectives(Actor, Measure),
+    (
+        is_shareholder_of(Actor, Beneficiary)
+    ;
+        parent_is_shareholder_of(Actor, Parent, Beneficiary)
+    ),
+    adopted_or_administered_by(Measure, Actor).
 
 % ------------------------------------------------------------------
 % Act of economic nature
@@ -286,7 +296,7 @@ act_of_economic_nature(Measure) :-
     waiver_private_law_claims(Measure); 
     converting_private_law_claims(Measure);
     acting_with_shareholder_objectives(Measure);
-    economic_objective_similarly_pursued_by_private_investor(Measure);
+    economic_objective_similar_to_private_investor(Measure);
     fallback_act_of_economic_nature(Measure).
 
 % ------------------------------------------------------------------
@@ -316,7 +326,7 @@ negative_market_economy_operator_test(Measure) :-
 
 directly_established_compliance_with_market_conditions(Measure) :-
     (
-    pari_passu(Measure, PublicBody, PrivateOperator)
+    pari_passu(Measure, Actor, PrivateOperator)
     ;
     qualifying_tender_procedure(Measure)
     ).
@@ -339,12 +349,12 @@ directly_established_compliance_with_market_conditions(Measure) :-
 %       As the normal case is that the starting point is similar, this will be modeled with NAF
 % ------------------------------------------------------------------
 
-pari_passu(Measure, PublicBody, PrivateOperator) :-
-    intervention_decided_at_same_time(Measure, PublicBody, PrivateOperator),
-    intervention_carried_at_same_time(Measure, PublicBody, PrivateOperator),    
-    same_terms_and_conditions(Measure, PublicBody, PrivateOperator),
+pari_passu(Measure, Actor, PrivateOperator) :-
+    intervention_decided_at_same_time(Measure, Actor, PrivateOperator),
+    intervention_carried_at_same_time(Measure, Actor, PrivateOperator),    
+    same_terms_and_conditions(Measure, Actor, PrivateOperator),
     intervention_is_significant(PrivateOperator),
-    \+ not_comparable_starting_position(Measure, PublicBody, PrivateOperator).
+    \+ not_comparable_starting_position(Measure, Actor, PrivateOperator).
 
 
 
@@ -416,7 +426,8 @@ worse_than_market_conditions(Measure) :-
 
     (expert_nonfinancial_assumption(Measure, ExpectedTerms),
     measure_nonfinancial_terms(Measure, ActualTerms),
-    textual_evidence_worse_nonfinancial_terms(Measure));
+    ((number(ActualTerms), number(ExpectedTerms), ActualTerms < ExpectedTerms);
+    textual_evidence_worse_nonfinancial_terms(Measure)));
     
     (expert_evaluation_on_measure_or_similar_action(Evaluation, Expert, Measure),
      ex_ante_evaluation(Evaluation, Measure),
@@ -439,7 +450,7 @@ liquidation_or_reduction_more_economic(Measure) :-
     ( expected_return(Measure, ExpectedReturnInvest),
       possible_liquidation_or_reduction(ExpectedReturnLiquidationReduction),
       ( (number(ExpectedReturnInvest), 
-         number(ExpectedReturnLiquidationReduction),
+         number(ExpectedReturnLiquidationReduction, Beneficiary),
          ExpectedReturnLiquidationReduction > ExpectedReturnInvest)
         ;
         textual_evidence_liquidation_or_reduction_more_economic(Measure)
@@ -451,20 +462,20 @@ liquidation_or_reduction_more_economic(Measure) :-
 % ------------------------------------------------------------------
 % A measure is direct if it is specifically targeted at an identifiable undertaking or group of undertakings.
 % ------------------------------------------------------------------------------
-direct(Measure, Undertaking) :-
-    direct_targeting(Measure, Undertaking).
+direct(Measure, Beneficiary) :-
+    direct_targeting(Measure, Beneficiary).
 
 % ------------------------------------------------------------------
 % Indirect Advantage
 % ------------------------------------------------------------------
 % A measure involves an indirect advantage if it channels secondary effects to identifiable undertakings or groups.
 % ------------------------------------------------------------------
-indirect(Measure, Undertaking) :-
-    channeled_secondary_effects(Measure, Undertaking, Effect),
+indirect(Measure, Beneficiary) :-
+    secondary_effects(Measure, Beneficiary, Effect),
     (
-        identifiable_undertakings(Undertaking, Effect)
+        channeled_to_identifiable_undertaking_s(Beneficiary, Effect)
     ;
-        group_of_undertakings(Undertaking, Effect)
+        channeled_to_group_of_undertakings(Beneficiary, Effect)
     ).
 
 % ------------------------------------------------------------------
@@ -510,7 +521,7 @@ exception_advantage(Measure) :-
 % ------------------------------------------------------------------
 altmark(Measure) :-
     % Criterion 1: Clearly defined PSO
-    compensation_for_public_service_obligation(Measure, Undertaking, Obligation),
+    compensation_for_public_service_obligation(Measure, Beneficiary, Obligation),
     clearly_defined(Obligation),
     % Criterion 2: Transparent, objective, advance calculation of parameters
     compensation_params_predefined(Measure, Obligation),
@@ -518,10 +529,11 @@ altmark(Measure) :-
     compensation_params_transparent(Measure, Obligation),
     % Criterion 3: Compensation does not exceed necessary costs + reasonable profit
     (
-        ( compensation_amount(Measure, Amount),
+        ( money_received(Beneficiary, Measure, MoneyReceived),
           actual_costs(Measure, Costs),
           reasonable_profit(Measure, Profit),
-          Amount =< Costs + Profit
+          number(MoneyReceived), number(Costs), number(Profit),
+          MoneyReceived =< Costs + Profit
         )
         ;
         textual_evidence_compensation_does_not_exceed_necessary_costs_plus_reasonable_profit(Measure)
@@ -532,10 +544,11 @@ altmark(Measure) :-
         designed_to_minimise_cost_to_community(ProcurementProcedure)
         ;
         (
-            ( compensation_amount(Measure, Amount),
+            ( money_received(Beneficiary, Measure, MoneyReceived),
             hypothetical_cost(Measure, HypotheticalCosts),
             reasonable_profit(Measure, Profit),
-            Amount =< HypotheticalCosts + Profit
+            number(MoneyReceived), number(HypotheticalCosts), number(Profit),
+            MoneyReceived =< HypotheticalCosts + Profit
             )
             ;
             textual_evidence_that_compensation_is_based_on_cost_structure_of_wellrun_plus_reasonable_profit(Measure)
@@ -551,7 +564,7 @@ altmark(Measure) :-
 % ------------------------------------------------------------------------------
 state_origin(Measure, State) :- 
     granted_through_state_resources(Measure),
-    imputable_to_state(Measure, State).
+    imputable_to_state(Actor, Measure, State).
 
 % ------------------------------------------------------------------------------
 % The advantage the measure grants is through state resources if there is a transfer of state resources
@@ -596,21 +609,18 @@ transfer_of_resources(Measure) :-
 state_resource(Resource) :-
     resource_of_public_sector(Resource)
     ;
-    (
-        resource_of_undertaking(Resource, ActingUndertaking),
-        is_public_undertaking(ActingUndertaking)
-    )
+    resource_of_public_undertaking(Resource)
+    ;
+    resource_of_body_appointed_by_state_to_administer_measure(Resource)    
     ;
     (
         resource_of_private_body(Resource),
         under_public_control(Resource)
     )
     ;
-    resource_of_body_appointed_by_state_to_administer_measure(Resource)
-    ;
     (
-        resource_from_international_or_union_fund(Resource),
-        discretion_by_national_authorities(Resource)
+        resource_from_international_or_union_fund(Resource, Fund),
+        usage_discretion_by_national_authorities(Resource, Fund)
     ).
 
 % ------------------------------------------------------------------------------
@@ -640,6 +650,7 @@ foregoing_state_revenue(Measure) :-
         % Case 2a: Goods or services priced below market value (by calculation)
         actual_price_goods_service(Measure, ActualPrice),
         market_price_goods_service(Measure, MarketPrice),
+        number(ActualPrice), number(MarketPrice),
         ActualPrice < MarketPrice
     );
     (
@@ -651,6 +662,7 @@ foregoing_state_revenue(Measure) :-
         % Case 3a: Access to public domain, natural resources or special or exclusive rights granted below market value
         access_domain_resources_rights(Measure, AccessValue),
         market_value_domain_resources_rights(Measure, MarketValue),
+        number(AccessValue), number(MarketValue),
         AccessValue < MarketValue,
         \+ acting_as_regulator_for_resources_rights(Measure)
     )
@@ -664,8 +676,9 @@ foregoing_state_revenue(Measure) :-
     (
         % Case 4a: Sale of rights or resources below general system rates
         sell_price_domain_resources_rights(Measure, SellPrice),
-        system_price_domain_resources_rights(Measure, SystemRates),
-        SellPrice < SystemRates
+        system_price_domain_resources_rights(Measure, SystemRatesPrice),
+        number(SellPrice), number(SystemRatesPrice),
+        SellPrice < SystemRatesPrice
     );
     (
         % Case 4b: Sale below standard rates inferred from text, but no precise comparison possible
@@ -730,44 +743,42 @@ revenue_forfeited_for_regulatory_purpose(Measure) :-
 % Exception: A measure is not imputable if the Member State was under a binding
 % obligation under Union law and had no discretion in its implementation.
 % ------------------------------------------------------------------------------
-imputable_to_state(Measure, State) :-
+imputable_to_state(Actor, Measure, State) :-
+    adopted_or_administered_by(Measure, Actor),
     (
+        % (1) Actor is a public authority of the State or an intrastate body
+        public_state_authority(Actor, State)
+        ;
         (
-            adopted_by(Measure, Entity),
+            public_intra_state_authority(Actor, IntraState),
+            intrastate_of(IntraState, State)
+        )
+        ;
+        % (2) Actor was designated by a public authority
+        (
+            was_designated(Actor, Measure, Designator),
             (
-                public_state_authority(Entity, State)
+                public_state_authority(Designator, State)
                 ;
                 (
-                    public_intra_state_authority(Entity, IntraState),
+                    public_intra_state_authority(Designator, IntraState),
                     intrastate_of(IntraState, State)
                 )
             )
         )
         ;
+        % (3) Actor is a public undertaking with State involvement
         (
-            administered_by(Body, Measure),
+            is_public_undertaking(Actor),
             (
-                public_state_authority_designating(Body, DesignatingAuthority, State)
+                public_undertaking_of_state(Actor, State)
                 ;
                 (
-                    public_intra_state_authority_designating(Body, DesignatingAuthority, IntraState),
-                    intrastate_of(IntraState, State)
-                )
-            )
-        )
-        ;
-        (
-            adopted_by(Measure, ActingUndertaking),
-            is_public_undertaking(ActingUndertaking),
-            (
-                public_undertaking_of_state(ActingUndertaking, State)
-                ;
-                (
-                    public_undertaking_intra_state(ActingUndertaking, IntraState),
+                    public_undertaking_of_intra_state(Actor, IntraState),
                     intrastate_of(IntraState, State)
                 )
             ),
-            indicator_of_state_or_intra_state_involvement(ActingUndertaking, Measure)
+            indicator_of_state_or_intra_state_involvement(Actor, Measure)
         )
     ),
     \+ imputability_exception(Measure).
@@ -790,23 +801,23 @@ imputable_to_state(Measure, State) :-
 % dominant influence does not prove that they actually exercised that influence in a given
 % case.
 % ------------------------------------------------------------------------------
-indicator_of_state_or_intra_state_involvement(ActingUndertaking, Measure) :-
-    decision_dependence_on_state_or_intra_state(ActingUndertaking, Measure);
-    acted_on_government_directives(ActingUndertaking, Measure);
-    strong_public_supervision(ActingUndertaking, Measure);
-    measure_scope_indicates_involvement(ActingUndertaking, Measure);
-    other_indicators_of_public_involvement(ActingUndertaking, Measure).
+indicator_of_state_or_intra_state_involvement(Actor, Measure) :-
+    decision_dependence_on_state_or_intra_state(Actor, Measure);
+    acted_on_government_directives(Actor, Measure);
+    strong_public_supervision(Actor, Measure);
+    measure_scope_indicates_involvement(Actor, Measure);
+    other_indicators_of_public_involvement(Actor, Measure).
 
-indicator_of_state_or_intra_state_involvement(ActingUndertaking, _) :-
-    organic_link_with_state_or_intra_state(ActingUndertaking);
-    integrated_into_public_administration(ActingUndertaking);
-    (strategic_sector(ActingUndertaking),
-    not_competing_under_normal_conditions(ActingUndertaking)).
+indicator_of_state_or_intra_state_involvement(Actor, _) :-
+    organic_link_with_state_or_intra_state(Actor);
+    integrated_into_public_administration(Actor);
+    (strategic_sector(Actor),
+    not_competing_under_normal_conditions(Actor)).
     
 
 % ------------------------------------------------------------------------------
 % Exception: No imputability where the Member State is under a Union law obligation and has no discretion in implementing the measure
 % ------------------------------------------------------------------------------
 imputability_exception(Measure) :- 
-    implementation_obligation(Measure, UnionLaw),
-    no_member_state_discretion(Measure).
+    is_implementation_of(Measure, UnionLawObligation),
+    no_member_state_discretion(UnionLawObligation).

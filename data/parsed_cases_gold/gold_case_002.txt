@@ -1,7 +1,0 @@
-% Case facts
-parsed_costs_relieved_monetary_obligations('XCA', 'tax exemption', 7543234). % [7]
-tax_exemption('tax exemption'). % [-]
-direct_targeting('tax exemption', 'XCA'). % [3]
-exemptions_reductions_taxes('tax exemption'). % [-]
-adopted_by('tax exemption', 'portuguese ministry of economy'). % [1]
-public_state_authority('portuguese ministry of economy', 'portugal'). % [-]

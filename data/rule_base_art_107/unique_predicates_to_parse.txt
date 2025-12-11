@@ -1,0 +1,153 @@
+1. Activa: done
+
+textual_evidence_of_improved_financial_situation(Beneficiary, Measure)
+financial_valuation_after(Beneficiary, Measure, -> number: AfterVal)
+financial_valuation_before(Beneficiary, Measure, -> number: BeforeVal),
+caused_change_of_financial_value(Beneficiary, Measure),
+textual_evidence_of_improved_financial_valuation(Beneficiary, Measure)
+parsed_money_received(Beneficiary, Measure, -> number: Value)
+parsed_assets_gained(Beneficiary, Measure, -> number: Value)
+parsed_value_received_rights_licenses(Beneficiary, Measure, -> number: Value)
+parsed_value_received_services(Beneficiary, Measure, -> number: Value)
+parsed_cost_relieved_legal_obligations(Beneficiary, Measure, -> number: Value)
+parsed_costs_relieved_monetary_obligations(Beneficiary, Measure, -> number: Value)
+
+2. Passiva: done
+parsed_money_spent(Beneficiary, Measure, -> number: Value)
+parsed_assets_lost(Beneficiary, Measure, -> number: Value)
+parsed_value_granted_rights_licenses(Beneficiary, Measure, -> number: Value)
+parsed_value_granted_services(Beneficiary, Measure, -> number: Value)
+parsed_other_liabilities_incurred(Beneficiary, Measure, -> number: Value)
+
+3. Altmark:
+compensation_for_obligation(Measure, Beneficiary, Obligation)
+is_public_service_obligation(Obligation)
+clearly_defined(Obligation)
+compensation_params_predefined(Measure, ServiceObligation)
+compensation_params_objective(Measure, ServiceObligation)
+compensation_params_transparent(Measure, ServiceObligation)
+actual_costs(Measure, Costs)
+hypothetical_cost(Measure, HypotheticalCosts)
+reasonable_profit(Measure, Profit)
+textual_evidence_compensation_does_not_exceed_necessary_costs_plus_reasonable_profit(Measure)
+textual_evidence_that_compensation_is_based_on_cost_structure_of_wellrun_plus_reasonable_profit(Measure)
+public_procurement_procedure_used(Measure, ProcurementProcedure)
+designed_to_minimise_cost_to_community(ProcurementProcedure)
+
+4. Act of public nature: 
+monetary_subsidy(Measure);
+tax_related(Measure);
+payment_of_unemployment_benefits(Measure);
+social_security_benefits(Measure);
+social_policy(Measure);
+granting_access_to_public_domain_resources_special_or_exclusive_rights(Measure);
+reimbursement_of_illegally_levied_charges_or_dues(Measure);
+compensation_for_damage(Measure);
+compensation_for_an_expropriation(Measure);
+regulatory_capacity(Measure);
+further_option_of_public_authority(Measure)
+
+5. Act of economic nature: 
+follows_shareholder_objectives(Actor, Measure),
+is_shareholder_of(Actor, Beneficiary)
+parent_is_shareholder_of(Actor, Parent, Beneficiary)
+loan(Measure);
+capital_injection(Measure);
+purchase_lease_rent_similar(Measure);
+sell_lease_rent_similar(Measure);
+waiver_private_law_claims(Measure); 
+converting_private_law_claims(Measure);
+economic_objective_similar_to_private_investor(Measure);
+fallback_act_of_economic_nature(Measure)
+
+6. Market Economy Operator Test:
+intervention_decided_at_same_time(Measure, Actor, PrivateOperator)
+intervention_carried_at_same_time(Measure, Actor, PrivateOperator)   
+same_terms_and_conditions(Measure, Actor, PrivateOperator)
+intervention_is_significant(PrivateOperator)
+not_comparable_starting_position(Measure, Actor, PrivateOperator)
+tender_used(Measure, Tender)
+competitive(Measure, Tender)
+transparent(Measure, Tender)
+non_discriminatory(Measure, Tender)
+unconditional(Measure, Tender)
+comparable_type(Measure, Transaction)
+comparable_operators(Measure, Transaction)
+comparable_situation(Measure, Transaction)
+expert_financial_expectation(Measure, -> number: ExpectedTerms),
+measure_financial_terms(Measure, -> number: ActualTerms)
+textual_evidence_worse_financial_terms(Measure)
+
+expert_nonfinancial_assumption(Measure, -> number: ExpectedTerms)
+measure_nonfinancial_terms(Measure, -> number: ActualTerms)
+textual_evidence_worse_nonfinancial_terms(Measure)
+
+expert_evaluation_on_measure_or_similar_action(Evaluation, Expert, Measure)
+ex_ante_evaluation(Evaluation, Measure)
+not_in_favour_of_measure_or_similar_action(Evaluation, Measure)
+
+expected_return(Measure, -> number: ExpectedReturnInvest)
+possible_liquidation_or_reduction(-> number: ExpectedReturnLiquidationReduction, Beneficiary)
+textual_evidence_liquidation_or_reduction_more_economic(Measure)
+
+7. Direct or indirect advantage: done
+direct_targeting(Measure, Beneficiary)
+secondary_effects(Measure, Beneficiary, Effect)
+channeled_to_identifiable_undertaking_s(Beneficiary, Effect)
+channeled_to_group_of_undertakings(Beneficiary, Effect)
+
+8. Active Transfer of resources
+active_resource_flow(Measure, Resource)
+firm_and_concrete_commitment_to_make_resources_available_at_later_point(Measure, Resource)
+foregoing_state_revenue(Measure)
+resource_of_central_state_entity(Resource)
+resource_of_intrastate_entity(Resource)
+resource_of_public_undertaking(Resource)
+resource_of_body_appointed_by_state_to_administer_measure(Resource)    
+resource_of_private_body(Resource)
+under_public_control(Resource)
+resource_from_international_or_union_fund(Resource, Fund)
+usage_discretion_by_national_authorities(Resource, Fund)
+
+9. Fore going Transfer of resources
+actual_price_goods_service(Measure, -> number: ActualPrice)
+market_price_goods_service(Measure, -> number: MarketPrice)
+goods_or_services_priced_below_market_value_textual_evidence(Measure)
+access_domain_resources_rights(Measure, -> number: AccessValue)
+market_value_domain_resources_rights(Measure, -> number: MarketValue)
+domain_resources_rights_priced_below_market_rate_textual_evidence(Measure)
+sell_price_domain_resources_rights(Measure, SellPrice)
+system_price_domain_resources_rights(Measure, SystemRatesPrice)
+domain_resources_rights_priced_below_system_rate_textual_evidence(Measure)
+exemptions_reductions_taxes(Measure)
+exemptions_reductions_social_security(Measure)
+exemptions_fines(Measure)
+exemptions_pecuniary_penalties(Measure)
+general_waiving_revenue_public_or_criminal_law(Measure)
+selection_process_for_measure(Measure, Process)
+qualitative_selection_criteria(Process)
+ex_ante(Criteria, Process)
+transparent(Criteria, Process)
+non_discriminatory(Criteria, Process)
+achieving_policy_objective(Measure, RegulatoryPurpose)
+revenue_loss_is_justified_by_policy(RegulatoryPurpose)
+
+10. Imputability
+adopted_or_administered_by(Measure, Actor)
+public_state_authority(Actor, State)
+public_intra_state_authority(Actor, IntraState),
+intrastate_of(IntraState, State)
+was_designated(Actor, Measure, Designator)
+public_state_authority(Designator, State)
+public_intra_state_authority(Designator, IntraState)
+is_public_undertaking(Actor)
+public_undertaking_of_state(Actor, State)
+decision_dependence_on_state_or_intra_state(Actor, Measure)
+acted_on_government_directives(Actor, Measure)
+strong_public_supervision(Actor, Measure)
+measure_scope_indicates_involvement(Actor, Measure)
+other_indicators_of_public_involvement(Actor, Measure)
+organic_link_with_state_or_intra_state(Actor)
+integrated_into_public_administration(Actor)
+strategic_sector(Actor)
+not_competing_under_normal_conditions(Actor)

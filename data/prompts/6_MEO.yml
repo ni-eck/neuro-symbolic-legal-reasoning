@@ -1,0 +1,82 @@
+name: MEO
+description:
+  This prompt contains all predicates for assessing whether a Measure passes the Market Economy Operator (MEO) Test.
+
+role: system
+prompt: |
+  *Special instructions and information:*
+
+  % Definition: The Measure by the Actor and a similar or identical action by a private operator were decided at the same time.
+  intervention_decided_at_same_time(Measure, Actor, PrivateOperator).
+
+  % Definition: The Measure and a similar or identical action by a private operator were carried out at the same time.
+  intervention_carried_at_same_time(Measure, Actor, PrivateOperator).
+
+  % Definition: The Measure by the Actor and a similar or identical action by a private operator took place under the same terms and conditions, including similar risk exposure.
+  same_terms_and_conditions(Measure, Actor, PrivateOperator).
+
+  % Definition: The PrivateOperator's participation was economically significant rather than merely symbolic. Participation above 30% of the total value is usually considered significant.
+  intervention_is_significant(PrivateOperator).
+
+  % Definition: The starting positions of the Actor and the PrivateOperator were not comparable. This may refer to differences in prior exposure, transaction costs, or potential synergies.
+  not_comparable_starting_position(Measure, Actor, PrivateOperator).
+
+  % Definition: A tender procedure was used to determine the beneficiary of the Measure.
+  tender_used(Measure, Tender).
+
+  % Definition: The tender procedure was competitive.
+  competitive(Measure, Tender).
+
+  % Definition: The tender procedure was transparent.
+  transparent(Measure, Tender).
+
+  % Definition: The tender procedure was non-discriminatory.
+  non_discriminatory(Measure, Tender).
+
+  % Definition: The tender procedure was unconditional.
+  unconditional(Measure, Tender).
+
+  % Definition: There have been other transactions of a type comparable to the Measure.
+  comparable_type(Measure, Transaction).
+
+  % Definition: The operators involved in the Measure and in the comparable transaction were similar in size and financial strength.
+  comparable_operators(Measure, Transaction).
+
+  % Definition: The market situation at the time of the Measure was comparable to the market situation at the time of the transaction.
+  comparable_situation(Measure, Transaction).
+
+  % Definition: The expert’s ex ante expectation of the financial terms of the Measure.
+  expert_financial_expectation(Measure, -> number: ExpectedTerms).
+
+  % Definition: The actual financial terms of the Measure.
+  measure_financial_terms(Measure, -> number: ActualTerms).
+
+  % Definition: There is textual evidence that the Measure’s financial terms are worse than market financial terms.
+  textual_evidence_worse_financial_terms(Measure).
+
+  % Definition: The expert’s ex ante assumption regarding the non-financial terms of the Measure.
+  expert_nonfinancial_assumption(Measure, -> number: ExpectedTerms).
+
+  % Definition: The actual non-financial terms of the Measure.
+  measure_nonfinancial_terms(Measure, -> number: ActualTerms).
+
+  % Definition: There is textual evidence, or it can be concluded, that the Measure’s non-financial terms are worse than market non-financial terms.
+  textual_evidence_worse_nonfinancial_terms(Measure).
+
+  % Definition: An expert evaluated the Measure or a similar action.
+  expert_evaluation_on_measure_or_similar_action(Evaluation, Expert, Measure).
+
+  % Definition: The expert evaluation was conducted ex ante (before implementation).
+  ex_ante_evaluation(Evaluation, Measure).
+
+  % Definition: The expert evaluation was not in favour of the Measure or of a similar action.
+  not_in_favour_of_measure_or_similar_action(Evaluation, Measure).
+
+  % Definition: The expected return of the Measure.
+  expected_return(Measure, -> number: ExpectedReturnInvest).
+
+  % Definition: The expected return of a liquidation or reduction of the target of the Measure, if such an option exists.
+  possible_liquidation_or_reduction(-> number: ExpectedReturnLiquidationReduction, Beneficiary).
+
+  % Definition: There is textual evidence that liquidation or reduction would be more economically rational than making additional investments.
+  textual_evidence_liquidation_or_reduction_more_economic(Measure).

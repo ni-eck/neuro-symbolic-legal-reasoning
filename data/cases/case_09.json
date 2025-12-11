@@ -7,11 +7,11 @@
     "number_of_chunks": 15,    
     "gold_parsing": [
         "parsed_money_received('BElectro', 'reimbursement', 3500000). % [14]",
-        "reimbursement_of_illegally_levied_charges_or_dues('reimbursement'). % [-]; [13]",
+        "reimbursement_of_illegally_levied_charges_or_dues('reimbursement'). % [-];[13]",
         "direct_targeting('reimbursement', 'BElectro'). % [-];[14]",
-        "active_resource_flow('reimbursement', 'public capital). % [-];[14]",
+        "active_resource_flow('reimbursement', 'public capital). % [-];[14];[15]",
         "resource_of_central_state_entity('punlic capital'). % [15]",
-        "adopted_by('reimbursement', 'ministry of finances'). % [14]",
+        "adopted_or_administered_by('reimbursement', 'ministry of finances'). % [14]",
         "public_state_authority('ministry of finances', 'belgium'). % [-];[14]"
         ],
     "type_of_measure": "Illegaly Levied Charges",

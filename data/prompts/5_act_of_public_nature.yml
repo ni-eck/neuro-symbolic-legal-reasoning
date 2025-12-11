@@ -1,0 +1,43 @@
+name: act_of_public_nature
+description:
+  This prompt contains all predicates indicating that the Measure was an act of a public nature. 
+
+role: user
+prompt: |
+  *Special instructions and information:*
+    - You may rely on internal knowledge to classify the measure when needed.
+
+  *List of available target predicates:*
+
+  % Definition: The Measure is a monetary subsidy.
+  monetary_subsidy(Measure).
+  
+  % Definition: The Measure involves the implementation or modification of tax policies, or tax exemptions.
+  tax_related(Measure).
+
+  % Definition: The Measure is a payment of unemployment benefits.
+  payment_of_unemployment_benefits(Measure).
+
+  % Definition: The Measure provides social security benefits.
+  social_security_benefits(Measure).
+
+  % Definition: The Measure is a social policy (e.g. redistribution, welfare).
+  social_policy(Measure).
+
+  % Definition: The Measure grants access to the public domain, natural resources, or special/exclusive rights.
+  granting_access_to_public_domain_resources_special_or_exclusive_rights(Measure).
+
+  % Definition: The Measure reimburses charges, dues, or taxes that were illegally levied.
+  reimbursement_of_illegally_levied_charges_or_dues(Measure).
+
+  % Definition: The Measure is a compensation for damages.
+  compensation_for_damage(Measure).
+
+  % Definition: The Measure compensates for an expropriation.
+  compensation_for_an_expropriation(Measure).
+
+  % Definition: The Measure is an act of regulatory nature.
+  regulatory_capacity(Measure).
+
+  % Definition: The Measure falls within a residual category of conduct that only public authorities can engage in. This predicate shall only be parsed if none of the previous, more specific predicates applies.
+  further_option_of_public_authority(Measure).

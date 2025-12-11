@@ -12,7 +12,7 @@
         "direct_targeting('off shore agreement', 'portum energia'). % [-];[7];[8]",
         "sell_price_domain_resources_rights('off shore agreement', 3075000). % [13]",
         "system_price_domain_resources_rights('off shore agreement', 6150000). % [5]",
-        "adopted_by('off shore agreement', 'Ministry for Maritime Infrastructure'). % [6]",
+        "adopted_or_administered_by('off shore agreement', 'Ministry for Maritime Infrastructure'). % [6]",
         "public_state_authority('Ministry for Maritime Infrastructure', 'Portugal'). % [-]"
         ],
     "type_of_measure": "Special Rights",

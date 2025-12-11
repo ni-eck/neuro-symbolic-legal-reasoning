@@ -1,0 +1,10 @@
+name: final_instruction
+description:
+  This user prompt repeats the most important instructions for clarity.
+
+role: user
+prompt: |
+  From the predicates listed above, parse all predicates that represent information from the case. 
+  Replace all arguments with the appropriate names. 
+  Make sure to use the names from memory where applicable. 
+  If no predicate can be parsed, output: % Nothing

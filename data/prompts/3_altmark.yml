@@ -1,0 +1,46 @@
+name: system_prompt
+description:
+  This prompt parses the predicates that represent the Altmark criteria.
+
+role: user
+prompt: |
+  *List of available target predicates:*
+
+  % Definition: The Measure compensates the Beneficiary for fulfilling a specific Obligation.
+  compensation_for_obligation(Measure, Beneficiary, Obligation).
+
+  % Definition: The Obligation is classified as a public service obligation.
+  public_service_obligation(Obligation).
+
+  % Definition: The obligation must be clearly defined. This means the nature, scope, and conditions under which it is to be performed are specified in sufficient detail.
+  clearly_defined(Obligation).
+
+  % Definition: The parameters for calculating compensation for the obligation are set in advance, before the service is provided.
+  compensation_params_predefined(Measure, Obligation).
+
+  % Definition: The parameters for calculating compensation for the obligation are based on objective criteria (e.g. cost formulas, output metrics).
+  compensation_params_objective(Measure, Obligation).
+
+  % Definition: The parameters for calculating compensation for the obligation are publicly accessible and clearly communicated.
+  compensation_params_transparent(Measure, Obligation).
+
+  % Definition: The actual costs the undertaking incurred in discharging the obligation.
+  actual_costs(Measure, -> number: Costs).
+
+  % Definition: The hypothetical cost that a well-run undertaking providing the same obligation would have incurred.
+  hypothetical_cost(Measure, -> number: HypotheticalCosts).
+
+  % Definition: The profit that would be reasonable for fulfilling this obligation.
+  reasonable_profit(Measure, -> number: Profit).
+
+  % Definition: A public procurement procedure was used to select the undertaking for the Measure.
+  public_procurement_procedure_used(Measure, ProcurementProcedure).
+
+  % Definition: The public procurement procedure was designed to minimise the cost to the community.
+  designed_to_minimise_cost_to_community(ProcurementProcedure).
+  
+  % Definition: The text provides evidence that the compensation for the Measure does not exceed the necessary costs plus a reasonable profit of the undertaking serving the obligation. This should only be parsed if this can be concluded based on the text and not based on numerical information.
+  textual_evidence_compensation_does_not_exceed_necessary_costs_plus_reasonable_profit(Measure).
+
+  % Definition: The text provides evidence that the compensation is based on the cost structure of a well-run undertaking plus a reasonable profit. This should only be parsed if this can be concluded based on the text and not based on numerical information.
+  textual_evidence_that_compensation_is_based_on_cost_structure_of_wellrun_plus_reasonable_profit(Measure).
