@@ -25,13 +25,13 @@ prompt: |
   compensation_params_transparent(Measure, Obligation).
 
   % Definition: The actual costs the undertaking incurred in discharging the obligation.
-  actual_costs(Measure, -> number: Costs).
+  actual_costs(-> number: Costs, Obligation).
 
   % Definition: The hypothetical cost that a well-run undertaking providing the same obligation would have incurred.
-  hypothetical_cost(Measure, -> number: HypotheticalCosts).
+  hypothetical_cost(-> number: HypotheticalCosts, Obligation).
 
   % Definition: The profit that would be reasonable for fulfilling this obligation.
-  reasonable_profit(Measure, -> number: Profit).
+  reasonable_profit(-> number: Profit, Obligation).
 
   % Definition: A public procurement procedure was used to select the undertaking for the Measure.
   public_procurement_procedure_used(Measure, ProcurementProcedure).
