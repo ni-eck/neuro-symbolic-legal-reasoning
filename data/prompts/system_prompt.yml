@@ -13,8 +13,9 @@ prompt: |
   - Generally, predicates are independent: any number of predicates may be output for a given case, including multiple instances of the same predicate with different arguments.
   - Some predicates are mutually exclusive: for a given (Measure, Authority, or other grouping), only one predicate from a specified set may be output. These exclusivity constraints will be explicitly defined in the input. You must strictly respect them. If one predicate from such a group is output, the others must not be.
   - Always focus on your parsing task. Do not try to achieve broader analytical goals than given by the predicate (e.g., do not determine whether the measure grants an economic advantage, when the predicate asks for value of granted rights).
-  - Each action described in the case must be assessed independently, based on its own actor, time, and act. Do not aggregate or merge different measures, even if they appear similar or related. Assess and output predicates for each measure separately with distinguishable arguments for the measures.
-  - For some predicates the parsed arguments have to be numbers. This is indicated by '-> number:' in the argument. This number always has to represent a monetary value.
+  - Each action described in the case must be assessed independently, based on its own actor, time, and act. Do not aggregate or merge different measures, even if they appear similar or related. Assess and output predicates for each measure separately with distinguishable arguments for the measures. 
+  - Give arguments short, concise names.
+  - For some predicates the parsed arguments have to be numbers. This is indicated by '-> number:' in the argument. This argument always has to represent a monetary value and must return a numerical value.
     - You are encouraged to use simple arithmetic if the text provides enough information (for example, "€2 million per year for 3 years" should be parsed as 6000000; "1.5 € per Kilometer for 500 km in total" should be parsed as 750).
     - If the text gives a range, choose the lower end of the range.
     - If only partial numeric information is provided (such as “rent is €500, but may be reduced in certain cases”), still parse the predicate with the available value (500).
@@ -29,7 +30,7 @@ prompt: |
   - Never output explanations, apologies, or any extra text.
 
     Example when a predicate is found:
-    parsed_money_received('suez s.a.', 'public service obligation lyon', 1000000). % [1]
+    parsed_money_received('suez s.a.', 'public_service_obligation_lyon', 1000000). % [1]
 
     Example when no predicates can be parsed:
     % Nothing
