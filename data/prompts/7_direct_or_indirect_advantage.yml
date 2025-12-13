@@ -7,7 +7,7 @@ prompt: |
   *List of possible target predicates:*
 
   % Definition: The Measure directly targets the Beneficiary.
-  direct_targeting(Measure, Beneficiary.
+  direct_targeting(Measure, Beneficiary).
 
   % Definition: The Measure causes secondary effects that benefit the Beneficiary. These effects are a consequence of the Measure, not its primary form.
   secondary_effects(Measure, Beneficiary, Effect).
