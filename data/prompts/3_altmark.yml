@@ -24,13 +24,13 @@ prompt: |
   % Definition: The parameters for calculating compensation for the obligation are publicly accessible and clearly communicated.
   compensation_params_transparent(Measure, Obligation).
 
-  % Definition: The actual costs the undertaking incurred in discharging the obligation.
+  % Definition: The actual costs the undertaking incurred in discharging the service obligation.
   actual_costs(-> number: Costs, Obligation).
 
-  % Definition: The hypothetical cost that a well-run undertaking providing the same obligation would have incurred.
+  % Definition: The hypothetical cost that a well-run undertaking providing the same service obligation would have incurred.
   hypothetical_cost(-> number: HypotheticalCosts, Obligation).
 
-  % Definition: The profit that would be reasonable for fulfilling this obligation.
+  % Definition: The profit that would be reasonable for fulfilling this service obligation.
   reasonable_profit(-> number: Profit, Obligation).
 
   % Definition: A public procurement procedure was used to select the undertaking for the Measure.
