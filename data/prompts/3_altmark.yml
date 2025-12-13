@@ -4,7 +4,7 @@ description:
 
 role: user
 prompt: |
-  *List of available target predicates:*
+  *List of available and allowed target predicates for this round:*
 
   % Definition: The Measure compensates the Beneficiary for fulfilling a specific Obligation.
   compensation_for_obligation(Measure, Beneficiary, Obligation).

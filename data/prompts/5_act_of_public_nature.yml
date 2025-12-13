@@ -7,7 +7,7 @@ prompt: |
   *Special instructions and information:*
     - You may rely on internal knowledge to classify the measure when needed.
 
-  *List of available target predicates:*
+  *List of available and allowed target predicates for this round:*
 
   % Definition: The Measure is a monetary subsidy.
   monetary_subsidy(Measure).

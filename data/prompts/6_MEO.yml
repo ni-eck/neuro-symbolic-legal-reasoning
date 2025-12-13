@@ -4,7 +4,7 @@ description:
 
 role: system
 prompt: |
-  *Special instructions and information:*
+  *List of available and allowed target predicates for this round:*
 
   % Definition: The Measure by the Actor and a similar or identical action by a private operator were decided at the same time.
   intervention_decided_at_same_time(Measure, Actor, PrivateOperator).

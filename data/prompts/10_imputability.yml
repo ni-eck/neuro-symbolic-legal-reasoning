@@ -7,7 +7,7 @@ prompt: |
   *Special instructions and information:*
     - You may rely on internal knowledge to answer the query.
 
-  *List of possible target predicates:*
+  *List of available and allowed target predicates for this round:*
 
   % Definition: The Measure was adopted or administered by an Actor.
   adopted_or_administered_by(Measure, Actor).
@@ -48,7 +48,7 @@ prompt: |
   % Definition: The public undertaking was subject to strong supervision by public authorities. "Supervision" refers to continuous and active oversight by public authorities, including monitoring of operations, enforcement of reporting obligations, or prior approval of decisions, even without explicit directives.
   strong_public_supervision(Actor, Measure).
 
-  % Definition: The scope of the Measure suggests involvement by public authorities (e.g., it pursues public objectives).
+  % Definition: The scope of the Measure suggests that public authorities were involved the Measure of the acting undertaking (e.g., it pursues public objectives).
   measure_scope_indicates_involvement(Actor, Measure).
 
   % Definition: Other indicators show involvement of public authorities in adopting the Measure (e.g., informal influence through public actors). This predicate should only be used when the following, more specific predicates were not parsed for the same Measure:

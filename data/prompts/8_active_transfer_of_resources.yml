@@ -7,7 +7,7 @@ prompt: |
   *Special instructions and information:*
     - You may rely on internal knowledge to classify the resources when needed.
 
-  *List of possible target predicates:*
+  *List of available and allowed target predicates for this round:*
   
   % Definition: The Measure involves an active flow of resources.
   active_resource_flow(Measure, Resource).

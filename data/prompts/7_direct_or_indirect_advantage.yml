@@ -4,7 +4,7 @@ description:
 
 role: user
 prompt: |
-  *List of possible target predicates:*
+  *List of available and allowed target predicates for this round:*
 
   % Definition: The Measure directly targets the Beneficiary.
   direct_targeting(Measure, Beneficiary).

@@ -8,7 +8,7 @@ prompt: |
     - This parsing round captures the outgoing financial effects for the Beneficiary. It includes money spent, assets lost, services provided, rights or licenses granted, and liabilities incurred as a causal consequence of the Measure. 
     - All value-based predicates must use gross amounts. Parsing or interpreting net values is strictly prohibited. This includes any figures adjusted for costs, expenses, liabilities, or other deductions. Do not apply economic, financial, or accounting reasoning to reduce values. Each predicate must reflect the full, unadjusted amount directly resulting from the Measure—no offsets, no balancing, no exceptions.
 
-  *List of available target predicates:*
+  *List of available and allowed target predicates for this round:*
   % Definition: The amount of money the Beneficiary spent in connection with the Measure. This should not include money the Beneficiary spent as part of an activity or investment that is supported by the Measure.   
   parsed_money_spent(Beneficiary, Measure, -> number: Value).
   

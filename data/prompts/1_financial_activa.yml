@@ -9,7 +9,7 @@ prompt: |
 
     - Beneficiary can be an undertaking or a group of undertakings
   
-  *List of available target predicates:*
+  *List of available and allowed target predicates for this round:*
 
   % Definition: The amount of money (cash or liquid funds) the Beneficiary obtained as a causal consequence of the Measure.
   parsed_money_received(Beneficiary, Measure, -> number: Value).
