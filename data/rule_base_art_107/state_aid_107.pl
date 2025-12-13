@@ -530,8 +530,8 @@ altmark(Measure) :-
     % Criterion 3: Compensation does not exceed necessary costs + reasonable profit
     (
         ( money_received(Beneficiary, Measure, MoneyReceived),
-          actual_costs(Measure, Costs),
-          reasonable_profit(Measure, Profit),
+          actual_costs(Costs, Obligation),
+          reasonable_profit(Profit, Obligation),
           number(MoneyReceived), number(Costs), number(Profit),
           MoneyReceived =< Costs + Profit
         )
