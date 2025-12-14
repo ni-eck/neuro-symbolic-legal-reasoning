@@ -1,0 +1,13 @@
+Case: case06
+Memory (role -> literals):
+  Actor = 'polish_government'
+  Beneficiary = 'oil_companies', 'service_station_operators_near_czech_border'
+  Designator = 'polish_government'
+  Effect = 'covered_only_remaining_part_of_discount', 'maintain_price_competitiveness', 'multiple_payments_for_multiple_stations'
+  Measure = 'increase_excise_duties_petrol', 'temporary_subsidy_petrol_border'
+  Obligation = 'maintain_price_competitiveness'
+  PrivateOperator = 'oil_companies'
+  Process = 'location_based_eligibility'
+  RegulatoryPurpose = 'maintain_price_competitiveness'
+  Resource = 'state_budget'
+  State = 'poland'

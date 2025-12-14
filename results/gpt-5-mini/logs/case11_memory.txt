@@ -1,0 +1,18 @@
+Case: case11
+Memory (role -> literals):
+  Actor = 'castilla_la_mancha_region'
+  Beneficiary = 'Express Sanchéz Norte S.L.', 'Servicios Interurbanos Rapidos S.A.', 'second_best_bidders'
+  Criteria = 'interim_service_contracts_2020'
+  Designator = 'castilla_la_mancha_region'
+  Effect = 'awarded_interim_contracts_without_new_tender', 'compensation_570000', 'compensation_589000', 'compensation_financed_by_regional_budget', 'retained_passenger_revenue'
+  Evaluation = 'cost_estimates_validation'
+  Expert = 'regional_transport_auditors'
+  IntraState = 'castilla_la_mancha'
+  Measure = 'interim_service_contracts_2020'
+  Obligation = 'regional_bus_psos_2020'
+  PrivateOperator = 'Express Sanchéz Norte S.L.', 'Servicios Interurbanos Rapidos S.A.'
+  Process = 'dec2019_tender'
+  RegulatoryPurpose = 'maintain_basic_public_transport_connectivity'
+  Resource = 'castilla_la_mancha_regional_budget', 'passenger_revenue'
+  State = 'spain'
+  Tender = 'dec2019_tender'

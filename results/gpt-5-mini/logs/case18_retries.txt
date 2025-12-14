@@ -1,0 +1,46 @@
+Case: case18
+
+Template: 6_MEO, attempt: 1
+  measure_financial_terms(euregion_succession_fund_grant, -> number: 300000). % [15],[16],[17]
+    Error: invalid predicate syntax: No terminal matches '-' in the current parser context, at line 1 col 57
+
+l_terms(euregion_succession_fund_grant, -> number: 300000).
+                                        ^
+Expected one of: 
+	* FUNCTOR
+	* VARIABLE
+	* SIGNED_NUMBER
+	* ATOM_STRING
+	* LSQB
+
+Previous tokens: Token('COMMA', ',')
+
+  measure_financial_terms(nrw_allocation, -> number: 125000000). % [10],[11]
+    Error: invalid predicate syntax: No terminal matches '-' in the current parser context, at line 1 col 41
+
+measure_financial_terms(nrw_allocation, -> number: 125000000).
+                                        ^
+Expected one of: 
+	* FUNCTOR
+	* VARIABLE
+	* SIGNED_NUMBER
+	* ATOM_STRING
+	* LSQB
+
+Previous tokens: Token('COMMA', ',')
+
+  measure_financial_terms(wallonia_allocation, -> number: 75000000). % [10],[11]
+    Error: invalid predicate syntax: No terminal matches '-' in the current parser context, at line 1 col 46
+
+re_financial_terms(wallonia_allocation, -> number: 75000000).
+                                        ^
+Expected one of: 
+	* FUNCTOR
+	* VARIABLE
+	* SIGNED_NUMBER
+	* ATOM_STRING
+	* LSQB
+
+Previous tokens: Token('COMMA', ',')
+
+

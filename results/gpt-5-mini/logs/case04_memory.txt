@@ -1,0 +1,11 @@
+Case: case04
+Memory (role -> literals):
+  Actor = 'Dansk Luftfart A/S', 'Denmark', 'Statens_Administration'
+  Beneficiary = 'Dansk Luftfart A/S', 'Denmark'
+  Designator = 'Denmark', 'Statens_Administration'
+  Evaluation = 'experts_doubt'
+  Expert = 'experts'
+  Measure = 'capital_injection_5_nov_2020', 'recovery_20_nov_2024', 'recovery_8_nov_2022'
+  RegulatoryPurpose = 'overcome_liquidity_shortfall_due_to_covid19'
+  Resource = 'Danish_general_budget', 'Dansk Luftfart A/S', 'Statens_Administration'
+  State = 'Denmark'

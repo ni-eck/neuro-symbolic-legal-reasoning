@@ -1,0 +1,15 @@
+Case: case12
+Memory (role -> literals):
+  Actor = 'bundestag'
+  Beneficiary = 'fastcharge_ag'
+  Criteria = 'remain_operational_and_meet_due_diligence'
+  Designator = 'bundestag', 'ministry_for_economic_affairs_and_climate_action'
+  Effect = 'regained_momentum', 'secured_contracts_with_european_car_manufacturers', 'upgrade_credit_rating_and_valuation'
+  Evaluation = 'market_analysts_assessment'
+  Expert = 'market_analysts'
+  Measure = 'bundestag_resolution_march_2024'
+  Obligation = 'remain_operational_and_meet_due_diligence'
+  Process = 'due_diligence_process'
+  RegulatoryPurpose = 'support_fastcharge_energy_transition'
+  Resource = 'federal_equity_injection_2026'
+  State = 'germany'

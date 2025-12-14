@@ -1,0 +1,10 @@
+Case: case05
+Memory (role -> literals):
+  Actor = 'french_government'
+  Beneficiary = 'fund_managing_entities, specialised_investment_structures', fund_managing_entities, specialised_investment_structures
+  Designator = 'french_authorities', 'french_government'
+  Effect = 'greater_liquidity_in_small_midcap_segment', 'higher_management_and_entry_fees', 'increased_share_demand'
+  Measure = 'dl_153_2011_article_6', dl_153_2011_article_6
+  RegulatoryPurpose = 'stimulate_economic_growth_and_improve_public_finances'
+  Resource = 'loss_of_tax_revenue'
+  State = 'france'

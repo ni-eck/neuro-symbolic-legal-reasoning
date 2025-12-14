@@ -1,0 +1,16 @@
+Case: case22
+Memory (role -> literals):
+  Actor = 'romanian_government'
+  Beneficiary = 'eligible_large_industrial_companies'
+  Criteria = 'installation_capacity_above_15000_m3_per_day'
+  Designator = 'romanian_government'
+  Effect = 'ability_to_buy_additional_certificates', 'ability_to_sell_surplus_certificates'
+  Evaluation = 'expert_committee_report'
+  Expert = 'expert_committee'
+  Measure = 'romanian_freshwater_extraction_certificates'
+  Obligation = 'keep_within_assigned_extraction_ceiling'
+  Process = 'eligibility_threshold_selection'
+  RegulatoryPurpose = 'environmental_protection_and_water_efficiency'
+  Resource = 'extraction_certificates'
+  State = 'Romania'
+  UnionLawObligation = 'Directive_EU_2020_1743'

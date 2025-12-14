@@ -1,0 +1,17 @@
+Case: case19
+Memory (role -> literals):
+  Actor = 'ministry_of_agriculture'
+  Beneficiary = 'AgroBaltic UAB'
+  Criteria = 'maintain_dairy_and_cereal_farming'
+  Designator = 'ministry_of_agriculture'
+  Effect = 'deduct_maintenance_costs', 'low_rent', 'restrictive_clause_maintain_same_activities'
+  IntraState = 'panevezys_region'
+  Measure = 'lease_panevezys_2800ha_2013'
+  Obligation = 'basic_drainage_and_soil_maintenance', 'maintain_dairy_and_cereal_farming'
+  PrivateOperator = 'AgroBaltic UAB'
+  Process = 'restricted_tender'
+  ProcurementProcedure = 'restricted_tender'
+  Resource = 'state_owned_agricultural_land_panevezys'
+  State = 'lithuania'
+  Tender = 'restricted_tender'
+  Transaction = 'regional_farmland_leases'
