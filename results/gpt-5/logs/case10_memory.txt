@@ -1,0 +1,13 @@
+Case: case10
+Memory (role -> literals):
+  Actor = 'Puglia Regional Authorities'
+  Beneficiary = 'Mobilità Bari S.p.A.', 'Trasporti Puglia SRL'
+  Designator = 'Puglia Regional Authorities'
+  Evaluation = 'independent_accounting_expert_validation_2018'
+  Expert = 'independent accounting expert'
+  IntraState = 'Puglia'
+  Measure = 'puglia_2018_contract_extensions', 'puglia_pso_compensation_2019_mobilita_bari', 'puglia_pso_compensation_2019_trasporti_puglia'
+  Obligation = 'puglia_regional_bus_pso'
+  RegulatoryPurpose = 'ensure_continued_operation_regional_bus_services'
+  Resource = 'puglia_regional_budget'
+  State = 'Italy'

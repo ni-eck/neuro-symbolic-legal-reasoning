@@ -1,0 +1,32 @@
+% 1_financial_activa
+parsed_money_received('XCA Lda', 'direct_grant_sines_2015', 15983927.91). % [1]
+
+% 2_financial_passiva
+% Nothing
+
+% 3_altmark
+% Nothing
+
+% 4_act_of_private_nature
+% Nothing
+
+% 5_act_of_public_nature
+monetary_subsidy('direct_grant_sines_2015'). % [1],[4]
+
+% 6_MEO
+% Nothing
+
+% 7_direct_or_indirect_advantage
+direct_targeting('direct_grant_sines_2015', 'XCA Lda'). % [1]
+
+% 8_active_transfer_of_resources
+active_resource_flow('direct_grant_sines_2015', 'portugal_state_budget'). % [1]
+resource_of_central_state_entity('portugal_state_budget'). % [1],[4]
+
+% 9_foregoing_revenue
+% Nothing
+
+% 10_imputability
+adopted_or_administered_by('direct_grant_sines_2015', 'Portuguese Ministry of Economy'). % [1]
+public_state_authority('Portuguese Ministry of Economy', 'Portugal'). % [1]
+intrastate_of('Alentejo', 'Portugal'). % [2]

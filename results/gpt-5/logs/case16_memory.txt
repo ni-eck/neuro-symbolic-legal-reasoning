@@ -1,0 +1,11 @@
+Case: case16
+Memory (role -> literals):
+  Actor = 'BāzesTīkls SIA', 'LatTeleGrid SIA', 'Republic of Latvia'
+  Beneficiary = 'BāzesTīkls SIA', 'LatTeleGrid SIA', 'advertisers'
+  Designator = 'Republic of Latvia'
+  Effect = 'access_to_ad_slots', 'access_to_advertising_revenue', 'potential_allocation_of_ad_revenue', 'support_public_service_mission_funding'
+  Measure = 'ad_revenue_mechanism_intro', 'ad_slots_sales_2017', 'ad_slots_sales_2018', 'ad_slots_sales_2019', 'ad_slots_sales_2020', 'ad_slots_sales_2021', 'creation_lattelegrid_fund', 'interest_bearing_state_loan_start', 'license_fee_portion_start', 'minister_discretion_over_fund_resources', 'minister_full_transfer_ad_revenue_2017', 'minister_full_transfer_ad_revenue_2018', 'minister_full_transfer_ad_revenue_2019', 'minister_full_transfer_ad_revenue_2020', 'minister_full_transfer_ad_revenue_2021', 'ministerial_decree_defining_mission', 'multi_year_service_mandate_approval'
+  Obligation = 'ensure_nationwide_public_tv_content'
+  RegulatoryPurpose = 'ensure_nationwide_public_tv_content', 'support_public_service_mission_funding'
+  Resource = 'access_to_ad_slots', 'access_to_advertising_revenue', 'advertising_payments_from_advertisers', 'broadcasting_license_fee_revenue', 'state_loan', 'support_public_service_mission_funding'
+  State = 'Republic of Latvia'

@@ -1,0 +1,11 @@
+Case: case06
+Memory (role -> literals):
+  Actor = 'Polish Government'
+  Beneficiary = 'oil_companies_with_price_management_clauses', 'station_ops_20to40km_cz_border', 'station_ops_within_20km_cz_border'
+  Designator = 'Polish Government'
+  Effect = 'reduced_cost_of_forecourt_discounts'
+  Measure = 'excise_increase_petrol_2021', 'subsidy_border_petrol_2021'
+  PrivateOperator = 'oil_companies_with_price_management_clauses'
+  RegulatoryPurpose = 'maintain_price_competitiveness'
+  Resource = 'excise_tax_revenue', 'state_budget_funds'
+  State = 'Poland'

@@ -1,0 +1,14 @@
+Case: case22
+Memory (role -> literals):
+  Actor = 'romanian_government'
+  Beneficiary = 'large_industrial_operators_ro'
+  Designator = 'romanian_government'
+  Effect = 'flexible_compliance_timing', 'surplus_certificate_trading'
+  Evaluation = 'review_committee_eval'
+  Expert = 'expert_committee_ro'
+  Measure = 'free_allocation_of_freshwater_extraction_certificates'
+  Process = 'eligibility_threshold_process'
+  RegulatoryPurpose = 'environmental_protection', 'water_use_efficiency'
+  Resource = 'freshwater_extraction_certificates_ro'
+  State = 'romania'
+  UnionLawObligation = 'directive_eu_2020_1743'

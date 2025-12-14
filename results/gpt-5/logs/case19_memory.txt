@@ -1,0 +1,15 @@
+Case: case19
+Memory (role -> literals):
+  Actor = 'Ministry of Agriculture of Lithuania'
+  Beneficiary = 'AgroBaltic UAB'
+  Criteria = 'activity_type_restriction'
+  Designator = 'Ministry of Agriculture of Lithuania'
+  Effect = 'below_market_rent', 'no_rent_adjustment_clause', 'rent_deduction_for_maintenance'
+  IntraState = 'Panevėžys region'
+  Measure = 'lease_2013_panevezys_land', 'restricted_tender_2013'
+  Process = 'restricted_tender_2013'
+  ProcurementProcedure = 'restricted_tender_2013'
+  Resource = 'panevezys_state_agricultural_land_2800ha'
+  State = 'Lithuania'
+  Tender = 'restricted_tender_2013'
+  Transaction = 'lithuanian_land_fund_farmland_leases', 'regional_land_auctions_farmland_leases'

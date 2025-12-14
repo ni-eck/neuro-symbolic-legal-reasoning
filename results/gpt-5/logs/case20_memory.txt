@@ -1,0 +1,11 @@
+Case: case20
+Memory (role -> literals):
+  Actor = 'hu_national_assembly'
+  Beneficiary = 'commercial_shipping_operators'
+  Designator = 'hu_national_assembly'
+  Effect = 'cheaper_marine_fuel'
+  Measure = 'hu_excise_duty_exemption_marine_fuel_2021'
+  RegulatoryPurpose = 'comply_international_maritime_conventions', 'transpose_directive_2003_96_ec'
+  Resource = 'hu_excise_tax_revenue_marine_fuel'
+  State = 'hungary'
+  UnionLawObligation = 'council_directive_2003_96_ec_art_14_1_c'

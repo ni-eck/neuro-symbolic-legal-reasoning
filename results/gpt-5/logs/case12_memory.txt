@@ -1,0 +1,12 @@
+Case: case12
+Memory (role -> literals):
+  Actor = 'Bundestag', 'German Federal Government'
+  Beneficiary = 'FastCharge AG'
+  Designator = 'Bundestag', 'German Federal Government', 'Ministry for Economic Affairs and Climate Action'
+  Effect = 'analyst_reassessment_mar_2024', 'contracts_with_eu_car_manufacturers_2024', 'credit_rating_upgrade_2024', 'valuation_upgrade_2024'
+  Evaluation = 'analyst_reassessment_mar_2024', 'vc1_eval_2023', 'vc2_eval_2023'
+  Expert = 'market_analysts', 'vc_company_1', 'vc_company_2'
+  Measure = 'bundestag_resolution_equity_commitment_2026'
+  RegulatoryPurpose = 'industrial_policy_support_battery_sector'
+  Resource = 'equity_investment_q1_2026'
+  State = 'Germany'

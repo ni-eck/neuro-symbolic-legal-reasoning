@@ -1,0 +1,10 @@
+Case: case14
+Memory (role -> literals):
+  Actor = 'amid'
+  Beneficiary = 'italian_digital_video_game_retailers'
+  Designator = 'amid', 'italian_ministry_for_economic_development'
+  Effect = 'elimination_of_price_competition_at_consumer_level', 'minimum_margin_for_retailers'
+  Measure = 'retail_pricing_regulation_for_video_games_2018'
+  RegulatoryPurpose = 'curb_aggressive_undercutting', 'prevent_race_to_the_bottom_in_retail_pricing', 'protect_viability_sme_digital_retailers', 'stabilise_market_consumer_video_game_distribution', 'strengthen_domestic_market_structure'
+  State = 'italy'
+  Transaction = 'informal_pricing_agreements_italian_game_publishers_retailers'

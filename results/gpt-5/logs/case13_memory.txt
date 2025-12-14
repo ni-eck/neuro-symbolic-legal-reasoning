@@ -1,0 +1,14 @@
+Case: case13
+Memory (role -> literals):
+  Actor = 'four_regional_public_undertakings', 'government_of_portugal', 'licensed_network_operators_and_suppliers', 'luselec sa', 'portuguese_legislature'
+  Beneficiary = 'luselec sa'
+  Designator = 'government_of_portugal', 'ministry_of_energy_and_infrastructure', 'portuguese_legislature'
+  Effect = 'stranded_costs_2007_pool_funding', 'transition_stranded_costs_coverage'
+  Evaluation = 'santos_committee_report_2007'
+  Expert = 'santos_committee'
+  Measure = 'article_12_surcharge_2007', 'biomass_gasification_rnd_ventures', 'electricity_sector_reform_act_2007', 'interior_region_gas_turbine_facility', 'long_term_import_contracts', 'sectoral_adjustment_agreement_2004_2007', 'universal_access_programme_rural_grid_extensions'
+  Obligation = 'interior_region_gas_turbine_facility', 'universal_access_programme_rural_grid_extensions'
+  RegulatoryPurpose = 'electricity_market_liberalisation', 'ensure_supply_stability_during_summer_peaks', 'stranded_costs_2007_pool_funding', 'transition_stranded_costs_coverage', 'universal_access_to_electricity'
+  Resource = 'capital_expenditure_for_backup_gas_turbine', 'financing_rural_grid_extensions', 'luselec_internal_funding_for_biomass_gasification_rnd', 'payments_from_distribution_companies_423_84m_annually', 'surcharge_proceeds_1jul_31dec_2007', 'surplus_remittance_to_ministry_of_energy_and_infrastructure'
+  State = 'portugal'
+  Transaction = 'sectoral_adjustment_agreement_2004_2007'

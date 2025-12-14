@@ -1,0 +1,14 @@
+Case: case03
+Memory (role -> literals):
+  Actor = 'Region of Upper Austria', 'Upper Austria Development GmbH', 'other public shareholders', 'private investors'
+  Beneficiary = 'Upper Austria Airport GmbH', 'Upper Austria Development GmbH'
+  Designator = 'Region of Upper Austria'
+  Effect = 'airport_linked_land_development', 'option_fee_payments_2009_2010'
+  Evaluation = 'june_2009_valuation'
+  Expert = 'certified property consultancy'
+  IntraState = 'Upper Austria'
+  Measure = 'private_investor_uad_equity_2009', 'region_uad_equity_2009', 'uad_uaa_option_2009', 'uad_uaa_option_payment_2009', 'uad_uaa_option_payment_2010'
+  PrivateOperator = 'private investors'
+  RegulatoryPurpose = 'airport_linked_land_development'
+  Resource = 'private_investor_funds', 'regional_budget_funds', 'uad_budget_funds'
+  State = 'Austria'
