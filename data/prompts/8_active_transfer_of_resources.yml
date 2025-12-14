@@ -12,7 +12,7 @@ prompt: |
   % Definition: The Measure involves an active flow of resources.
   active_resource_flow(Measure, Resource).
   
-  % Definition: The Measure includes a firm and concrete commitment to make resources available at a later point in time.
+  % Definition: The Measure includes a firm and concrete commitment to make resources available at a later point in time, but there was no resource flow so far.
   firm_and_concrete_commitment_to_make_resources_available_at_later_point(Measure, Resource).
   
   % Definition: The Resource is from the central state or from a central-state entity (e.g., a ministry or national agency).

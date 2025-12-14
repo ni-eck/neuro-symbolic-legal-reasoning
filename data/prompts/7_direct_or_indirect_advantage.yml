@@ -6,10 +6,10 @@ role: user
 prompt: |
   *List of available and allowed target predicates for this round:*
 
-  % Definition: The Measure directly targets the Beneficiary.
+  % Definition: The Measure directly targets the Beneficiary as its primary and intended recipient.
   direct_targeting(Measure, Beneficiary).
 
-  % Definition: The Measure causes secondary effects that benefit the Beneficiary. These effects are a consequence of the Measure, not its primary form.
+  % Definition: The Measure causes an indirect benefit for the Beneficiary that arises as a consequence of the Measure, is distinct from its primary form or objective, and is not an automatic or mechanical result of its implementation.
   secondary_effects(Measure, Beneficiary, Effect).
 
   % Definition: The secondary effect caused by the Measure benefits an identifiable Undertaking.
