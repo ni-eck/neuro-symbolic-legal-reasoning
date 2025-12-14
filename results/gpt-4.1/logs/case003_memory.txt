@@ -1,0 +1,12 @@
+Case: case003
+Memory (role -> literals):
+  Actor = 'other_public_shareholders', 'private_investors', 'region_of_upper_austria', 'upper_austria_development_gmbh'
+  Beneficiary = 'upper_austria_development_gmbh'
+  Designator = 'region_of_upper_austria'
+  Evaluation = 'land_valuation_report_2009'
+  Expert = 'certified_property_consultancy'
+  IntraState = 'upper_austria'
+  Measure = 'region_capital_contribution_2009', 'region_equity_injection_2009', 'uaa_exclusive_option_contract_2009'
+  PrivateOperator = 'private_investors'
+  Resource = 'region_of_upper_austria', 'upper_austria_development_gmbh'
+  State = 'austria'

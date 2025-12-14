@@ -1,0 +1,10 @@
+Case: case014
+Memory (role -> literals):
+  Actor = 'amid', 'ministry_for_economic_development'
+  Beneficiary = 'small_and_medium_sized_digital_retailers'
+  Designator = 'amid', 'ministry_for_economic_development'
+  Effect = 'ensured_minimum_margin'
+  IntraState = 'italy'
+  Measure = 'retail_pricing_regulation_video_games'
+  RegulatoryPurpose = 'ensured_minimum_margin'
+  State = 'italy'

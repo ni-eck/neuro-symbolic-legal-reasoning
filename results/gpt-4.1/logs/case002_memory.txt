@@ -1,0 +1,8 @@
+Case: case002
+Memory (role -> literals):
+  Actor = 'Portuguese Ministry of Economy'
+  Beneficiary = 'XCA Lda'
+  Designator = 'Portuguese Ministry of Economy'
+  Measure = 'permit_134'
+  Resource = 'corporate_income_tax_exemption'
+  State = 'Portugal'

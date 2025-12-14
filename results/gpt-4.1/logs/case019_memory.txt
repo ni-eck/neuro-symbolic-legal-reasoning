@@ -1,0 +1,15 @@
+Case: case019
+Memory (role -> literals):
+  Actor = 'Ministry of Agriculture of Lithuania', 'Ministry’s Land Administration Division'
+  Beneficiary = 'AgroBaltic UAB'
+  Criteria = '2013_lithuania_state_land_lease'
+  Designator = 'Ministry of Agriculture of Lithuania', 'Ministry’s Land Administration Division'
+  IntraState = 'Lithuania', 'Ministry’s Land Administration Division'
+  Measure = '2013_lithuania_state_land_lease'
+  Obligation = 'dairy_farming_and_cereal_cultivation_obligation'
+  Process = 'restricted_tender_procedure'
+  ProcurementProcedure = 'restricted_tender_procedure'
+  Resource = 'state_owned_agricultural_land_panevezys'
+  State = 'Lithuania'
+  Tender = 'restricted_tender_procedure'
+  Transaction = 'regional_land_auctions'

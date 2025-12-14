@@ -1,0 +1,11 @@
+Case: case021
+Memory (role -> literals):
+  Actor = 'Portuguese Ministry for Maritime Infrastructure'
+  Beneficiary = 'Portum Energia S.A.'
+  Designator = 'Portuguese Ministry for Maritime Infrastructure'
+  Measure = 'exclusive_right_offshore_wind_farm_zone_e7', 'exclusive_right_offshore_wind_farm_zone_e7_variable'
+  RegulatoryPurpose = 'speed_up_green_energy_investment'
+  Resource = 'maritime_area_zone_e7'
+  SellPrice = 1000, 75000
+  State = 'Portugal'
+  SystemRatesPrice = 150000, 3000

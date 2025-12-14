@@ -1,0 +1,12 @@
+Case: case018
+Memory (role -> literals):
+  Actor = 'Euregion Succession Fund'
+  Beneficiary = 'GutesBrot GmbH'
+  Criteria = 'Euregion Succession Fund eligibility criteria'
+  Designator = 'North Rhine-Westphalia', 'Wallonia'
+  IntraState = 'Belgium', 'Germany', 'North Rhine-Westphalia', 'Wallonia'
+  Measure = 'Euregion Succession Fund Grant Eupen'
+  Process = 'Euregion Succession Fund grant selection process'
+  RegulatoryPurpose = 'support business succession and local economic continuity'
+  Resource = 'Euregion Succession Fund resources'
+  State = 'Belgium', 'Germany'

@@ -1,0 +1,10 @@
+Case: case012
+Memory (role -> literals):
+  Actor = 'Bundestag'
+  Beneficiary = 'FastCharge AG'
+  Designator = 'Bundestag'
+  Effect = 'securing_major_contracts_with_european_car_manufacturers', 'upgrade_in_credit_rating_and_valuation'
+  Measure = 'Bundestag_resolution_2026_equity_injection'
+  RegulatoryPurpose = 'supporting_leading_German_battery_company_and_energy_transition'
+  Resource = 'federal_equity_investment'
+  State = 'Germany'

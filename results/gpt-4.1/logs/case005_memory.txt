@@ -1,0 +1,10 @@
+Case: case005
+Memory (role -> literals):
+  Actor = 'french_government'
+  Beneficiary = 'specialised_investment_structures'
+  Designator = 'french_government'
+  Effect = 'increased_liquidity_for_small_and_medium_companies', 'increased_management_and_entry_fees'
+  Measure = 'preferential_tax_regime_ucits'
+  RegulatoryPurpose = 'stimulate_economic_growth_and_improve_public_finances'
+  Resource = 'foregone_tax_revenue'
+  State = 'france'

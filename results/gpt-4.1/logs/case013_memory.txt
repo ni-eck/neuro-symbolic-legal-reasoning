@@ -1,0 +1,10 @@
+Case: case013
+Memory (role -> literals):
+  Actor = 'LUSELEC SA', 'Ministry of Energy and Infrastructure', 'Portuguese State', 'Portuguese legislature'
+  Beneficiary = 'LUSELEC SA'
+  Designator = 'Ministry of Energy and Infrastructure', 'Portuguese State', 'Portuguese legislature'
+  Measure = 'article_12_transitional_energy_measures_act_2007', 'interior_region_gas_turbine_facility', 'sectoral_adjustment_agreement_2004_2007', 'universal_access_programme'
+  Obligation = 'interior_region_gas_turbine_facility', 'universal_access_programme'
+  RegulatoryPurpose = 'compensation_for_stranded_costs_due_to_liberalisation'
+  Resource = 'article_12_surcharge_funds', 'sectoral_adjustment_payments'
+  State = 'Portugal'

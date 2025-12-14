@@ -1,0 +1,10 @@
+Case: case020
+Memory (role -> literals):
+  Actor = 'hungarian_orszaggyules'
+  Beneficiary = 'commercial_shipping_operators'
+  Designator = 'hungarian_orszaggyules'
+  Effect = 'marine_fuel_became_cheaper'
+  Measure = 'hungarian_excise_duty_exemption_marine_fuel'
+  Resource = 'excise_duty_revenue'
+  State = 'hungary'
+  UnionLawObligation = 'article_14_1_c_council_directive_2003_96_ec'

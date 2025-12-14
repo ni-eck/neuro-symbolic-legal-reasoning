@@ -1,0 +1,10 @@
+Case: case016
+Memory (role -> literals):
+  Actor = 'BāzesTīkls SIA', 'LatTeleGrid', 'Minister for Culture'
+  Beneficiary = 'LatTeleGrid'
+  Designator = 'Minister for Culture'
+  Measure = 'advertising_revenue_transfers_2017_2021'
+  Obligation = 'public_service_tv_content'
+  RegulatoryPurpose = 'public_service_tv_content'
+  Resource = 'advertising_revenue'
+  State = 'Latvia'

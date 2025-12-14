@@ -1,0 +1,15 @@
+Case: case011
+Memory (role -> literals):
+  Actor = 'castilla_la_mancha_region'
+  Beneficiary = 'Express Sanchéz Norte S.L.', 'Servicios Interurbanos Rapidos S.A.'
+  Criteria = 'interim_service_contract_express_sanchez_norte', 'interim_service_contract_servicios_interurbanos_rapidos'
+  Designator = 'castilla_la_mancha_region'
+  IntraState = 'castilla_la_mancha'
+  Measure = 'interim_service_contract_express_sanchez_norte', 'interim_service_contract_servicios_interurbanos_rapidos'
+  Obligation = 'public_service_obligation_express_sanchez_norte', 'public_service_obligation_servicios_interurbanos_rapidos'
+  Process = 'original_procurement_round'
+  ProcurementProcedure = 'original_procurement_round'
+  RegulatoryPurpose = 'public_service_obligation_express_sanchez_norte', 'public_service_obligation_servicios_interurbanos_rapidos'
+  Resource = 'castilla_la_mancha_regional_budget'
+  State = 'spain'
+  Tender = 'original_procurement_round'

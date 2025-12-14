@@ -1,0 +1,10 @@
+Case: case006
+Memory (role -> literals):
+  Actor = 'polish_government'
+  Beneficiary = 'service_station_operators_0_20km', 'service_station_operators_20_40km', 'service_station_operators_border_region'
+  Designator = 'polish_government'
+  Effect = 'oil_companies_cover_remaining_discount'
+  Measure = 'polish_petrol_border_subsidy_2021'
+  RegulatoryPurpose = 'maintain_price_competitiveness'
+  Resource = 'state_budget'
+  State = 'poland'

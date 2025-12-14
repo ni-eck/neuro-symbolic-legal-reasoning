@@ -1,0 +1,11 @@
+Case: case010
+Memory (role -> literals):
+  Actor = 'Puglia Regional Authorities'
+  Beneficiary = 'Mobilità Bari S.p.A.', 'Trasporti Puglia SRL'
+  Designator = 'Puglia Regional Authorities'
+  IntraState = 'Puglia'
+  Measure = 'contract_extension_2018'
+  Obligation = 'regional_bus_service_obligation'
+  RegulatoryPurpose = 'regional_bus_service_obligation'
+  Resource = 'regional_budget_puglia'
+  State = 'Italy'
