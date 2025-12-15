@@ -1,11 +1,11 @@
 Case: case21
 Memory (role -> literals):
-  Actor = 'portuguese_ministry_for_maritime_infrastructure', 'portum_energia'
-  Beneficiary = 'portum_energia'
-  Designator = 'portuguese_ministry_for_maritime_infrastructure'
+  Actor = 'Portuguese_Ministry_for_Maritime_Infrastructure', 'Portum Energia S.A.'
+  Beneficiary = 'Portum Energia S.A.'
+  Designator = 'Portuguese_Ministry_for_Maritime_Infrastructure'
   Effect = 'reduced_fees'
-  Measure = 'agreement_portum_zone_e7'
+  Measure = 'agreement_zone_E7'
+  Obligation = 'develop_and_operate_E7'
   RegulatoryPurpose = 'speed_up_green_energy_investment'
-  Resource = 'maritime_area_zone_e7', 'reduced_fees'
-  State = 'portugal'
-  SystemRatesPrice = 6150000
+  Resource = 'maritime_area_E7'
+  State = 'Portugal'

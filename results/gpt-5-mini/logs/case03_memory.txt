@@ -1,13 +1,13 @@
 Case: case03
 Memory (role -> literals):
-  Actor = 'other_public_shareholders', 'private_investors', 'region_of_upper_austria', 'upper_austria_development_gmbh'
-  Beneficiary = 'upper_austria_development_gmbh'
+  Actor = 'region_of_upper_austria', 'upper_austria_development_gmbh'
+  Beneficiary = 'upper_austria_airport_gmbh', 'upper_austria_development_gmbh'
   Designator = 'region_of_upper_austria'
-  Evaluation = 'independent_land_valuation_june_2009'
+  Effect = 'acquisition_and_marketing_of_airport_linked_land_benefit', 'option_payments_received', 'shared_risks_and_returns_with_shareholders'
+  Evaluation = 'valuation_june2009'
   Expert = 'certified_property_consultancy'
   IntraState = 'upper_austria'
-  Measure = 'capital_contribution_by_region_9_million_7_may_2009', 'equity_injection_by_region_alleged_12_million_2009', 'exclusive_option_on_upper_austria_airport_land_2009', 'upper_austria_development_gmbh'
+  Measure = 'equity_contribution_from_region_on_incorporation', 'equity_injection_from_region', 'exclusive_option_purchase_rights', 'option_payment_2009_from_uad', 'option_payment_2010_from_uad', 'option_payment_total_from_uad', equity_contribution_from_region_on_incorporation, equity_injection_from_region, exclusive_option_purchase_rights, option_payment_2009_from_uad, option_payment_2010_from_uad, option_payment_total_from_uad
   PrivateOperator = 'private_investors'
-  Resource = private_investors_funds, region_equity_injection_12_million, regional_budget, upper_austria_development_gmbh_budget
-  SellPrice = 9000000
+  Resource = 'private_investors', 'region_of_upper_austria', 'upper_austria_development_gmbh'
   State = 'austria'

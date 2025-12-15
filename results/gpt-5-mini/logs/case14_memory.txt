@@ -1,10 +1,9 @@
 Case: case14
 Memory (role -> literals):
-  Actor = amid, ministry_for_economic_development
-  Beneficiary = small_medium_digital_retailers
-  Designator = amid, ministry_for_economic_development
-  Effect = ensured_minimum_margin, protection_from_undercutting
-  Measure = retail_pricing_regulation_amid_2018
-  RegulatoryPurpose = protection_from_undercutting
-  Resource = amid, ministry_for_economic_development
-  State = italy
+  Actor = 'AMID', 'Ministry_for_Economic_Development'
+  Beneficiary = 'retailers', 'small_and_medium_digital_retailers'
+  Designator = 'AMID', 'Ministry_for_Economic_Development', 'ministerial_decree_28_2018'
+  Measure = 'retail_pricing_regulation_for_video_games'
+  RegulatoryPurpose = 'prevent_race_to_bottom_and_protect_small_and_medium_digital_retailers'
+  Resource = 'AMID', 'Ministry_for_Economic_Development', 'ministerial_decree_28_2018'
+  State = 'Italy'

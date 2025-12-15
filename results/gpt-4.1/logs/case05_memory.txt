@@ -1,0 +1,10 @@
+Case: case05
+Memory (role -> literals):
+  Actor = 'french_government'
+  Beneficiary = 'specialised_investment_structures'
+  Designator = 'french_government'
+  Effect = 'increased_investment_in_small_and_medium_companies', 'increased_management_and_entry_fees'
+  Measure = 'dl_153_2011'
+  RegulatoryPurpose = 'stimulate_economic_growth_and_improve_public_finances'
+  Resource = 'tax_revenue_relief'
+  State = 'france'

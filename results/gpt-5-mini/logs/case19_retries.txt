@@ -1,0 +1,18 @@
+Case: case19
+
+Template: 6_MEO, attempt: 1
+  measure_financial_terms('lease_2800ha_panevezys_2013', -> number:6). % [10],[15]
+    Error: invalid predicate syntax: No terminal matches '-' in the current parser context, at line 1 col 56
+
+al_terms('lease_2800ha_panevezys_2013', -> number:6).
+                                        ^
+Expected one of: 
+	* SIGNED_NUMBER
+	* LSQB
+	* FUNCTOR
+	* VARIABLE
+	* ATOM_STRING
+
+Previous tokens: Token('COMMA', ',')
+
+

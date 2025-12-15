@@ -1,0 +1,18 @@
+Case: case21
+
+Template: 6_MEO, attempt: 1
+  measure_financial_terms('agreement_zone_E7', -> number: 2075000). % [12],[13],[8]
+    Error: invalid predicate syntax: No terminal matches '-' in the current parser context, at line 1 col 46
+
+re_financial_terms('agreement_zone_E7', -> number: 2075000).
+                                        ^
+Expected one of: 
+	* SIGNED_NUMBER
+	* LSQB
+	* FUNCTOR
+	* VARIABLE
+	* ATOM_STRING
+
+Previous tokens: Token('COMMA', ',')
+
+

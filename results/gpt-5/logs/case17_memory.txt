@@ -1,12 +1,11 @@
 Case: case17
 Memory (role -> literals):
-  Actor = 'Greek Ministry of Digital Governance', 'KritiNet S.A.'
-  Beneficiary = 'KritiNet S.A.'
-  Designator = 'Greek Ministry of Digital Governance'
-  Effect = 'authorization_to_operate_for_minimum_10_years', 'no_clawback_mechanism', 'no_monitoring_structure_or_public_service_obligations', 'no_wholesale_access_obligation', 'ownership_of_infrastructure', 'unspecified_pricing_access_terms_and_performance_benchmarks'
+  Actor = 'KritiNet', 'greek_ministry_of_digital_governance'
+  Beneficiary = 'KritiNet'
+  Designator = 'greek_ministry_of_digital_governance'
   Fund = 'ERDF'
-  Measure = 'grant_27_2025_erdf_component', 'grant_27_2025_state_budget_component'
+  Measure = 'grant_no_27_2025'
   Process = 'direct_administrative_designation'
-  RegulatoryPurpose = 'connectivity_in_underserved_rural_and_mountainous_areas', 'digital_development', 'regional_cohesion'
-  Resource = erdf_funds_grant27_2025, state_budget_funds_grant27_2025
-  State = 'Greece'
+  RegulatoryPurpose = 'connectivity_underserved_rural_mountainous_areas', 'digital_development_and_regional_cohesion'
+  Resource = 'erdf_contribution', 'greek_state_budget_contribution'
+  State = 'greece'

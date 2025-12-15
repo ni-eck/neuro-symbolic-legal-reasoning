@@ -1,5 +1,6 @@
 % 1_financial_activa
-textual_evidence_of_improved_financial_situation(small_medium_digital_retailers, retail_pricing_regulation_amid_2018). % [7],[8],[10],[13],[14],[15],[16]
+textual_evidence_of_improved_financial_situation('small_and_medium_digital_retailers','retail_pricing_regulation_for_video_games'). % [14]
+textual_evidence_of_improved_financial_situation('retailers','retail_pricing_regulation_for_video_games'). % [16]
 
 % 2_financial_passiva
 % Nothing
@@ -8,32 +9,34 @@ textual_evidence_of_improved_financial_situation(small_medium_digital_retailers,
 % Nothing
 
 % 4_act_of_private_nature
-economic_objective_similar_to_private_investor(retail_pricing_regulation_amid_2018). % [6],[13],[14],[16]
+fallback_act_of_economic_nature('retail_pricing_regulation_for_video_games'). % [3],[6],[7],[15]
 
 % 5_act_of_public_nature
-regulatory_capacity(retail_pricing_regulation_amid_2018). % [3],[6],[7]
+regulatory_capacity('retail_pricing_regulation_for_video_games'). % [3],[6],[7],[15]
 
 % 6_MEO
-textual_evidence_worse_financial_terms(retail_pricing_regulation_amid_2018). % [15],[17],[18],[8],[10]
-measure_financial_terms(retail_pricing_regulation_amid_2018, 34.99). % [7],[8],[10]
+measure_financial_terms('retail_pricing_regulation_for_video_games', 34.99). % [8],[10]
+textual_evidence_worse_financial_terms('retail_pricing_regulation_for_video_games'). % [17],[18],[8],[10]
+textual_evidence_worse_nonfinancial_terms('retail_pricing_regulation_for_video_games'). % [15],[14],[13]
 
 % 7_direct_or_indirect_advantage
-direct_targeting(retail_pricing_regulation_amid_2018, small_medium_digital_retailers). % [6],[13],[14]
-secondary_effects(retail_pricing_regulation_amid_2018, small_medium_digital_retailers, ensured_minimum_margin). % [16],[7],[8]
-channeled_to_group_of_undertakings(small_medium_digital_retailers, protection_from_undercutting). % [11],[12],[13]
+direct_targeting('retail_pricing_regulation_for_video_games', 'retailers'). % [7],[15]
+direct_targeting('retail_pricing_regulation_for_video_games', 'small_and_medium_digital_retailers'). % [14],[15]
 
 % 8_active_transfer_of_resources
-resource_of_central_state_entity(ministry_for_economic_development). % [4],[5]
-resource_of_body_appointed_by_state_to_administer_measure(amid). % [1],[2],[5]
+resource_of_body_appointed_by_state_to_administer_measure('AMID'). % [1],[2],[3],[6]
+resource_of_central_state_entity('ministerial_decree_28_2018'). % [5],[6]
+resource_of_central_state_entity('Ministry_for_Economic_Development'). % [4],[5]
 
 % 9_foregoing_revenue
-actual_price_goods_service(retail_pricing_regulation_amid_2018, 34.99). % [8],[10]
-achieving_policy_objective(retail_pricing_regulation_amid_2018, protection_from_undercutting). % [13],[14]
-revenue_loss_is_justified_by_policy(protection_from_undercutting). % [13],[14]
+actual_price_goods_service('retail_pricing_regulation_for_video_games', 34.99). % [8],[10]
+achieving_policy_objective('retail_pricing_regulation_for_video_games', 'prevent_race_to_bottom_and_protect_small_and_medium_digital_retailers'). % [11],[12],[13],[14]
 
 % 10_imputability
-public_state_authority(amid, italy). % [1],[2]
-adopted_or_administered_by(retail_pricing_regulation_amid_2018, amid). % [1],[3]
-public_state_authority(ministry_for_economic_development, italy). % [4]
-adopted_or_administered_by(retail_pricing_regulation_amid_2018, ministry_for_economic_development). % [4]
-was_designated(amid, retail_pricing_regulation_amid_2018, ministry_for_economic_development). % [5],[6]
+adopted_or_administered_by('retail_pricing_regulation_for_video_games','AMID'). % [1],[3]
+adopted_or_administered_by('retail_pricing_regulation_for_video_games','Ministry_for_Economic_Development'). % [4]
+public_state_authority('AMID','Italy'). % [2]
+public_state_authority('Ministry_for_Economic_Development','Italy'). % [4]
+was_designated('AMID','retail_pricing_regulation_for_video_games','ministerial_decree_28_2018'). % [5],[6]
+public_state_authority('ministerial_decree_28_2018','Italy'). % [5],[6]
+organic_link_with_state_or_intra_state('AMID'). % [2]

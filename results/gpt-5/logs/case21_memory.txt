@@ -3,8 +3,8 @@ Memory (role -> literals):
   Actor = 'Portuguese Ministry for Maritime Infrastructure'
   Beneficiary = 'Portum Energia S.A.'
   Designator = 'Portuguese Ministry for Maritime Infrastructure'
-  Measure = 'agreement_zone_e7_2023', 'gfumdp_framework'
+  Measure = 'exclusive_right_zone_e7_2023'
   RegulatoryPurpose = 'speed_up_green_energy_investment'
-  Resource = 'agreement_zone_e7_fees', 'gfumdp_fees', 'gfumdp_maritime_areas', 'zone_e7_maritime_area'
+  Resource = 'zone_e7_maritime_area'
   State = 'Portugal'
   SystemRatesPrice = 150000, 3000

@@ -1,0 +1,12 @@
+Case: case18
+Memory (role -> literals):
+  Actor = 'euregion_succession_fund_resource'
+  Beneficiary = 'GutesBrot GmbH'
+  Criteria = criteria_euregion_succession_fund_grant
+  Designator = 'north_rhine_westphalia', 'wallonia'
+  IntraState = 'north_rhine_westphalia', 'wallonia'
+  Measure = 'euregion_succession_fund_grant'
+  Process = process_euregion_succession_fund_grant
+  RegulatoryPurpose = support_business_transfers_cross_border_region
+  Resource = 'euregion_succession_fund_resource'
+  State = 'belgium', 'germany'

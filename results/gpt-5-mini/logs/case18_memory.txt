@@ -1,13 +1,13 @@
 Case: case18
 Memory (role -> literals):
-  Actor = euregion_succession_fund, joint_committee, north_rhine_westphalia_government, wallonia_government
-  Beneficiary = euregion_succession_fund, gutesbrot_gmbh
-  Criteria = eligibility_residence_continuity_employment
-  Designator = north_rhine_westphalia_government, wallonia_government
-  Effect = financing_125000000, financing_75000000, grant_300000_to_gutesbrot, support_up_to_15_percent_for_cross_border_undertakings
-  IntraState = north_rhine_westphalia, wallonia
-  Measure = euregion_succession_fund_grant, nrw_allocation, wallonia_allocation
-  Process = joint_committee_selection
-  RegulatoryPurpose = preserve_local_economic_activity_and_employment
-  Resource = financing_125000000, financing_75000000, grant_300000_to_gutesbrot, support_up_to_15_percent_for_cross_border_undertakings
-  State = belgium, germany
+  Actor = 'Euregion Succession Fund', 'joint_committee_selection', 'north_rhine_westphalia', 'wallonia'
+  Beneficiary = 'Euregion Succession Fund', 'GutesBrot GmbH'
+  Criteria = 'eligibility_criteria'
+  Designator = 'north_rhine_westphalia', 'wallonia'
+  Effect = 'business_transfer_support', 'grant_to_gutesbrot'
+  IntraState = 'Belgium', 'Germany'
+  Measure = 'euregion_succession_fund_grant', 'government_contributions'
+  Obligation = 'business_transfer_support'
+  Process = 'joint_committee_selection'
+  RegulatoryPurpose = 'preserve_local_economy_employment_services'
+  Resource = 'Euregion Succession Fund', 'grant_to_gutesbrot_300000', 'north_rhine_westphalia_125_million', 'wallonia_75_million'

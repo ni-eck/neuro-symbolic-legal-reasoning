@@ -12,22 +12,20 @@ textual_evidence_of_improved_financial_situation('commercial_shipping_operators'
 
 % 5_act_of_public_nature
 tax_related('hungarian_excise_duty_exemption_marine_fuel'). % [1],[3]
-regulatory_capacity('hungarian_excise_duty_exemption_marine_fuel'). % [1],[3]
+regulatory_capacity('hungarian_excise_duty_exemption_marine_fuel'). % [3]
 
 % 6_MEO
 % Nothing
 
 % 7_direct_or_indirect_advantage
-direct_targeting('hungarian_excise_duty_exemption_marine_fuel', 'commercial_shipping_operators'). % [3]
-secondary_effects('hungarian_excise_duty_exemption_marine_fuel', 'commercial_shipping_operators', 'marine_fuel_became_cheaper'). % [10]
+direct_targeting('hungarian_excise_duty_exemption_marine_fuel', 'commercial_shipping_operators'). % [3],[10]
 
 % 8_active_transfer_of_resources
 active_resource_flow('hungarian_excise_duty_exemption_marine_fuel', 'excise_duty_revenue'). % [1],[3],[10]
-resource_of_central_state_entity('excise_duty_revenue'). % [1],[2],[3]
+resource_of_central_state_entity('excise_duty_revenue'). % [1],[2]
 
 % 9_foregoing_revenue
 exemptions_reductions_taxes('hungarian_excise_duty_exemption_marine_fuel'). % [1],[3]
-goods_or_services_priced_below_market_value_textual_evidence('hungarian_excise_duty_exemption_marine_fuel'). % [10]
 
 % 10_imputability
 adopted_or_administered_by('hungarian_excise_duty_exemption_marine_fuel', 'hungarian_orszaggyules'). % [1]

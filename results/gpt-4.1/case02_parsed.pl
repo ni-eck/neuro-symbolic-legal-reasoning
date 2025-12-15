@@ -1,5 +1,5 @@
 % 1_financial_activa
-parsed_value_received_rights_licenses('XCA Lda', 'permit_134', 7543234). % [3],[7]
+parsed_value_received_rights_licenses('xca lda', 'permit_no_134', 7543234). % [2],[3],[7]
 
 % 2_financial_passiva
 % Nothing
@@ -11,22 +11,22 @@ parsed_value_received_rights_licenses('XCA Lda', 'permit_134', 7543234). % [3],[
 % Nothing
 
 % 5_act_of_public_nature
-tax_related('permit_134'). % [3],[7]
+tax_related('permit_no_134'). % [3],[7]
 
 % 6_MEO
-measure_financial_terms('permit_134', 7543234). % [7]
+measure_financial_terms('permit_no_134', 7543234). % [7]
 
 % 7_direct_or_indirect_advantage
-direct_targeting('permit_134', 'XCA Lda'). % [2]
+direct_targeting('permit_no_134', 'xca lda'). % [2],[3]
 
 % 8_active_transfer_of_resources
-firm_and_concrete_commitment_to_make_resources_available_at_later_point('permit_134', 'corporate_income_tax_exemption'). % [3],[7]
+firm_and_concrete_commitment_to_make_resources_available_at_later_point('permit_no_134', 'corporate_income_tax_exemption'). % [1],[3],[5],[7]
 resource_of_central_state_entity('corporate_income_tax_exemption'). % [1],[3]
 
 % 9_foregoing_revenue
-exemptions_reductions_taxes('permit_134'). % [3]
-actual_price_goods_service('permit_134', 7543234). % [7]
+exemptions_reductions_taxes('permit_no_134'). % [3]
+actual_price_goods_service('permit_no_134', 7543234). % [7]
 
 % 10_imputability
-adopted_or_administered_by('permit_134', 'Portuguese Ministry of Economy'). % [1]
-public_state_authority('Portuguese Ministry of Economy', 'Portugal'). % [1]
+adopted_or_administered_by('permit_no_134', 'portuguese_ministry_of_economy'). % [1]
+public_state_authority('portuguese_ministry_of_economy', 'portugal'). % [1]

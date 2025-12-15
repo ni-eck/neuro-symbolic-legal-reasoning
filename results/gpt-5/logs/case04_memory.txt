@@ -1,11 +1,11 @@
 Case: case04
 Memory (role -> literals):
-  Actor = 'Danish Agency for Public Finance and Management', 'Danish State', 'Dansk Luftfart A/S'
+  Actor = 'Danish Agency for Public Finance and Management', 'Danish Government', 'Danish State', 'Dansk Luftfart A/S'
   Beneficiary = 'Dansk Luftfart A/S'
-  Designator = 'Danish Agency for Public Finance and Management', 'Danish State'
-  Evaluation = 'eval_2020_winter_doubts'
+  Designator = 'Danish Agency for Public Finance and Management', 'Danish Government', 'Danish State'
+  Evaluation = 'eval_experts_2020'
   Expert = 'experts'
-  Measure = 'payment_2020_11_05', 'recovery_2022_11_08', 'recovery_2024_11_20'
-  RegulatoryPurpose = 'overcome_covid19_liquidity_shortfall'
-  Resource = 'dk_state_budget_funds', 'dl_repayment_funds_2022_11_08', 'dl_repayment_funds_2024_11_20'
+  Measure = 'payment_5nov2020'
+  RegulatoryPurpose = 'covid19_liquidity_shortfall'
+  Resource = 'dk_state_budget'
   State = 'Denmark'

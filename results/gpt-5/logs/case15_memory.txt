@@ -1,14 +1,14 @@
 Case: case15
 Memory (role -> literals):
-  Actor = 'CapInvest SAS', 'Développement Occitanie SA', 'SRI', 'banking consortium', 'employees'
+  Actor = 'CapInvest SAS', 'Développement Occitanie SA', 'Société de Restructuration Industrielle', 'banking consortium'
   Beneficiary = 'Aerolyze SA'
   Designator = 'French Government', 'Ministry of Economics', 'Region of Occitanie'
-  Effect = 'private_consortium_participation_2012'
-  Evaluation = 'experts_profitability_assessment_2012'
-  Expert = 'industry_experts'
+  Effect = 'induced_banking_consortium_participation_2012'
+  Evaluation = 'expert_eval_banks_2012', 'expert_eval_capinvest_2012', 'expert_eval_occ_conv_2012', 'expert_eval_occ_inj_2012', 'expert_eval_sri_2012'
+  Expert = 'sector experts'
   IntraState = 'Occitanie'
-  Measure = 'banking_consortium_funding_2012', 'capinvest_equity_2012', 'occitanie_capital_injection_2012', 'occitanie_loan_conversion_2012', 'sri_debt_waiver_2012'
-  PrivateOperator = 'CapInvest SAS', 'banking consortium'
-  RegulatoryPurpose = 'maintain_industrial_capacity_and_employment_in_the_region'
-  Resource = bank_consortium_private_component_2012, bank_consortium_public_component_2012, capinvest_new_equity_21m_eur, captainvest_new_equity_21m_eur, occitanie_converted_loan_6_5m_eur, occitanie_new_equity_7_5m_eur, sri_waived_debt_18m_eur
+  Measure = 'bank_consortium_funding_2012', 'capinvest_new_equity_2012', 'occitanie_capital_injection_2012', 'occitanie_loan_conversion_2012', 'sri_debt_waiver_2012'
+  PrivateOperator = 'CapInvest SAS'
+  RegulatoryPurpose = 'avoid_social_economic_consequences_liquidation', 'maintain_industrial_capacity_and_employment'
+  Resource = 'bank_consortium_funds', 'capinvest_funds', 'occ_funds', 'occ_loan', 'sri_claim'
   State = 'France'

@@ -1,11 +1,8 @@
 Case: case09
 Memory (role -> literals):
-  Actor = 'belgian_court', 'belgian_ministry_of_finances', 'belgian_state'
-  Beneficiary = 'belectro s.a.'
-  Designator = 'belgian_court', 'belgian_ministry_of_finances', 'belgian_state'
-  Evaluation = 'belgian_court_ruling'
-  Expert = 'belgian_court'
-  Measure = 'belgian_court_ruling', 'inspection_charges_legislation', 'reimbursement_belgian_ministry_2012'
-  RegulatoryPurpose = 'customs_related_technical_inspections'
-  Resource = 'belectro_payments_2004_2009', 'belgian_central_state_budget'
-  State = 'belgium'
+  Actor = 'Belgian Ministry of Finances'
+  Beneficiary = 'BElectro S.A.'
+  Designator = 'Belgian Ministry of Finances'
+  Measure = 'reimbursement_inspection_charges_2012'
+  Resource = 'belgian_central_state_budget'
+  State = 'Belgium'

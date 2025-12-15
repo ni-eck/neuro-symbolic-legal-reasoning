@@ -1,8 +1,8 @@
 Case: case01
 Memory (role -> literals):
   Actor = 'portuguese_ministry_of_economy'
-  Beneficiary = 'xca_lda'
+  Beneficiary = 'XCA Lda'
   Designator = 'portuguese_ministry_of_economy'
-  Measure = 'direct_grant_sines_2015'
+  Measure = 'direct_grant_sines'
   Resource = 'portuguese_general_state_budget'
-  State = 'portugal'
+  State = 'Portugal'

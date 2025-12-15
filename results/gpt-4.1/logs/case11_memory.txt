@@ -1,0 +1,15 @@
+Case: case11
+Memory (role -> literals):
+  Actor = 'authorities_castilla_la_mancha_region'
+  Beneficiary = 'express_sanchez_norte_s.l.', 'servicios_interurbanos_rapidos_s.a.'
+  Criteria = 'interim_bus_contracts_castilla_la_mancha_2020'
+  Designator = 'authorities_castilla_la_mancha_region'
+  IntraState = 'castilla_la_mancha'
+  Measure = 'interim_bus_contracts_castilla_la_mancha_2020'
+  Obligation = 'public_service_obligation_affected_lines_2020'
+  Process = 'award_backup_bidders_castilla_la_mancha_2020'
+  ProcurementProcedure = 'award_backup_bidders_castilla_la_mancha_2020'
+  RegulatoryPurpose = 'public_service_obligation_affected_lines_2020'
+  Resource = 'castilla_la_mancha_regional_budget'
+  State = 'spain'
+  Tender = 'award_backup_bidders_castilla_la_mancha_2020'

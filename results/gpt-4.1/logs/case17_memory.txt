@@ -1,0 +1,11 @@
+Case: case17
+Memory (role -> literals):
+  Actor = 'greek_ministry_of_digital_governance'
+  Beneficiary = 'kritinet s.a.'
+  Designator = 'greek_ministry_of_digital_governance'
+  Fund = 'erdf'
+  Measure = 'crete_next-gen_connectivity_project'
+  Process = 'direct_administrative_designation'
+  RegulatoryPurpose = 'digital_development_and_regional_cohesion'
+  Resource = 'erdf_30000000_eur', 'greek_state_budget_12000000_eur'
+  State = 'greece'

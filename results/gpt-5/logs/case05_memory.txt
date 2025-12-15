@@ -1,12 +1,12 @@
 Case: case05
 Memory (role -> literals):
-  Actor = french_government
-  Beneficiary = managing_entities_of_specialised_investment_structures, small_and_medium_sized_companies, specialised_investment_structures
-  Designator = french_authorities, french_government
-  Effect = encouraged_investment, greater_liquidity_in_sme_segment, higher_demand_for_shares, increased_management_and_entry_fees
-  Evaluation = dl153_fiscal_expenditure_estimate
-  Expert = french_authorities
-  Measure = 'dl_153_2011_article_6_reduced_substitute_tax_rate', dl_153_2011_article_6_reduced_substitute_tax_rate
-  RegulatoryPurpose = encouraged_investment, improve_public_finances, stimulate_economic_growth
-  Resource = french_treasury_tax_revenue
-  State = france
+  Actor = 'french government'
+  Beneficiary = 'managing entities of specialised investment structures', 'small_and_medium_sized_companies', 'specialised investment structures'
+  Designator = 'french government'
+  Effect = 'greater_liquidity', 'higher_demand_for_their_shares', 'increased_management_and_entry_fees'
+  Evaluation = 'fiscal_expenditure_estimate'
+  Expert = 'french authorities'
+  Measure = 'dl_153_2011_art6_reduced_tax'
+  RegulatoryPurpose = 'improve_public_finances', 'stimulate_economic_growth'
+  Resource = 'french_treasury_tax_revenue'
+  State = 'france'

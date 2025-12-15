@@ -1,0 +1,28 @@
+Case: case11
+
+Template: 3_altmark, attempt: 1
+  actual_costs(1240000, 'public_service_obligation_affected_lines_2020'). % [20],[22]   % 620,000km*2 + 600,000km*2
+    Error: invalid predicate syntax: No terminal matches '%' in the current parser context, at line 1 col 73
+
+rvice_obligation_affected_lines_2020'). % [20],[22]
+                                        ^
+Expected one of: 
+	* RPAR
+	* COMMA
+	* RSQB
+
+Previous tokens: Token('DOT', '.')
+
+  reasonable_profit(49600, 'public_service_obligation_affected_lines_2020'). % [18],[20] % 620,000km*2=1,240,000*0.04=49,600
+    Error: invalid predicate syntax: No terminal matches '%' in the current parser context, at line 1 col 76
+
+rvice_obligation_affected_lines_2020'). % [18],[20]
+                                        ^
+Expected one of: 
+	* RPAR
+	* COMMA
+	* RSQB
+
+Previous tokens: Token('DOT', '.')
+
+

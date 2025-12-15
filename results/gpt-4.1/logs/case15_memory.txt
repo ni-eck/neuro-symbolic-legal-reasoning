@@ -1,0 +1,12 @@
+Case: case15
+Memory (role -> literals):
+  Actor = 'banking consortium', 'capinvest sas', 'developpement occitanie sa', 'société de restructuration industrielle'
+  Beneficiary = 'aerolyze sa'
+  Designator = 'ministry of economics'
+  Evaluation = 'expert_opinion_unprofitability_2012'
+  Expert = 'experts'
+  IntraState = 'region of occitanie'
+  Measure = 'banking_consortium_funding_2012', 'capinvest_new_equity_2012', 'developpement_occitanie_capital_injection_2012', 'developpement_occitanie_loan_conversion_2012', 'sri_debt_waiver_2012'
+  PrivateOperator = 'banking consortium', 'capinvest sas', 'société de restructuration industrielle'
+  Resource = 'banking_consortium_funds_2012', 'banking_consortium_public_funds_2012', 'capinvest_internal_resources_2012', 'developpement_occitanie_internal_funds_2012', 'developpement_occitanie_loan_2012', 'sri_debt_writeoff'
+  State = 'france'

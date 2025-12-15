@@ -1,0 +1,8 @@
+Case: case14
+Memory (role -> literals):
+  Actor = 'amid'
+  Beneficiary = 'small_and_medium_sized_digital_retailers'
+  Designator = 'amid', 'ministry_for_economic_development'
+  Measure = 'retail_pricing_regulation_for_video_games'
+  RegulatoryPurpose = 'market_stabilisation_and_protection_of_small_and_medium_sized_digital_retailers'
+  State = 'italy'

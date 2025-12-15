@@ -1,12 +1,11 @@
 Case: case07
 Memory (role -> literals):
-  Actor = 'Cargo & Person Rail S.R.O.', 'Slovak Republic'
+  Actor = 'Cargo & Person Rail S.R.O.', 'Slovak Republic tax authority', 'Slovak Republic'
   Beneficiary = 'Cargo & Person Rail S.R.O.'
-  Designator = 'Slovak Republic'
-  Effect = 'avoidance_of_insolvency', 'preservation_of_viability', 'return_to_sustained_profitability'
-  Evaluation = 'viability_assessment_1', 'viability_assessment_2'
-  Expert = 'independent_investment_bank_1', 'independent_investment_bank_2'
+  Designator = 'Slovak Republic tax authority'
+  Evaluation = 'internal_financial_analysis', 'investment_banks_assessment_1', 'investment_banks_assessment_2'
+  Expert = 'Slovak Republic tax authority', 'independent investment bank'
   Measure = '2013_tax_debt_settlement'
-  RegulatoryPurpose = 'avoidance_of_insolvency', 'preservation_of_viability'
+  RegulatoryPurpose = 'preserve_company_viability'
   Resource = 'slovak_central_budget'
   State = 'Slovak Republic'

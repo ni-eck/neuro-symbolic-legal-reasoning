@@ -1,7 +1,5 @@
 % 1_financial_activa
-parsed_money_received('station_ops_within_20km_cz_border', 'subsidy_border_petrol_2021', 0.08). % [2],[4]
-parsed_money_received('station_ops_20to40km_cz_border', 'subsidy_border_petrol_2021', 0.04). % [2],[5]
-textual_evidence_of_improved_financial_situation('oil_companies_with_price_management_clauses', 'subsidy_border_petrol_2021'). % [9],[11],[12]
+textual_evidence_of_improved_financial_situation('oil_companies', 'petrol_sales_subsidy_czech_border'). % [12]
 
 % 2_financial_passiva
 % Nothing
@@ -10,33 +8,29 @@ textual_evidence_of_improved_financial_situation('oil_companies_with_price_manag
 % Nothing
 
 % 4_act_of_private_nature
-economic_objective_similar_to_private_investor('subsidy_border_petrol_2021'). % [3]
+economic_objective_similar_to_private_investor('petrol_sales_subsidy_czech_border'). % [3]
 
 % 5_act_of_public_nature
-monetary_subsidy('subsidy_border_petrol_2021'). % [2],[4],[5],[6],[7],[8]
-tax_related('excise_increase_petrol_2021'). % [1],[2]
-regulatory_capacity('excise_increase_petrol_2021'). % [1],[2]
+monetary_subsidy('petrol_sales_subsidy_czech_border'). % [2],[4],[5],[6],[7],[8],[9]
+tax_related('polish_excise_duty_increase_petrol_2021'). % [1],[2]
+regulatory_capacity('polish_excise_duty_increase_petrol_2021'). % [1],[2]
 
 % 6_MEO
-intervention_carried_at_same_time('subsidy_border_petrol_2021', 'Polish Government', 'oil_companies_with_price_management_clauses'). % [2],[12]
-measure_financial_terms('subsidy_border_petrol_2021', 100000). % [7]
+intervention_carried_at_same_time('petrol_sales_subsidy_czech_border', 'polish_government', 'oil_companies'). % [3],[11],[12]
 
 % 7_direct_or_indirect_advantage
-direct_targeting('subsidy_border_petrol_2021', 'station_ops_within_20km_cz_border'). % [2],[4],[5]
-direct_targeting('subsidy_border_petrol_2021', 'station_ops_20to40km_cz_border'). % [2],[4],[6]
-secondary_effects('subsidy_border_petrol_2021', 'oil_companies_with_price_management_clauses', 'reduced_cost_of_forecourt_discounts'). % [9],[10],[11],[12]
-channeled_to_group_of_undertakings('oil_companies_with_price_management_clauses', 'reduced_cost_of_forecourt_discounts'). % [9],[10],[11],[12]
+direct_targeting('petrol_sales_subsidy_czech_border', 'service_station_operators_near_czech_border'). % [2],[3],[4],[5],[6]
+secondary_effects('petrol_sales_subsidy_czech_border', 'oil_companies', 'reduction_in_costs_for_forecourt_discounts'). % [9],[10],[11],[12]
+channeled_to_group_of_undertakings('oil_companies', 'reduction_in_costs_for_forecourt_discounts'). % [9],[10],[11],[12]
 
 % 8_active_transfer_of_resources
-active_resource_flow('subsidy_border_petrol_2021', 'state_budget_funds'). % [3],[8]
-firm_and_concrete_commitment_to_make_resources_available_at_later_point('subsidy_border_petrol_2021', 'state_budget_funds'). % [3],[7],[8]
-resource_of_central_state_entity('state_budget_funds'). % [8]
-active_resource_flow('excise_increase_petrol_2021', 'excise_tax_revenue'). % [1],[2]
+active_resource_flow('petrol_sales_subsidy_czech_border', 'polish_state_budget'). % [2],[6],[8]
+resource_of_central_state_entity('polish_state_budget'). % [8]
 
 % 9_foregoing_revenue
-achieving_policy_objective('subsidy_border_petrol_2021', 'maintain_price_competitiveness'). % [3]
+achieving_policy_objective('petrol_sales_subsidy_czech_border', 'maintaining_price_competitiveness'). % [3]
 
 % 10_imputability
-adopted_or_administered_by('excise_increase_petrol_2021', 'Polish Government'). % [1],[2]
-adopted_or_administered_by('subsidy_border_petrol_2021', 'Polish Government'). % [1],[3]
-public_state_authority('Polish Government', 'Poland'). % [-]
+adopted_or_administered_by('polish_excise_duty_increase_petrol_2021', 'polish_government'). % [1],[2]
+adopted_or_administered_by('petrol_sales_subsidy_czech_border', 'polish_government'). % [1],[3]
+public_state_authority('polish_government', 'poland'). % [1]

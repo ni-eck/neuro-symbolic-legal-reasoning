@@ -1,0 +1,10 @@
+Case: case12
+Memory (role -> literals):
+  Actor = 'bundestag', 'ministry_for_economic_affairs_and_climate_action'
+  Beneficiary = 'fastcharge ag'
+  Designator = 'bundestag', 'ministry_for_economic_affairs_and_climate_action'
+  Effect = 'upgrade_in_credit_rating_and_valuation'
+  Measure = 'bundestag_resolution_march_2024'
+  RegulatoryPurpose = 'support_leading_german_battery_industry_and_eu_energy_transition'
+  Resource = 'future_equity_investment_german_central_state'
+  State = 'germany'

@@ -1,0 +1,16 @@
+Case: case08
+
+Template: 2_financial_passiva, attempt: 1
+  parsed_value_granted_services('bus_and_tram_operators_styria', 'styrian_school_student_transport_compensation_scheme', 39_900_000). % [5],[6],[7],[26]
+    Error: invalid predicate syntax: No terminal matches '_' in the current parser context, at line 1 col 122
+
+udent_transport_compensation_scheme', 39_900_000).
+                                        ^
+Expected one of: 
+	* RPAR
+	* COMMA
+	* RSQB
+
+Previous tokens: Token('SIGNED_NUMBER', '39')
+
+

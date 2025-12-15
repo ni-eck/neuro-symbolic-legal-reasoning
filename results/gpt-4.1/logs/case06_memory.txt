@@ -1,0 +1,9 @@
+Case: case06
+Memory (role -> literals):
+  Actor = 'polish_government'
+  Beneficiary = 'border_service_station_operators_0_20km', 'border_service_station_operators_20_40km'
+  Designator = 'polish_government'
+  Measure = 'polish_petrol_subsidy_2021'
+  RegulatoryPurpose = 'maintain_price_competitiveness_near_czech_border'
+  Resource = 'state_budget_funds'
+  State = 'poland'

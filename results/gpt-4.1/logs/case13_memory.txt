@@ -1,0 +1,12 @@
+Case: case13
+Memory (role -> literals):
+  Actor = 'luselec_sa', 'portuguese_government', 'portuguese_legislature'
+  Beneficiary = 'luselec_sa'
+  Designator = 'portuguese_government', 'portuguese_legislature'
+  Evaluation = 'santos_committee_report'
+  Expert = 'professor_helena_santos'
+  Measure = 'article_12_transitional_energy_measures_act_surcharge', 'interior_region_gas_turbine_facility', 'sectoral_adjustment_agreement', 'universal_access_programme'
+  Obligation = 'interior_region_gas_turbine_facility', 'universal_access_programme'
+  RegulatoryPurpose = 'compensation_stranded_costs_state_imposed_obligations'
+  Resource = 'distribution_company_payments_to_luselec_sa', 'electricity_customer_surcharge'
+  State = 'portugal'

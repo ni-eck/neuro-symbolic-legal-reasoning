@@ -1,5 +1,5 @@
 % 1_financial_activa
-parsed_money_received('XCA Lda', 'direct_grant_sines_2015', 15983927.91). % [1]
+parsed_money_received('xca lda', 'investment_grant_sines_2015', 15983927.91). % [1]
 
 % 2_financial_passiva
 % Nothing
@@ -11,22 +11,22 @@ parsed_money_received('XCA Lda', 'direct_grant_sines_2015', 15983927.91). % [1]
 % Nothing
 
 % 5_act_of_public_nature
-monetary_subsidy('direct_grant_sines_2015'). % [1],[4]
+monetary_subsidy('investment_grant_sines_2015'). % [1],[4]
 
 % 6_MEO
-% Nothing
+measure_financial_terms('investment_grant_sines_2015', 15983927.91). % [1]
 
 % 7_direct_or_indirect_advantage
-direct_targeting('direct_grant_sines_2015', 'XCA Lda'). % [1]
+direct_targeting('investment_grant_sines_2015', 'xca lda'). % [1]
 
 % 8_active_transfer_of_resources
-active_resource_flow('direct_grant_sines_2015', 'portugal_state_budget'). % [1]
-resource_of_central_state_entity('portugal_state_budget'). % [1],[4]
+active_resource_flow('investment_grant_sines_2015', 'pt_general_state_budget'). % [1],[4]
+resource_of_central_state_entity('pt_general_state_budget'). % [4]
 
 % 9_foregoing_revenue
 % Nothing
 
 % 10_imputability
-adopted_or_administered_by('direct_grant_sines_2015', 'Portuguese Ministry of Economy'). % [1]
-public_state_authority('Portuguese Ministry of Economy', 'Portugal'). % [1]
-intrastate_of('Alentejo', 'Portugal'). % [2]
+adopted_or_administered_by('investment_grant_sines_2015', 'portuguese ministry of economy'). % [1]
+public_state_authority('portuguese ministry of economy', 'portugal'). % [1]
+intrastate_of('alentejo', 'portugal'). % [2]

@@ -1,0 +1,10 @@
+Case: case04
+Memory (role -> literals):
+  Actor = 'danish_state', 'dansk_luftfart_a_s'
+  Beneficiary = 'dansk_luftfart_a_s'
+  Designator = 'danish_state'
+  Evaluation = 'liquidity_remedy_expert_eval'
+  Expert = 'experts'
+  Measure = 'danish_state_payment_2020'
+  Resource = 'danish_state_budget'
+  State = 'denmark'

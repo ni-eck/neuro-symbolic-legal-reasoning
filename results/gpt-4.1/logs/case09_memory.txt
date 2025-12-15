@@ -1,0 +1,8 @@
+Case: case09
+Memory (role -> literals):
+  Actor = 'belgian_ministry_of_finances'
+  Beneficiary = 'belectro s.a.'
+  Designator = 'belgian_ministry_of_finances'
+  Measure = 'reimbursement_belgian_inspection_charges'
+  Resource = 'belgian_central_state_budget'
+  State = 'belgium'

@@ -1,0 +1,10 @@
+Case: case22
+Memory (role -> literals):
+  Actor = 'romanian_government'
+  Beneficiary = 'large_industrial_operators'
+  Designator = 'romanian_government'
+  Measure = 'freshwater_extraction_certificate_scheme'
+  RegulatoryPurpose = 'safeguard_long_term_environmental_interests_and_encourage_water_efficiency'
+  Resource = 'freshwater_extraction_certificates'
+  State = 'romania'
+  UnionLawObligation = 'directive_(eu)_2020/1743'

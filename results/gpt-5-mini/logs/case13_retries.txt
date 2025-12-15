@@ -1,0 +1,32 @@
+Case: case13
+
+Template: 6_MEO, attempt: 1
+  measure_financial_terms('article_12_transitional_energy_measures_act', -> number: 423840000). % [47],[41]
+    Error: invalid predicate syntax: No terminal matches '-' in the current parser context, at line 1 col 72
+
+e_12_transitional_energy_measures_act', -> number: 423840000).
+                                        ^
+Expected one of: 
+	* SIGNED_NUMBER
+	* LSQB
+	* FUNCTOR
+	* VARIABLE
+	* ATOM_STRING
+
+Previous tokens: Token('COMMA', ',')
+
+  measure_financial_terms('article_12_transitional_energy_measures_act', -> number: 0.0000678). % [40]
+    Error: invalid predicate syntax: No terminal matches '-' in the current parser context, at line 1 col 72
+
+e_12_transitional_energy_measures_act', -> number: 0.0000678).
+                                        ^
+Expected one of: 
+	* SIGNED_NUMBER
+	* LSQB
+	* FUNCTOR
+	* VARIABLE
+	* ATOM_STRING
+
+Previous tokens: Token('COMMA', ',')
+
+
