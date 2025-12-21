@@ -11,7 +11,7 @@
         "direct_targeting('tax exemption', 'XCA'). % [3]",
         "exemptions_reductions_taxes('tax exemption'). % [-];[3]",
         "adopted_or_administered_by('tax exemption', 'portuguese ministry of economy'). % [1]",
-        "public_state_authority('portuguese ministry of economy', 'portugal'). % [-];[3]"
+        "public_state_authority('portuguese ministry of economy', 'portugal'). % [-];[1]"
         ],
     "type_of_measure": "Tax Exemption",
     "state_aid": "True"

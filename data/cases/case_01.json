@@ -12,7 +12,7 @@
         "active_resource_flow('grant', 'public capital'). % [-];[1]",
         "resource_of_central_state_entity('public capital'). % [4]",
         "adopted_or_administered_by('grant', 'portuguese ministry of economy'). % [1]",
-        "public_state_authority('portuguese ministry of economy', 'portugal'). % [-]"
+        "public_state_authority('portuguese ministry of economy', 'portugal'). % [-];[1]"
         ],
     "type_of_measure": "Grant",
     "state_aid": "True"
