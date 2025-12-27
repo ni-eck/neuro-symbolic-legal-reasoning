@@ -325,7 +325,11 @@ def write_model_markdown(
 
 
 def write_global_comparison(results_dir: Path, summaries: List[ModelSummary]) -> None:
-    md_lines = ["# Model Comparison\n"]
+    md_lines = [
+        "# Model Comparison\n",
+        "## Predicate evaluation\n",
+        "_Predicate-only metrics: functor + arity + numeric arguments. Source citations are evaluated separately._\n",
+    ]
 
     headers = ["Model", "TP", "FP", "FN", "Prec", "Rec", "F1"]
     rows = []
