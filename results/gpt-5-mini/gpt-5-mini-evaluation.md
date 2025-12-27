@@ -151,3 +151,109 @@ domain_resources_rights_priced_below_market_rate_textual_evidence               
 ---------------------------------
 218  467  41  31.8%  84.2%  46.2%
 ```
+
+## Source citation evaluation
+
+```text
+Case  Matched              Src_OK  Src_WRONG  Src_acc
+-----------------------------------------------------
+01          7                 7.0        0.0   100.0%
+02          6   5.778800783071405        0.0    96.3%
+03         13   7.606530659712633        5.0    58.5%
+04         12   7.942933008926847        3.0    66.2%
+05         10   6.778800783071405        3.0    67.8%
+06          8   5.778800783071405        2.0    72.2%
+07          6   5.778800783071405        0.0    96.3%
+08         12   6.695496712889445        4.0    55.8%
+09          7   6.606530659712633        0.0    94.4%
+10         17  13.557601566142809        3.0    79.8%
+11         17   12.55760156614281        4.0    73.9%
+12         11   8.778800783071405        2.0    79.8%
+13          6   4.065305579931595        1.0    67.8%
+14          6   4.778800783071405        1.0    79.6%
+15         23                17.0        6.0    73.9%
+16          9    5.25116733581242        3.0    58.3%
+17         10                 4.0        6.0    40.0%
+18         10                10.0        0.0   100.0%
+19          7                 6.0        1.0    85.7%
+20          8   7.606530659712633        0.0    95.1%
+21          4   1.778800783071405        2.0    44.5%
+22          9   6.385331442784038        2.0    70.9%
+```
+
+### Per-predicate source summary
+
+```text
+Predicate                                                                             Matched  Src_OK  Src_WRONG  Src_acc
+-------------------------------------------------------------------------------------------------------------------------
+achieving_policy_objective                                                                  1    0.78       0.00    77.9%
+active_resource_flow                                                                       14   10.56       3.00    75.4%
+adopted_or_administered_by                                                                 24   20.56       3.00    85.7%
+capital_injection                                                                           3    1.00       2.00    33.3%
+channeled_to_group_of_undertakings                                                          3    1.00       2.00    33.3%
+clearly_defined                                                                             4    3.00       1.00    75.0%
+compensation_for_obligation                                                                 6    3.47       1.00    57.9%
+compensation_params_objective                                                               3    0.00       3.00     0.0%
+compensation_params_predefined                                                              3    0.47       2.00    15.7%
+compensation_params_transparent                                                             1    0.00       1.00     0.0%
+converting_private_law_claims                                                               1    0.00       1.00     0.0%
+designed_to_minimise_cost_to_community                                                      1    1.00       0.00   100.0%
+direct_targeting                                                                           26   24.56       1.00    94.5%
+domain_resources_rights_priced_below_market_rate_textual_evidence                           1    0.00       1.00     0.0%
+ex_ante                                                                                     1    0.00       1.00     0.0%
+ex_ante_evaluation                                                                          3    2.78       0.00    92.6%
+exemptions_reductions_taxes                                                                 4    4.00       0.00   100.0%
+expert_evaluation_on_measure_or_similar_action                                              3    3.00       0.00   100.0%
+firm_and_concrete_commitment_to_make_resources_available_at_later_point                     1    1.00       0.00   100.0%
+follows_shareholder_objectives                                                              1    1.00       0.00   100.0%
+granting_access_to_public_domain_resources_special_or_exclusive_rights                      2    1.39       0.00    69.3%
+intervention_carried_at_same_time                                                           1    0.00       1.00     0.0%
+intervention_decided_at_same_time                                                           1    0.00       1.00     0.0%
+intervention_is_significant                                                                 1    1.00       0.00   100.0%
+intrastate_of                                                                               5    2.00       3.00    40.0%
+is_implementation_of                                                                        2    2.00       0.00   100.0%
+is_public_undertaking                                                                       3    3.00       0.00   100.0%
+is_shareholder_of                                                                           1    1.00       0.00   100.0%
+measure_financial_terms                                                                     1    1.00       0.00   100.0%
+monetary_subsidy                                                                            4    2.78       1.00    69.5%
+no_member_state_discretion                                                                  1    1.00       0.00   100.0%
+not_in_favour_of_measure_or_similar_action                                                  3    2.78       0.00    92.6%
+other_indicators_of_public_involvement                                                      1    0.00       1.00     0.0%
+parsed_costs_relieved_monetary_obligations                                                  4    3.78       0.00    94.5%
+parsed_money_received                                                                      12   10.67       0.00    88.9%
+parsed_money_spent                                                                          1    1.00       0.00   100.0%
+parsed_value_granted_rights_licenses                                                        1    0.61       0.00    60.7%
+parsed_value_granted_services                                                               2    2.00       0.00   100.0%
+public_intra_state_authority                                                                5    4.00       1.00    80.0%
+public_procurement_procedure_used                                                           1    1.00       0.00   100.0%
+public_state_authority                                                                     16   10.00       6.00    62.5%
+public_undertaking_of_intra_state                                                           2    2.00       0.00   100.0%
+public_undertaking_of_state                                                                 1    1.00       0.00   100.0%
+regulatory_capacity                                                                         2    0.78       1.00    38.9%
+reimbursement_of_illegally_levied_charges_or_dues                                           1    0.61       0.00    60.7%
+resource_from_international_or_union_fund                                                   1    1.00       0.00   100.0%
+resource_of_body_appointed_by_state_to_administer_measure                                   2    2.00       0.00   100.0%
+resource_of_central_state_entity                                                            6    5.00       1.00    83.3%
+resource_of_intrastate_entity                                                               3    2.00       1.00    66.7%
+resource_of_public_undertaking                                                              2    0.00       2.00     0.0%
+same_terms_and_conditions                                                                   1    0.00       1.00     0.0%
+secondary_effects                                                                           3    1.00       2.00    33.3%
+selection_process_for_measure                                                               1    1.00       0.00   100.0%
+sell_lease_rent_similar                                                                     1    0.00       1.00     0.0%
+tax_related                                                                                 4    3.39       0.00    84.6%
+tender_used                                                                                 1    1.00       0.00   100.0%
+textual_evidence_compensation_does_not_exceed_necessary_costs_plus_reasonable_profit        3    2.00       1.00    66.7%
+textual_evidence_of_improved_financial_situation                                            4    3.00       1.00    75.0%
+textual_evidence_of_improved_financial_valuation                                            2    1.78       0.00    88.9%
+usage_discretion_by_national_authorities                                                    1    1.00       0.00   100.0%
+waiver_private_law_claims                                                                   1    0.00       1.00     0.0%
+was_designated                                                                              4    4.00       0.00   100.0%
+```
+
+### Source summary
+
+```text
+Matched  Src_OK  Src_WRONG  Src_acc
+-----------------------------------
+    218  161.73      48.00    74.2%
+```
