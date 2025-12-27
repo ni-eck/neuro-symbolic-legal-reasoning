@@ -1,5 +1,9 @@
 # Model Comparison
 
+## Predicate evaluation
+
+_Predicate-only metrics: functor + arity + numeric arguments. Source citations are evaluated separately._
+
 ```text
 Model        TP   FP  FN   Prec    Rec     F1
 ---------------------------------------------
