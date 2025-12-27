@@ -1,6 +1,10 @@
 # Evaluation for model `gpt-5`
 
-## Per-case summary
+## Predicate evaluation
+
+_Predicates are matched on functor, arity, and numeric arguments only; string arguments and source citations are not considered in this section._
+
+### Per-case summary
 
 ```text
 Case    TP  FP  FN   Prec     Rec     F1
@@ -29,7 +33,7 @@ case21   4  13   4  23.5%   50.0%  32.0%
 case22   7  10   5  41.2%   58.3%  48.3%
 ```
 
-## Per-predicate summary (all cases)
+### Per-predicate summary (all cases)
 
 ```text
 Predicate                                                                                        TP  FP  FN    Prec     Rec
@@ -141,7 +145,7 @@ sell_price_domain_resources_rights                                              
 domain_resources_rights_priced_below_market_rate_textual_evidence                                 1   0   0  100.0%  100.0%
 ```
 
-## Overall model performance
+### Overall predicate performance
 
 ```text
  TP   FP  FN   Prec    Rec     F1

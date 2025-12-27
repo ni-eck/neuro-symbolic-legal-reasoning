@@ -8,7 +8,7 @@ gpt-5       220  387  39  36.2%  84.9%  50.8%
 gpt-5-mini  218  467  41  31.8%  84.2%  46.2%
 ```
 
-# Source citation comparison
+## Source citation comparison
 ```text
 Model       Matched  Src_OK  Src_WRONG  Src_acc
 -----------------------------------------------
