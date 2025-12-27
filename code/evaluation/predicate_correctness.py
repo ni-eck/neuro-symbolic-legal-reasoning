@@ -209,9 +209,14 @@ def write_model_markdown(
     """
     md_lines = []
     md_lines.append(f"# Evaluation for model `{model_name}`\n")
+    md_lines.append("## Predicate evaluation\n")
+    md_lines.append(
+        "_Predicates are matched on functor, arity, and numeric arguments only; "
+        "string arguments and source citations are not considered in this section._\n"
+    )
 
     # Per-case summary
-    md_lines.append("## Per-case summary\n")
+    md_lines.append("### Per-case summary\n")
 
     headers = ["Case", "TP", "FP", "FN", "Prec", "Rec", "F1"]
     rows = []
@@ -238,7 +243,7 @@ def write_model_markdown(
     md_lines.append("```")
 
     # Per-predicate summary
-    md_lines.append("\n## Per-predicate summary (all cases)\n")
+    md_lines.append("\n### Per-predicate summary (all cases)\n")
 
     headers = ["Predicate", "TP", "FP", "FN", "Prec", "Rec"]
     rows = []
@@ -283,7 +288,7 @@ def write_model_markdown(
     recall    = total_TP / (total_TP + total_FN) if (total_TP + total_FN) else 0.0
     f1        = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
 
-    md_lines.append("\n## Overall model performance\n")
+    md_lines.append("\n### Overall predicate performance\n")
 
     headers = ["TP", "FP", "FN", "Prec", "Rec", "F1"]
     rows = [[

@@ -378,7 +378,7 @@ def write_global_sources_comparison(results_dir: Path, summaries):
     else:
         md = []
 
-    md += ["# Source citation comparison", "```text", render_ascii_table(headers, rows, align_right={1, 2, 3, 4}), "```"]
+    md += ["## Source citation comparison", "```text", render_ascii_table(headers, rows, align_right={1, 2, 3, 4}), "```"]
     md_path.write_text("\n".join(md) + "\n", encoding="utf-8")
 
 
