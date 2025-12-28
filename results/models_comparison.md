@@ -20,3 +20,13 @@ gpt-4.1         211  146.16      64.00    69.3%
 gpt-5           220  162.67      52.00    73.9%
 gpt-5-mini      218  161.73      48.00    74.2%
 ```
+
+## Reasoning comparison (Prolog)
+_Reasoning outputs compared to gold reasoning (rule base + gold facts)._
+```text
+Model       TP  FP  FN    Prec    Rec     F1
+--------------------------------------------
+gpt-4.1     12   0   7  100.0%  63.2%  77.4%
+gpt-5        9   2  10   81.8%  47.4%  60.0%
+gpt-5-mini   6   3  13   66.7%  31.6%  42.9%
+```

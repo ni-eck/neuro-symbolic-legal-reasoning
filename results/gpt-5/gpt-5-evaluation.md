@@ -254,3 +254,44 @@ Matched  Src_OK  Src_WRONG  Src_acc
 -----------------------------------
     220  162.67      52.00    73.9%
 ```
+
+## Reasoning evaluation (Prolog)
+
+_Rule base: `data/rule_base_art_107/state_aid_107.pl`. Target compared against gold reasoning: state_aid/2._
+
+### Per-case reasoning summary
+
+```text
+Case    TP  FP  FN    Prec     Rec      F1
+------------------------------------------
+case01   1   0   0  100.0%  100.0%  100.0%
+case02   1   0   0  100.0%  100.0%  100.0%
+case03   0   0   0    0.0%    0.0%    0.0%
+case04   1   0   0  100.0%  100.0%  100.0%
+case05   1   0   0  100.0%  100.0%  100.0%
+case06   0   0   1    0.0%    0.0%    0.0%
+case07   0   0   0    0.0%    0.0%    0.0%
+case08   1   0   0  100.0%  100.0%  100.0%
+case09   0   0   0    0.0%    0.0%    0.0%
+case10   0   0   1    0.0%    0.0%    0.0%
+case11   0   1   0    0.0%    0.0%    0.0%
+case12   1   0   0  100.0%  100.0%  100.0%
+case13   0   0   1    0.0%    0.0%    0.0%
+case14   0   0   0    0.0%    0.0%    0.0%
+case15   0   0   3    0.0%    0.0%    0.0%
+case16   0   1   0    0.0%    0.0%    0.0%
+case17   1   0   0  100.0%  100.0%  100.0%
+case18   0   0   2    0.0%    0.0%    0.0%
+case19   1   0   0  100.0%  100.0%  100.0%
+case20   0   0   1    0.0%    0.0%    0.0%
+case21   1   0   0  100.0%  100.0%  100.0%
+case22   0   0   1    0.0%    0.0%    0.0%
+```
+
+### Overall reasoning performance
+
+```text
+TP  FP  FN   Prec    Rec     F1
+-------------------------------
+ 9   2  10  81.8%  47.4%  60.0%
+```
