@@ -13,8 +13,7 @@ The aim is to leverage LLMs' ability to handle unstructured text while preservin
 the transparency, auditability, and reproducibility of formal rule-based reasoning.
 
 ## Rule Base and Data
-For this project, a Prolog rule base (`data/rule_base_art_107/state_aid_107.pl`)
-representing two of the four criteria of Article 107(1) TFEU was created. It contains 153 unique predicates and is based on the Commission's [notion of State aid](https://eur-lex.europa.eu/EN/legal-content/summary/notion-of-state-aid.html).
+For this project, a Prolog rule base (`data/rule_base_art_107/state_aid_107.pl`) representing two of the four criteria of Article 107(1) TFEU was created. It contains 153 unique predicates and is based on the Commission's [notion of State aid](https://eur-lex.europa.eu/EN/legal-content/summary/notion-of-state-aid.html).
 Furthermore, 22 cases (either fictional or adapted from real-world decisions with
 changed entities) were created, each with a case description and gold Prolog fact
 representations (`data/cases`).
@@ -23,9 +22,9 @@ representations (`data/cases`).
 The LLM-based parser must extract all relevant relations using the predefined
 predicate set. Because there are 153 possible predicates, the task is split into
 several rounds. In each round, the LLM is prompted to look for specific facts
-defined in a prompt template (`data/prompts`). Because the Prolog rule base
+defined in a prompt template (`data/prompts`). As the Prolog rule base
 requires consistent argument naming, the parser injects a memory block that tracks
-previously used arguments. Outputs are validated with a Prolog grammar and arity
+previously used arguments. Outputs are validated with Prolog grammar and arity
 checks, and invalid predicates trigger a retry prompt. If no predicate applies, the
 model is instructed to output a single line: `% nothing`.
 The parser was run with three models (`GPT-5`, `GPT-5-mini`, `GPT-4.1`).

@@ -32,4 +32,4 @@ Results are reported using TP, FP, FN, precision, recall, and F1.
 ## Limitations
 
 - Predicate evaluation ignores non-numeric argument identity and citations, so structurally correct but semantically incorrect predicates may be counted as correct.
-- Reasoning evaluation targets only `state_aid/2` and does not compare proof traces; it should therefore be interpreted as a proxy for reasoning soundness rather than a full validation.
+- Reasoning evaluation targets only `state_aid/2` and does not compare proof traces. It should therefore be interpreted as a proxy for reasoning soundness rather than a full validation.
