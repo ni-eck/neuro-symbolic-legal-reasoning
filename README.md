@@ -21,14 +21,8 @@ changed entities) were created, each with a case description and gold Prolog fac
 representations (`data/cases`).
 
 ## Parser and Prompts
-The LLM-based parser must extract all relevant relations using the predefined
-predicate set. Because there are 153 possible predicates, the task is split into
-several rounds. In each round, the LLM is prompted to look for specific facts
-defined in a prompt template (`data/prompts`). As the Prolog rule base
-requires consistent argument naming, the parser injects a memory block that tracks
-previously used arguments. Outputs are validated with Prolog grammar and arity
-checks, and invalid predicates trigger a retry prompt. If no predicate applies, the
-model is instructed to output a single line: `% nothing`.
+The LLM-based parser must extract all relevant relations using a predefined predicate set. Given the size of the predicate space (153 predicates), parsing is split into multiple rounds. In each round, the LLM is prompted to extract only the facts defined in a group-specific prompt template (`data/prompts`). Since the Prolog rule base requires consistent argument naming, the parser injects a memory block that tracks previously used arguments. Outputs are validated using Prolog grammar and arity checks, and invalid predicates trigger a retry prompt. If no predicate applies, the model is instructed to output a single line: `% nothing`.
+
 The parser was run with three models (`GPT-5`, `GPT-5-mini`, `GPT-4.1`).
 
 ## Evaluation

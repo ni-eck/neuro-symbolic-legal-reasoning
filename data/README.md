@@ -4,7 +4,7 @@ This folder contains the Dataset, prompt templates, and the Prolog rule base.
 
 ## Subfolders
 
-- `cases/` - JSON cases and gold Prolog facts
+- `cases/` - JSON with case description and gold Prolog facts
 - `prompts/` - YAML prompt templates for the semantic parser
 - `rule_base_art_107/` - Prolog rules for Article 107 reasoning
 
@@ -44,3 +44,7 @@ TFEU, focusing on advantage and state origin. Key design choices include:
 
 Prompts are separated into thematic groups (`N_*.yml`). Each group starts with group-specific information and defines the predicates that can be emitted in that round. 
 The `system_prompt.yml` contains global instructions about the parsing task and output constraints. The `final_instruction.yml` repeats the most important instructions.
+
+## Limitations
+
+- The cases represent a controlled simplification of real State aid proceedings. Actual cases are substantially longer, contain extensive background and procedural material, and often include conflicting, incomplete, or strategically framed information from multiple parties.
