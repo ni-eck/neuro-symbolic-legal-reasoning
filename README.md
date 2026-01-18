@@ -12,6 +12,8 @@ It combines:
 The aim is to leverage LLMs' ability to handle unstructured text while preserving
 the transparency, auditability, and reproducibility of formal rule-based reasoning.
 
+![Pipeline overview](data/visual/neuro-symbolic-pipeline-overview.png)
+
 ## Rule Base and Data
 For this project, a Prolog rule base (`data/rule_base_art_107/state_aid_107.pl`) representing two of the four criteria of Article 107(1) TFEU was created. It contains 153 unique predicates and is based on the Commission's [notion of State aid](https://eur-lex.europa.eu/EN/legal-content/summary/notion-of-state-aid.html).
 Furthermore, 22 cases (either fictional or adapted from real-world decisions with
