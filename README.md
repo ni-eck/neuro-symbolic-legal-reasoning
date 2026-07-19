@@ -34,7 +34,7 @@ Evaluation is performed on the 22 cases across three dimensions:
 
 ## Project structure
 
-- `code/` - Python modules for parsing and evaluation
+- `src/neuro_symbolic_legal_reasoning/` - Python modules for parsing and evaluation
 - `data/` - dataset, prompts, and Prolog rule base
 - `results/` - model outputs and evaluation results
 
@@ -43,17 +43,18 @@ Each folder has its own `README.md` with detailed guidance and further explanati
 ## Requirements
 
 - Python 3.10+ recommended.
-- Dependencies listed in `requirements.txt`.
+- Dependencies and tool configuration are defined in `pyproject.toml`.
+- `uv` is the recommended project manager and runner for this repository.
 - SWI-Prolog installed and on PATH for reasoning evaluation.
 - OpenAI API access for running the semantic parser.
 
 ## Quick start
 
 1) Create and activate a Python environment.
-2) Install dependencies:
+2) Install `uv` and sync the project:
 
 ```bash
-python -m pip install -r requirements.txt
+uv sync --dev
 ```
 
 3) Create an environment file for the OpenAI API key:
@@ -61,27 +62,48 @@ python -m pip install -r requirements.txt
 On Windows:
 
 ```bash
-copy code\parser\.env.example code\parser\.env
+copy .env.example .env
 ```
 
 On Linux/macOS:
 
 ```bash
-mv code/parser/.env.example code/parser/.env
+cp .env.example .env
 ```
 
-Set `OPENAI_API_KEY` in `code/parser/.env`.
+Set `OPENAI_API_KEY` in `.env`.
 
 4) Run the parser:
 
 ```bash
-python code\parser\semantic_parser.py --results_dir results --cases_dir data\cases --templates_dir data\prompts --model gpt-4.1
+uv run -m neuro_symbolic_legal_reasoning.parser.semantic_parser --results_dir results --cases_dir data\cases --templates_dir data\prompts --model gpt-4.1
 ```
 
 5) Evaluate outputs:
 
 ```bash
-python code\evaluation\predicate_correctness.py --gold_dir data\cases --results_dir results
-python code\evaluation\source_correctness.py --gold_dir data\cases --results_dir results
-python code\evaluation\reasoning_correctness.py --results_dir results --rule_base data\rule_base_art_107\state_aid_107.pl
+uv run -m neuro_symbolic_legal_reasoning.evaluation.predicate_correctness --gold_dir data\cases --results_dir results
+uv run -m neuro_symbolic_legal_reasoning.evaluation.source_correctness --gold_dir data\cases --results_dir results
+uv run -m neuro_symbolic_legal_reasoning.evaluation.reasoning_correctness --results_dir results --rule_base data\rule_base_art_107\state_aid_107.pl
+```
+
+6) Run linting and formatting with Ruff:
+
+```bash
+uv run ruff check .
+uv run ruff format .
+```
+
+7) Install pre-commit hooks:
+
+```bash
+uv run pre-commit install
+```
+
+The configured hooks run Ruff on each commit.
+
+8) Lock dependencies when you want to persist the resolved environment:
+
+```bash
+uv lock
 ```
