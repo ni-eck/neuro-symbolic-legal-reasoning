@@ -1,10 +1,9 @@
 # memory.py
 from pathlib import Path
-from typing import Dict, Set, List, Tuple
-from prolog_validation import parse_predicate_text
+from neuro_symbolic_legal_reasoning.parser.prolog_validation import parse_predicate_text
 
 
-def init_memory() -> Dict[str, Set[str]]:
+def init_memory() -> dict[str, set[str]]:
     """
     Memory is: role_name -> set of literals.
     Example:
@@ -16,7 +15,11 @@ def init_memory() -> Dict[str, Set[str]]:
     return {}
 
 
-def update_memory_from_reply(memory: Dict[str, Set[str]], reply: str, role_map: Dict[str, Dict[int, str]]) -> None:
+def update_memory_from_reply(
+    memory: dict[str, set[str]],
+    reply: str,
+    role_map: dict[str, dict[int, str]],
+) -> None:
     """
     Scan a reply text, parse each predicate line, and update memory
     with role_name -> set(literals) based on the role_map.
@@ -53,7 +56,7 @@ def update_memory_from_reply(memory: Dict[str, Set[str]], reply: str, role_map: 
             memory.setdefault(role, set()).add(str(literal))
 
 
-def build_memory_block(memory: Dict[str, Set[str]]) -> str:
+def build_memory_block(memory: dict[str, set[str]]) -> str:
     """
     Build the textual block to include in the prompt showing, for each role,
     which literals have been seen.
@@ -69,7 +72,7 @@ def build_memory_block(memory: Dict[str, Set[str]]) -> str:
     if not memory:
         return ""
 
-    lines: List[str] = []
+    lines: list[str] = []
     lines.append(
         "Memory: Previously parsed arguments (grouped by role). "
         "If you refer to the same entity, measure, action, etc., you MUST reuse the exact literal:"
@@ -80,13 +83,14 @@ def build_memory_block(memory: Dict[str, Set[str]]) -> str:
         lines.append(f"{role} = {lits}")
 
     lines.append(
-        "Repeat the exact literal for the same entity, measure, action, etc. — no paraphrasing or renaming.\n"
+        "Repeat the exact literal for the same entity, measure, action, etc. "
+        "— no paraphrasing or renaming.\n"
     )
 
     return "\n".join(lines) + "\n"
 
 
-def write_memory_log_txt(case_id: str, memory: Dict[str, Set[str]], logs_dir: Path) -> None:
+def write_memory_log_txt(case_id: str, memory: dict[str, set[str]], logs_dir: Path) -> None:
     """
     Write a plain-text memory log for this case:
         Case: C1
@@ -97,7 +101,7 @@ def write_memory_log_txt(case_id: str, memory: Dict[str, Set[str]], logs_dir: Pa
     logs_dir.mkdir(parents=True, exist_ok=True)
     out_path = logs_dir / f"{case_id}_memory.txt"
 
-    lines: List[str] = [f"Case: {case_id}", "Memory (role -> literals):"]
+    lines: list[str] = [f"Case: {case_id}", "Memory (role -> literals):"]
 
     if not memory:
         lines.append("  (empty)")

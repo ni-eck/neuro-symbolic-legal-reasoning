@@ -2,18 +2,19 @@
 
 import argparse
 import json
-from pathlib import Path
-from typing import Dict, List, Tuple, Any
-from dataclasses import dataclass
 from collections import defaultdict
+from dataclasses import dataclass
+from pathlib import Path
 import re
-from code.parser.prolog_validation import parse_predicate_text
+from typing import Any
+
+from neuro_symbolic_legal_reasoning.parser.prolog_validation import parse_predicate_text
 
 # DATA STRUCTURES
 @dataclass
 class Predicate:
     functor: str
-    args: List[Any]
+    args: list[Any]
 
 
 @dataclass
@@ -38,7 +39,7 @@ class ModelSummary:
 
 
 # GOLD CASE LOADING
-def load_gold_case(json_path: Path) -> Tuple[str, List[Predicate]]:
+def load_gold_case(json_path: Path) -> tuple[str, list[Predicate]]:
     """
     Load the gold predicate list from a JSON file.
     Returns:
@@ -48,7 +49,7 @@ def load_gold_case(json_path: Path) -> Tuple[str, List[Predicate]]:
     data = json.loads(json_path.read_text(encoding="utf-8"))
     case_id = data["id"]
 
-    gold_predicates: List[Predicate] = []
+    gold_predicates: list[Predicate] = []
 
     for raw_predicate in data.get("gold_parsing", []):
         predicate_part = raw_predicate.split("%")[0].strip()
@@ -62,11 +63,11 @@ def load_gold_case(json_path: Path) -> Tuple[str, List[Predicate]]:
 
 
 # PARSED CASE LOADING
-def load_parsed_case(pl_path: Path) -> List[Predicate]:
+def load_parsed_case(pl_path: Path) -> list[Predicate]:
     """
     Load the LLM-parsed predicates from the .pl file.
     """
-    parsed_predicates: List[Predicate] = []
+    parsed_predicates: list[Predicate] = []
 
     for raw_line in pl_path.read_text(encoding="utf-8").splitlines():
         line = raw_line.strip()
@@ -100,7 +101,7 @@ def predicates_match(gold: Predicate, parsed: Predicate) -> bool:
     if len(gold.args) != len(parsed.args):
         return False
 
-    for gold_arg, parsed_arg in zip(gold.args, parsed.args):
+    for gold_arg, parsed_arg in zip(gold.args, parsed.args, strict=True):
         gold_is_num = isinstance(gold_arg, (int, float))
         parsed_is_num = isinstance(parsed_arg, (int, float))
 
@@ -116,9 +117,9 @@ def predicates_match(gold: Predicate, parsed: Predicate) -> bool:
 
 # CASE EVALUATION
 def evaluate_single_case(
-    gold_predicates: List[Predicate],
-    parsed_predicates: List[Predicate],
-    predicate_aggregate: Dict[str, Dict[str, int]],
+    gold_predicates: list[Predicate],
+    parsed_predicates: list[Predicate],
+    predicate_aggregate: dict[str, dict[str, int]],
 ) -> CaseEvaluation:
     """
     Evaluate predicate-level TP/FP/FN for ONE case.
@@ -152,7 +153,7 @@ def evaluate_single_case(
 
     # 2. All leftover parsed preds → FP
     FP = 0
-    for used, parsed_pred in zip(parsed_used, parsed_predicates):
+    for used, parsed_pred in zip(parsed_used, parsed_predicates, strict=True):
         if not used:
             FP += 1
             functor = parsed_pred.functor
@@ -177,12 +178,12 @@ def render_ascii_table(headers, rows, align_right=None):
 
     str_rows = [[str(c) for c in row] for row in rows]
 
-    cols = list(zip(headers, *str_rows))
+    cols = list(zip(headers, *str_rows, strict=True))
     widths = [max(len(cell) for cell in col) for col in cols]
 
     def fmt_row(row):
         out = []
-        for i, (cell, w) in enumerate(zip(row, widths)):
+        for i, (cell, w) in enumerate(zip(row, widths, strict=True)):
             if i in align_right:
                 out.append(cell.rjust(w))
             else:
@@ -201,8 +202,8 @@ def render_ascii_table(headers, rows, align_right=None):
 def write_model_markdown(
     model_name: str,
     model_dir: Path,
-    per_case_results: Dict[str, CaseEvaluation],
-    predicate_aggregate: Dict[str, Dict[str, int]],
+    per_case_results: dict[str, CaseEvaluation],
+    predicate_aggregate: dict[str, dict[str, int]],
 ) -> ModelSummary:
     """
     Writes results/<model>/evaluation.md and returns ModelSummary.
@@ -324,11 +325,14 @@ def write_model_markdown(
     )
 
 
-def write_global_comparison(results_dir: Path, summaries: List[ModelSummary]) -> None:
+def write_global_comparison(results_dir: Path, summaries: list[ModelSummary]) -> None:
     md_lines = [
         "# Model Comparison\n",
         "## Predicate evaluation\n",
-        "_Predicate-only metrics: functor + arity + numeric arguments. Source citations are evaluated separately._\n",
+        (
+            "_Predicate-only metrics: functor + arity + numeric arguments. "
+            "Source citations are evaluated separately._\n"
+        ),
     ]
 
     headers = ["Model", "TP", "FP", "FN", "Prec", "Rec", "F1"]
@@ -371,7 +375,7 @@ def main():
     cfg = parser.parse_args()
 
     # Load gold cases
-    gold_cases: Dict[str, List[Predicate]] = {}
+    gold_cases: dict[str, list[Predicate]] = {}
 
     for json_file in sorted(cfg.gold_dir.glob("case_*.json")):
         if not re.match(r"case_\d{2}\.json$", json_file.name):
@@ -379,7 +383,7 @@ def main():
         case_id, preds = load_gold_case(json_file)
         gold_cases[case_id] = preds
 
-    model_summaries: List[ModelSummary] = []
+    model_summaries: list[ModelSummary] = []
 
     # Evaluate each model directory
     for model_dir in sorted(cfg.results_dir.iterdir()):
@@ -387,7 +391,7 @@ def main():
             continue
 
         model_name = model_dir.name
-        per_case_results: Dict[str, CaseEvaluation] = {}
+        per_case_results: dict[str, CaseEvaluation] = {}
         predicate_aggregate = defaultdict(lambda: {"TP": 0, "FP": 0, "FN": 0})
 
         for case_id, gold_predicates in gold_cases.items():

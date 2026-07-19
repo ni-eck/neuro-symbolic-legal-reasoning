@@ -32,7 +32,7 @@ def main():
         sys.exit(1)
 
     for json_file in json_files:
-        with open(json_file, "r", encoding="utf-8") as f:
+        with open(json_file, encoding="utf-8") as f:
             data = json.load(f)
 
         prolog_facts = data.get("gold_parsing", [])

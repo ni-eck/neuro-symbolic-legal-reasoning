@@ -33,6 +33,7 @@ wheelhouse/
 # Test / coverage
 ############################
 .pytest_cache/
+.ruff_cache/
 .tox/
 .nox/
 coverage/

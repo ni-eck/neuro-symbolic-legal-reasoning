@@ -5,10 +5,9 @@ import re
 import sys
 from collections import defaultdict
 from pathlib import Path
-from typing import List, Tuple
 
-from code.evaluation.predicate_correctness import Predicate, predicates_match, render_ascii_table
-from code.parser.prolog_validation import parse_predicate_text
+from neuro_symbolic_legal_reasoning.evaluation.predicate_correctness import Predicate
+from neuro_symbolic_legal_reasoning.parser.prolog_validation import parse_predicate_text
 
 SRC_TOKEN_RE = re.compile(r"\s*(\(|\)|,|;|\[[^\[\]]*\]|None)\s*", re.IGNORECASE)
 CIT_RE = re.compile(r"\[([-A-Za-z0-9_]+)\]")
@@ -16,7 +15,7 @@ CIT_RE = re.compile(r"\[([-A-Za-z0-9_]+)\]")
 
 # Parsing helpers -------------------------------------------------------------
 # 
-def parse_source_rule(source_expression: str) -> List[set]:
+def parse_source_rule(source_expression: str) -> list[set]:
     """
     Parse a gold source citation rule into a list of acceptable citation sets.
 
@@ -135,7 +134,7 @@ def parse_source_rule(source_expression: str) -> List[set]:
         raise ValueError("Trailing junk in source rule")
 
     # Remove duplicate clauses while preserving order
-    unique_clauses: List[set] = []
+    unique_clauses: list[set] = []
     for clause in parsed_clauses:
         if clause not in unique_clauses:
             unique_clauses.append(clause)
@@ -167,7 +166,7 @@ def load_lists(gold: Path, parsed: Path):
         try:
             parsed_src = parse_source_rule(src_str)
         except Exception as exc:
-            raise ValueError(f"{gold}: {exc} in line: {str(ln).strip()}")
+            raise ValueError(f"{gold}: {exc} in line: {str(ln).strip()}") from exc
         gold_rel.append((pred, parsed_src))
 
     parsed_rel = []
@@ -183,7 +182,7 @@ def load_lists(gold: Path, parsed: Path):
     return gold_rel, parsed_rel
 
 
-def _signature(pred: Predicate) -> Tuple[str, int, Tuple[Tuple[int, float], ...]]:
+def _signature(pred: Predicate) -> tuple[str, int, tuple[tuple[int, float], ...]]:
     """
     Build a matching signature: functor, arity, and positional numeric args.
     Non-numeric args are ignored (predicates_match treats them as wildcards).
@@ -197,7 +196,14 @@ def _signature(pred: Predicate) -> Tuple[str, int, Tuple[Tuple[int, float], ...]
 
 # Scoring ---------------------------------------------------------------------
 
-def _score_sources(dnf_clauses, predicted_set, ratio: float, min_req: int, free_irrelevant: int, decay_alpha: float) -> float:
+def _score_sources(
+    dnf_clauses,
+    predicted_set,
+    ratio: float,
+    min_req: int,
+    free_irrelevant: int,
+    decay_alpha: float,
+) -> float:
     """
     Score citations for a single predicate match.
     Returns a value in [0,1].
@@ -228,12 +234,12 @@ def render_ascii_table(headers, rows, align_right=None):
     if align_right is None:
         align_right = set()
     str_rows = [[str(row[h]) for h in headers] for row in rows]
-    cols = list(zip(headers, *str_rows))
+    cols = list(zip(headers, *str_rows, strict=True))
     widths = [max(len(cell) for cell in col) for col in cols]
 
     def fmt_row(row):
         out = []
-        for i, (cell, w) in enumerate(zip(row, widths)):
+        for i, (cell, w) in enumerate(zip(row, widths, strict=True)):
             out.append(str(cell).rjust(w) if i in align_right else str(cell).ljust(w))
         return "  ".join(out)
 
@@ -306,7 +312,13 @@ def evaluate_single_case(gpath: Path, ppath: Path, args):
 
 # Markdown writers ------------------------------------------------------------
 
-def write_model_sources_markdown(model_dir: Path, model_name: str, per_case_rows, summary, predicate_stats):
+def write_model_sources_markdown(
+    model_dir: Path,
+    model_name: str,
+    per_case_rows,
+    summary,
+    predicate_stats,
+):
     md_path = model_dir / f"{model_name}-evaluation.md"
     if md_path.exists():
         existing = md_path.read_text(encoding="utf-8").rstrip()
@@ -378,7 +390,12 @@ def write_global_sources_comparison(results_dir: Path, summaries):
     else:
         md = []
 
-    md += ["## Source citation comparison", "```text", render_ascii_table(headers, rows, align_right={1, 2, 3, 4}), "```"]
+    md += [
+        "## Source citation comparison",
+        "```text",
+        render_ascii_table(headers, rows, align_right={1, 2, 3, 4}),
+        "```",
+    ]
     md_path.write_text("\n".join(md) + "\n", encoding="utf-8")
 
 
@@ -395,7 +412,11 @@ def main():
 
     args = ap.parse_args()
 
-    gold_files = [p for p in args.gold_dir.glob("case_*.json") if re.match(r"case_\d{2}\.json$", p.name)]
+    gold_files = [
+        p
+        for p in args.gold_dir.glob("case_*.json")
+        if re.match(r"case_\d{2}\.json$", p.name)
+    ]
     if not gold_files:
         sys.exit("No gold files found.")
 
@@ -440,7 +461,13 @@ def main():
         }
         summaries.append(summary)
 
-        write_model_sources_markdown(model_dir, model_name, per_case_rows, summary, model_predicate_stats)
+        write_model_sources_markdown(
+            model_dir,
+            model_name,
+            per_case_rows,
+            summary,
+            model_predicate_stats,
+        )
 
     if summaries:
         write_global_sources_comparison(args.results_dir, summaries)

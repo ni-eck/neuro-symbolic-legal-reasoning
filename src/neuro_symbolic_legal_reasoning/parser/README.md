@@ -9,7 +9,7 @@ logs retries and memory to keep outputs auditable.
 From the repository root:
 
 ```bash
-python code\parser\semantic_parser.py --results_dir results --cases_dir data\cases --templates_dir data\prompts --model gpt-4.1
+uv run -m neuro_symbolic_legal_reasoning.parser.semantic_parser --results_dir results --cases_dir data\cases --templates_dir data\prompts --model gpt-4.1
 ```
 
 ## CLI arguments
@@ -42,7 +42,7 @@ If a template yields no facts, the parser writes a `% nothing` marker.
 - `prolog_validation.py` - Prolog predicate parser and validator. Builds a role
   map from templates.
 - `memory.py` - tracks previously extracted literals and injects a memory block.
-- `.env.example` - template for the OpenAI API key.
+- `.env.example` - root-level template for the OpenAI API key.
 
 ## How the parser works (step by step)
 

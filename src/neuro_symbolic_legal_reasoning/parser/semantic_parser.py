@@ -3,23 +3,36 @@ import argparse
 import json
 import time
 from pathlib import Path
-from typing import Dict, List, Tuple
+
 from dotenv import load_dotenv
-from openai import OpenAI, APIError, RateLimitError, APITimeoutError
-from prompts import load_prompts, build_prompt, build_retry_prompt
-from prolog_validation import build_role_map, validate_reply
-from memory import (init_memory, update_memory_from_reply, build_memory_block, write_memory_log_txt)
+from openai import APITimeoutError, OpenAI, RateLimitError
+
+from neuro_symbolic_legal_reasoning.parser.memory import (
+    build_memory_block,
+    init_memory,
+    update_memory_from_reply,
+    write_memory_log_txt,
+)
+from neuro_symbolic_legal_reasoning.parser.prompts import (
+    build_prompt,
+    build_retry_prompt,
+    load_prompts,
+)
+from neuro_symbolic_legal_reasoning.parser.prolog_validation import (
+    build_role_map,
+    validate_reply,
+)
 
 load_dotenv()
 client = OpenAI()  
 
 # CASE LOADING
-def load_cases(path: Path) -> List[Dict]:
+def load_cases(path: Path) -> list[dict]:
     """
-    Load cases from JSON file or directory of JSON files that are named case_XX.json (XX = two digits).
+    Load cases from a JSON file or a directory of `case_XX.json` files.
     Each case must have: 'id', 'case_description'.
     """
-    cases: List[Dict] = []
+    cases: list[dict] = []
     if path.is_file():
         data = json.loads(path.read_text(encoding="utf-8"))
         cases.extend(data if isinstance(data, list) else [data])
@@ -47,13 +60,13 @@ def call_model(system_prompt: str, user_prompt: str, model: str, max_attempts: i
             )
             return resp.output_text or ""
 
-        except RateLimitError as e:
+        except RateLimitError:
             print(f"[RateLimitError] attempt {attempt}/{max_attempts}: waiting {delay}s")
             time.sleep(delay)
             delay = min(delay * 2, 60)  # cap at 60 seconds
             continue
 
-        except (APITimeoutError) as e:
+        except APITimeoutError:
             # transient server errors
             print(f"[APITimeoutError] attempt {attempt}/{max_attempts}: waiting {delay}s")
             time.sleep(delay)
@@ -69,7 +82,12 @@ def call_model(system_prompt: str, user_prompt: str, model: str, max_attempts: i
 
 
 # RETRY LOGGING
-def append_retry_log_lines(buffer: List[str], template_name: str, attempt: int, invalid_info: List[Tuple[str, str]]) -> None:
+def append_retry_log_lines(
+    buffer: list[str],
+    template_name: str,
+    attempt: int,
+    invalid_info: list[tuple[str, str]],
+) -> None:
     buffer.append(f"Template: {template_name}, attempt: {attempt}")
     for line, err in invalid_info:
         buffer.append(f"  {line}")
@@ -77,7 +95,7 @@ def append_retry_log_lines(buffer: List[str], template_name: str, attempt: int, 
     buffer.append("")
 
 
-def write_retry_log_txt(case_id: str, retry_log_lines: List[str], logs_dir: Path) -> None:
+def write_retry_log_txt(case_id: str, retry_log_lines: list[str], logs_dir: Path) -> None:
     if not retry_log_lines:
         return
     logs_dir.mkdir(parents=True, exist_ok=True)
@@ -87,11 +105,11 @@ def write_retry_log_txt(case_id: str, retry_log_lines: List[str], logs_dir: Path
 
 # PROCESS SINGLE CASE
 def process_case(
-    case: Dict,
+    case: dict,
     system_prompt: str,
-    templates: List[Tuple[str, str]],
+    templates: list[tuple[str, str]],
     final_instruction: str,
-    role_map: Dict[str, Dict[int, str]],
+    role_map: dict[str, dict[int, str]],
     model: str,
     output_dir: Path,
     logs_dir: Path,
@@ -112,12 +130,12 @@ def process_case(
 
     # State initialization
     memory_state = init_memory()
-    retry_log_lines: List[str] = []
-    output_lines: List[str] = []
+    retry_log_lines: list[str] = []
+    output_lines: list[str] = []
 
 
     # Template loop
-    for idx, (template_name, template_prompt) in enumerate(templates, start=1):
+    for template_name, template_prompt in templates:
 
         # Memory block only if memory exists and it's not the first template
         memory_block = "" if not memory_state else build_memory_block(memory_state)
@@ -229,7 +247,10 @@ def main():
         "--templates_dir",
         type=Path,
         required=True,
-        help="Directory containing YAML templates (system_prompt.yml, final_instruction.yml, numeric templates).",
+        help=(
+            "Directory containing YAML templates "
+            "(system_prompt.yml, final_instruction.yml, numeric templates)."
+        ),
     )
 
     parser.add_argument(

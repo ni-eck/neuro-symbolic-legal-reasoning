@@ -1,15 +1,16 @@
 # prompts.py
 import re
-import yaml
 from pathlib import Path
-from typing import Dict, List, Tuple
 
-def _load_yaml(path: Path) -> Dict:
+import yaml
+
+
+def _load_yaml(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 
-def load_prompts(templates_dir: Path) -> Tuple[str, List[Tuple[str, str]], str]:
+def load_prompts(templates_dir: Path) -> tuple[str, list[tuple[str, str]], str]:
     """
     Load system prompt, numeric templates, and final instruction from YAML files.
 
@@ -32,7 +33,7 @@ def load_prompts(templates_dir: Path) -> Tuple[str, List[Tuple[str, str]], str]:
     system_prompt = str(system_data.get("prompt", "")).strip()
     final_instruction = str(final_data.get("prompt", "")).strip()
 
-    templates_raw: List[Tuple[str, str, int]] = []
+    templates_raw: list[tuple[str, str, int]] = []
 
     for yml in templates_dir.glob("*.yml"):
         stem = yml.stem
@@ -52,11 +53,16 @@ def load_prompts(templates_dir: Path) -> Tuple[str, List[Tuple[str, str]], str]:
         raise SystemExit(f"No numeric templates (e.g. '1_*.yml') found in {templates_dir}")
 
     templates_raw.sort(key=lambda t: t[2])
-    templates: List[Tuple[str, str]] = [(name, prompt) for (name, prompt, _n) in templates_raw]
+    templates: list[tuple[str, str]] = [(name, prompt) for (name, prompt, _n) in templates_raw]
 
     return system_prompt, templates, final_instruction
 
-def build_prompt(case_description: str, template_prompt: str, final_instruction: str, memory_block: str) -> str:
+def build_prompt(
+    case_description: str,
+    template_prompt: str,
+    final_instruction: str,
+    memory_block: str,
+) -> str:
     parts = [f"Case description:\n{case_description.strip()}\n"]
     if memory_block:
         parts.append(memory_block.strip() + "\n")
@@ -68,7 +74,7 @@ def build_prompt(case_description: str, template_prompt: str, final_instruction:
 def build_retry_prompt(
     original_user_prompt: str,
     last_assistant_reply: str,
-    invalid_info: List[Tuple[str, str]],
+    invalid_info: list[tuple[str, str]],
     memory_block: str | None = None,
 ) -> str:
     """
@@ -82,7 +88,7 @@ def build_retry_prompt(
       
     Returns a single string to be passed as the new user prompt.
     """
-    lines: List[str] = []
+    lines: list[str] = []
 
     # Original user prompt
     lines.append("\nOriginal user prompt:")

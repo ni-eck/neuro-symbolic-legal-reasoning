@@ -11,9 +11,9 @@ Scripts for evaluating parsed Prolog facts against gold data.
 ## Usage
 
 ```bash
-python code\evaluation\predicate_correctness.py --gold_dir data\cases --results_dir results
-python code\evaluation\source_correctness.py --gold_dir data\cases --results_dir results
-python code\evaluation\reasoning_correctness.py --results_dir results --rule_base data\rule_base_art_107\state_aid_107.pl
+uv run -m neuro_symbolic_legal_reasoning.evaluation.predicate_correctness --gold_dir data\cases --results_dir results
+uv run -m neuro_symbolic_legal_reasoning.evaluation.source_correctness --gold_dir data\cases --results_dir results
+uv run -m neuro_symbolic_legal_reasoning.evaluation.reasoning_correctness --results_dir results --rule_base data\rule_base_art_107\state_aid_107.pl
 ```
 
 ## CLI arguments

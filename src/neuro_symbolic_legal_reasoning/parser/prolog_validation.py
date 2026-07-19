@@ -2,7 +2,8 @@
 
 import re
 from pathlib import Path
-from typing import Dict, List, Tuple, Any
+from typing import Any
+
 from lark import Lark, Transformer, exceptions as lark_exceptions
 import yaml
 
@@ -71,7 +72,7 @@ _PROLOG_PARSER = Lark(
 )
 
 
-def parse_predicate_text(text: str) -> Tuple[str, List[Any]]:
+def parse_predicate_text(text: str) -> tuple[str, list[Any]]:
     """
     Parse 'pred(arg1, arg2, ...)' and return (functor, args).
     Raises ValueError on failure.
@@ -80,18 +81,18 @@ def parse_predicate_text(text: str) -> Tuple[str, List[Any]]:
         functor, args = _PROLOG_PARSER.parse(text)
         return functor, args
     except lark_exceptions.LarkError as exc:
-        raise ValueError(str(exc))
+        raise ValueError(str(exc)) from exc
 
 
 
 # ROLE MAP
 
 
-def _load_yaml(path: Path) -> Dict:
+def _load_yaml(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
-MANUAL_ROLE_OVERRIDES: Dict[str, Dict[int, str]] = {}
+MANUAL_ROLE_OVERRIDES: dict[str, dict[int, str]] = {}
 
 # Normalization
 _TYPED_ARG_RE = re.compile(r"->\s*number\s*:\s*([A-Za-z_][A-Za-z0-9_]*)")
@@ -117,7 +118,7 @@ def normalize_template_predicate_line(line: str) -> str:
 
     return s
 
-def build_role_map(templates_dir: Path) -> Dict[str, Dict[int, str]]:
+def build_role_map(templates_dir: Path) -> dict[str, dict[int, str]]:
     """
     Build a mapping: functor -> {arg_index: role_name}
 
@@ -125,7 +126,7 @@ def build_role_map(templates_dir: Path) -> Dict[str, Dict[int, str]]:
     Any line that parses as a predicate is used to infer argument role names
     from the argument tokens (e.g. Beneficiary -> beneficiary).
     """
-    role_map: Dict[str, Dict[int, Dict]] = {}
+    role_map: dict[str, dict[int, dict]] = {}
 
     for yml in templates_dir.glob("*.yml"):
         stem = yml.stem
@@ -176,7 +177,7 @@ def build_role_map(templates_dir: Path) -> Dict[str, Dict[int, str]]:
 
 # VALIDATION
 
-def _strip_code_fences(text: str) -> List[str]:
+def _strip_code_fences(text: str) -> list[str]:
     return [
         ln.rstrip()
         for ln in text.splitlines()
@@ -194,8 +195,8 @@ def _is_nothing_line(line: str) -> bool:
 
 def validate_reply(
     reply: str,
-    role_map: Dict[str, Dict[int, str]],
-) -> Tuple[List[str], List[Tuple[str, str]], bool]:
+    role_map: dict[str, dict[int, str]],
+) -> tuple[list[str], list[tuple[str, str]], bool]:
     """
     Validate a model reply.
 
@@ -217,8 +218,8 @@ def validate_reply(
     if len(non_empty) == 1 and _is_nothing_line(non_empty[0]):
         return [non_empty[0]], [], True
 
-    valid_lines: List[str] = []
-    invalid_info: List[Tuple[str, str]] = []
+    valid_lines: list[str] = []
+    invalid_info: list[tuple[str, str]] = []
 
     allowed_preds = set(role_map.keys())
 

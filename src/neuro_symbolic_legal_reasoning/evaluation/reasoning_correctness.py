@@ -3,10 +3,11 @@ import json
 import re
 import subprocess
 import tempfile
+from collections.abc import Iterable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable, List, Tuple, Set
-from code.evaluation.predicate_correctness import render_ascii_table
+
+from neuro_symbolic_legal_reasoning.evaluation.predicate_correctness import render_ascii_table
 
 
 # Data helpers
@@ -63,12 +64,17 @@ def _write_temp_facts(lines: Iterable[str]) -> Path:
     return Path(tmp.name)
 
 
-def _extract_gold_facts(json_path: Path) -> List[str]:
+def _extract_gold_facts(json_path: Path) -> list[str]:
     data = json.loads(json_path.read_text(encoding="utf-8"))
     return [str(raw).strip() for raw in data.get("gold_parsing", []) if str(raw).strip()]
 
 
-def _run_prolog_query(rule_base: Path, facts_path: Path, target: TargetPredicate, timeout: int = 10) -> Set[Tuple]:
+def _run_prolog_query(
+    rule_base: Path,
+    facts_path: Path,
+    target: TargetPredicate,
+    timeout: int = 10,
+) -> set[tuple]:
     """
     Run SWI-Prolog and return the set of derived tuples for the target predicate.
     """
@@ -187,7 +193,7 @@ def _fmt_pct(value: float) -> str:
 def write_model_markdown(
     model_dir: Path,
     model_name: str,
-    per_case_rows: List[Tuple[str, Stats]],
+    per_case_rows: list[tuple[str, Stats]],
     overall: Stats,
     rule_base: Path,
 ) -> None:
@@ -249,7 +255,7 @@ def write_model_markdown(
 
 
 def write_global_comparison(
-    results_dir: Path, model_summaries: List[Tuple[str, Stats]]
+    results_dir: Path, model_summaries: list[tuple[str, Stats]]
 ) -> None:
     md_path = results_dir / "models_comparison.md"
     if md_path.exists():
@@ -291,8 +297,18 @@ def main():
     )
     ap.add_argument("--gold_dir", type=Path, default=Path("data/cases"))
     ap.add_argument("--results_dir", type=Path, required=True)
-    ap.add_argument("--rule_base", type=Path, default=Path("data/rule_base_art_107/state_aid_107.pl"), help="Path to the Prolog rule base file.")
-    ap.add_argument("--timeout", type=int, default=10, help="Per-query timeout in seconds for SWI-Prolog.")
+    ap.add_argument(
+        "--rule_base",
+        type=Path,
+        default=Path("data/rule_base_art_107/state_aid_107.pl"),
+        help="Path to the Prolog rule base file.",
+    )
+    ap.add_argument(
+        "--timeout",
+        type=int,
+        default=10,
+        help="Per-query timeout in seconds for SWI-Prolog.",
+    )
 
     args = ap.parse_args()
 
@@ -306,14 +322,14 @@ def main():
 
     case_map = {_case_id_from_json(p): p for p in gold_files}
 
-    model_summaries: List[Tuple[str, Stats]] = []
+    model_summaries: list[tuple[str, Stats]] = []
 
     for model_dir in sorted(args.results_dir.iterdir()):
         if not model_dir.is_dir():
             continue
         model_name = model_dir.name
 
-        per_case_rows: List[Tuple[str, Stats]] = []
+        per_case_rows: list[tuple[str, Stats]] = []
         overall = Stats()
 
         for case_id, gold_json in sorted(case_map.items()):

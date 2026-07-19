@@ -14,5 +14,5 @@ Small helper scripts for dataset preprocessing.
 ## Usage
 
 ```bash
-python code\utils\convert_json_to_txt.py data\cases
+uv run src\neuro_symbolic_legal_reasoning\utils\convert_json_to_txt.py data\cases
 ```
