@@ -1,0 +1,15 @@
+Case: case15
+Memory (role -> literals):
+  Actor = 'banking_consortium', 'capinvest sas', 'developpement occitanie sa', 'employees', 'sri'
+  Beneficiary = 'aerolyze sa'
+  Designator = 'ministry_of_economics', 'region_of_occitanie', 'regional_council_economic_affairs_committee'
+  Effect = 'private_consortium_participation'
+  Evaluation = 'profitability_evaluation'
+  Expert = 'experts'
+  IntraState = 'occitanie'
+  Measure = 'bank_consortium_funding', 'capinvest_new_equity', 'developpement_occitanie_capital_injection', 'developpement_occitanie_loan_conversion', 'sri_debt_waiver'
+  PrivateOperator = 'capinvest sas'
+  RegulatoryPurpose = 'maintain_industrial_capacity_and_employment'
+  Resource = 'capinvest_resources', 'developpement_occitanie_internal_resources', 'developpement_occitanie_loan_claim', 'private_bank_resources', 'public_bank_resources', 'sri_debt_claim'
+  State = 'france'
+  Transaction = 'capinvest_new_equity'

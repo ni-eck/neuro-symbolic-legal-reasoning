@@ -1,0 +1,9 @@
+Case: case14
+Memory (role -> literals):
+  Actor = 'amid'
+  Beneficiary = 'video_game_retailers'
+  Designator = 'amid', 'ministry_for_economic_development'
+  Measure = 'retail_pricing_regulation_for_video_games'
+  RegulatoryPurpose = 'stabilising_video_game_retail_market'
+  Resource = 'consumer_payments_to_video_game_retailers'
+  State = 'italy'

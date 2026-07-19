@@ -1,0 +1,13 @@
+Case: case19
+Memory (role -> literals):
+  Actor = 'ministry_of_agriculture_of_lithuania'
+  Beneficiary = 'agrobaltic uab'
+  Criteria = 'activity_continuity_criterion'
+  Designator = 'ministry_of_agriculture_of_lithuania'
+  Measure = 'state_land_lease'
+  Process = 'restricted_tender_procedure'
+  ProcurementProcedure = 'restricted_tender_procedure'
+  Resource = 'state_owned_agricultural_land'
+  State = 'lithuania'
+  Tender = 'restricted_tender_procedure'
+  Transaction = 'comparable_farmland_leases'

@@ -1,0 +1,11 @@
+Case: case08
+Memory (role -> literals):
+  Actor = 'landesverkehrsabteilung_steiermark', 'styrian_government'
+  Beneficiary = 'bus_and_tram_operators_in_styria'
+  Designator = 'landesverkehrsabteilung_steiermark', 'styrian_government'
+  IntraState = 'styria'
+  Measure = 'styrian_school_student_transport_compensation_scheme'
+  Obligation = 'discounted_school_student_transport_services_in_styria'
+  RegulatoryPurpose = 'affordable_education_transport_family_support_environmentally_friendly_public_transport'
+  Resource = 'styrian_public_budget_funds'
+  State = 'austria'

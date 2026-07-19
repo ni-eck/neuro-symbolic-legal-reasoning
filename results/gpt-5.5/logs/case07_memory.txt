@@ -1,0 +1,12 @@
+Case: case07
+Memory (role -> literals):
+  Actor = 'cargo_person_rail_sro', 'slovak_republic', 'slovak_tax_authority'
+  Beneficiary = 'cargo_person_rail_sro'
+  Designator = 'slovak_tax_authority'
+  Evaluation = 'viability_assessment'
+  Expert = 'independent_investment_banks'
+  Measure = 'tax_debt_write_off', 'tax_debt_write_off_and_restructuring'
+  Parent = 'slovak_republic'
+  RegulatoryPurpose = 'preserve_company_viability'
+  Resource = 'slovak_central_budget_resources'
+  State = 'slovak_republic'

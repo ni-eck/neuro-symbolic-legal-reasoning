@@ -1,0 +1,14 @@
+Case: case07
+
+Template: 1_financial_activa, attempt: 1
+  textual_evidence_of_improved_financial_situation('cargo_person_rail_sro', 'tax_debt_write_off_and_restructuring',). % [11],[13],[14]
+    Error: invalid predicate syntax: Unexpected token Token('RPAR', ')') at line 1, column 114.
+Expected one of: 
+	* VARIABLE
+	* ATOM_STRING
+	* LSQB
+	* SIGNED_NUMBER
+	* FUNCTOR
+Previous tokens: [Token('COMMA', ',')]
+
+

@@ -1,0 +1,12 @@
+Case: case18
+Memory (role -> literals):
+  Actor = 'euregion_succession_fund', 'joint_committee', 'north_rhine_westphalia_government', 'wallonia_government'
+  Beneficiary = 'gutesbrot gmbh'
+  Criteria = 'eligibility_criteria'
+  Designator = 'north_rhine_westphalia_government', 'wallonia_government'
+  IntraState = 'north_rhine_westphalia', 'wallonia'
+  Measure = 'euregion_succession_fund_grant'
+  Process = 'eligibility_assessment_process'
+  RegulatoryPurpose = 'support_business_transfers'
+  Resource = 'euregion_succession_fund_resources'
+  State = 'belgium', 'germany'

@@ -1,0 +1,13 @@
+Case: case13
+Memory (role -> literals):
+  Actor = 'four_regional_public_undertakings', 'licensed_network_operators_and_suppliers', 'luselec_sa', 'ministry_of_energy_and_infrastructure', 'portuguese_government', 'portuguese_legislature'
+  Beneficiary = 'luselec_sa'
+  Designator = 'ministry_of_energy_and_infrastructure', 'portuguese_government', 'portuguese_legislature'
+  Evaluation = 'santos_committee_report'
+  Expert = 'santos_committee'
+  Measure = 'article_12_transitional_energy_measures_act', 'biomass_gasification_rd_ventures', 'electricity_sector_reform_act', 'future_public_infrastructure_subsidies', 'government_resolution_luselec_mandate', 'interior_region_gas_turbine_facility', 'long_term_electricity_import_contracts', 'sectoral_adjustment_agreement', 'universal_access_programme'
+  Obligation = 'interior_region_gas_turbine_facility', 'universal_access_programme'
+  RegulatoryPurpose = 'cover_stranded_costs_during_transition', 'electricity_market_liberalisation_and_competition', 'future_public_infrastructure_support', 'reliable_affordable_electricity_supply', 'rural_grid_extension_universal_access', 'secure_final_stranded_cost_payment', 'supply_stability_during_summer_peaks'
+  Resource = 'article_12_surcharge_funds', 'distribution_company_payments_to_luselec', 'public_undertaking_funds_for_biomass_rd', 'public_undertaking_funds_for_gas_turbine', 'public_undertaking_funds_for_import_contracts', 'public_undertaking_funds_for_rural_grid_extensions'
+  State = 'portugal'
+  Transaction = 'sectoral_adjustment_agreement'

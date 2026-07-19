@@ -1,0 +1,17 @@
+Case: case11
+Memory (role -> literals):
+  Actor = 'castilla_la_mancha_regional_government'
+  Beneficiary = 'express_sanchez_norte_s.l.', 'servicios_interurbanos_rapidos_s.a.'
+  Criteria = 'price_per_kilometre_award_criterion', 'temporary_interim_bus_service_contracts'
+  Designator = 'castilla_la_mancha_regional_government'
+  Evaluation = 'loss_estimate_validation'
+  Expert = 'regional_transport_auditors'
+  IntraState = 'castilla_la_mancha'
+  Measure = 'temporary_interim_bus_service_contracts'
+  Obligation = 'interim_regional_bus_service_obligation'
+  Process = 'december_2019_bus_services_procurement'
+  ProcurementProcedure = 'december_2019_bus_services_procurement'
+  RegulatoryPurpose = 'maintain_basic_public_transport_connectivity'
+  Resource = 'castilla_la_mancha_regional_budget_funds'
+  State = 'spain'
+  Tender = 'december_2019_bus_services_procurement'

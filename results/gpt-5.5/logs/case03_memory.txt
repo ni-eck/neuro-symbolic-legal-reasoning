@@ -1,0 +1,12 @@
+Case: case03
+Memory (role -> literals):
+  Actor = 'other public shareholders', 'private investors', 'region of upper austria', 'upper austria airport gmbh', 'upper austria development gmbh'
+  Beneficiary = 'upper austria airport gmbh', 'upper austria development gmbh'
+  Designator = 'region of upper austria', 'upper austria ministry of economic affairs'
+  Evaluation = 'june_2009_land_valuation_report'
+  Expert = 'certified_property_consultancy'
+  IntraState = 'upper austria'
+  Measure = 'exclusive_option_contract', 'private_capital_contribution', 'regional_capital_contribution'
+  PrivateOperator = 'private investors'
+  Resource = 'exclusive_option_rights', 'private_investor_funds', 'regional_budget_funds', 'uad_budget_funds'
+  State = 'austria'

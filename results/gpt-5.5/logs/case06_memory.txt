@@ -1,0 +1,11 @@
+Case: case06
+Memory (role -> literals):
+  Actor = 'polish_government'
+  Beneficiary = 'oil_companies_serving_stations_20_40km_czech_border', 'oil_companies_serving_stations_within_20km_czech_border', 'operators_20_40km_czech_border', 'operators_within_20km_czech_border'
+  Designator = 'polish_government'
+  Effect = 'reduced_forecourt_discount_costs'
+  Measure = 'petrol_excise_duty_increase', 'temporary_petrol_subsidy'
+  PrivateOperator = 'oil_companies_serving_stations_20_40km_czech_border', 'oil_companies_serving_stations_within_20km_czech_border'
+  RegulatoryPurpose = 'maintaining_price_competitiveness'
+  Resource = 'state_budget_funds'
+  State = 'poland'

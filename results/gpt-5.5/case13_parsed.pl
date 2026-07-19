@@ -1,0 +1,108 @@
+% 1_financial_activa
+parsed_money_received('luselec_sa', 'sectoral_adjustment_agreement', 423840000). % [32],[33]
+parsed_money_received('luselec_sa', 'article_12_transitional_energy_measures_act', 423840000). % [39],[40],[44],[45],[47]
+
+% 2_financial_passiva
+% Nothing
+
+% 3_altmark
+compensation_for_obligation('sectoral_adjustment_agreement', 'luselec_sa', 'interior_region_gas_turbine_facility'). % [27],[28],[32],[33],[34],[35]
+compensation_for_obligation('sectoral_adjustment_agreement', 'luselec_sa', 'universal_access_programme'). % [27],[28],[32],[33],[34],[35]
+compensation_for_obligation('article_12_transitional_energy_measures_act', 'luselec_sa', 'interior_region_gas_turbine_facility'). % [27],[28],[39],[40],[41],[42],[43],[44],[45]
+compensation_for_obligation('article_12_transitional_energy_measures_act', 'luselec_sa', 'universal_access_programme'). % [27],[28],[39],[40],[41],[42],[43],[44],[45]
+public_service_obligation('interior_region_gas_turbine_facility'). % [7],[27],[28]
+public_service_obligation('universal_access_programme'). % [9],[27],[28]
+clearly_defined('interior_region_gas_turbine_facility'). % [7]
+clearly_defined('universal_access_programme'). % [9]
+
+% 4_act_of_private_nature
+is_shareholder_of('four_regional_public_undertakings', 'luselec_sa'). % [2],[3]
+purchase_lease_rent_similar('long_term_electricity_import_contracts'). % [12]
+economic_objective_similar_to_private_investor('long_term_electricity_import_contracts'). % [29],[30]
+economic_objective_similar_to_private_investor('biomass_gasification_rd_ventures'). % [13],[29],[30]
+fallback_act_of_economic_nature('sectoral_adjustment_agreement'). % [32],[36]
+
+% 5_act_of_public_nature
+regulatory_capacity('government_resolution_luselec_mandate'). % [4]
+social_policy('universal_access_programme'). % [9],[10]
+regulatory_capacity('electricity_sector_reform_act'). % [18],[19],[20]
+monetary_subsidy('sectoral_adjustment_agreement'). % [32],[33]
+tax_related('article_12_transitional_energy_measures_act'). % [39],[40]
+monetary_subsidy('article_12_transitional_energy_measures_act'). % [40],[44],[45],[47]
+regulatory_capacity('article_12_transitional_energy_measures_act'). % [39],[40],[44]
+monetary_subsidy('future_public_infrastructure_subsidies'). % [48],[49]
+
+% 6_MEO
+expert_evaluation_on_measure_or_similar_action('santos_committee_report', 'santos_committee', 'interior_region_gas_turbine_facility'). % [26],[27],[28]
+expert_evaluation_on_measure_or_similar_action('santos_committee_report', 'santos_committee', 'universal_access_programme'). % [26],[27],[28]
+expert_evaluation_on_measure_or_similar_action('santos_committee_report', 'santos_committee', 'biomass_gasification_rd_ventures'). % [26],[27],[29],[30]
+expert_evaluation_on_measure_or_similar_action('santos_committee_report', 'santos_committee', 'long_term_electricity_import_contracts'). % [26],[27],[29],[30]
+not_in_favour_of_measure_or_similar_action('santos_committee_report', 'biomass_gasification_rd_ventures'). % [29],[30]
+not_in_favour_of_measure_or_similar_action('santos_committee_report', 'long_term_electricity_import_contracts'). % [29],[30]
+measure_financial_terms('sectoral_adjustment_agreement', 423840000). % [32],[33]
+measure_financial_terms('article_12_transitional_energy_measures_act', 423840000). % [40],[47]
+comparable_type('article_12_transitional_energy_measures_act', 'sectoral_adjustment_agreement'). % [41],[42]
+
+% 7_direct_or_indirect_advantage
+direct_targeting('government_resolution_luselec_mandate', 'luselec_sa'). % [4]
+direct_targeting('interior_region_gas_turbine_facility', 'luselec_sa'). % [7]
+direct_targeting('universal_access_programme', 'luselec_sa'). % [9]
+direct_targeting('sectoral_adjustment_agreement', 'luselec_sa'). % [32],[33]
+direct_targeting('article_12_transitional_energy_measures_act', 'luselec_sa'). % [44],[45]
+
+% 8_active_transfer_of_resources
+active_resource_flow('interior_region_gas_turbine_facility', 'public_undertaking_funds_for_gas_turbine'). % [5],[7],[23],[24],[28]
+resource_of_public_undertaking('public_undertaking_funds_for_gas_turbine'). % [2],[3],[23],[24]
+active_resource_flow('universal_access_programme', 'public_undertaking_funds_for_rural_grid_extensions'). % [9],[23],[24],[28]
+resource_of_public_undertaking('public_undertaking_funds_for_rural_grid_extensions'). % [2],[3],[23],[24]
+active_resource_flow('biomass_gasification_rd_ventures', 'public_undertaking_funds_for_biomass_rd'). % [13],[29],[30]
+resource_of_public_undertaking('public_undertaking_funds_for_biomass_rd'). % [2],[3],[24]
+active_resource_flow('long_term_electricity_import_contracts', 'public_undertaking_funds_for_import_contracts'). % [12],[29],[30]
+resource_of_public_undertaking('public_undertaking_funds_for_import_contracts'). % [2],[3],[24]
+active_resource_flow('sectoral_adjustment_agreement', 'distribution_company_payments_to_luselec'). % [32],[33],[35],[36]
+active_resource_flow('article_12_transitional_energy_measures_act', 'article_12_surcharge_funds'). % [40],[44],[45],[47]
+resource_of_private_body('article_12_surcharge_funds'). % [40],[44]
+resource_of_body_appointed_by_state_to_administer_measure('article_12_surcharge_funds'). % [44]
+under_public_control('article_12_surcharge_funds'). % [39],[40],[44],[47],[50],[51],[52]
+
+% 9_foregoing_revenue
+general_waiving_revenue_public_or_criminal_law('article_12_transitional_energy_measures_act'). % [40]
+achieving_policy_objective('government_resolution_luselec_mandate', 'reliable_affordable_electricity_supply'). % [4]
+achieving_policy_objective('interior_region_gas_turbine_facility', 'supply_stability_during_summer_peaks'). % [7]
+achieving_policy_objective('universal_access_programme', 'rural_grid_extension_universal_access'). % [9]
+achieving_policy_objective('sectoral_adjustment_agreement', 'cover_stranded_costs_during_transition'). % [32],[33]
+achieving_policy_objective('electricity_sector_reform_act', 'electricity_market_liberalisation_and_competition'). % [16],[17],[18],[20]
+achieving_policy_objective('article_12_transitional_energy_measures_act', 'secure_final_stranded_cost_payment'). % [38],[39],[41]
+achieving_policy_objective('future_public_infrastructure_subsidies', 'future_public_infrastructure_support'). % [49]
+
+% 10_imputability
+adopted_or_administered_by('government_resolution_luselec_mandate', 'portuguese_government'). % [4]
+adopted_or_administered_by('electricity_sector_reform_act', 'portuguese_legislature'). % [18]
+adopted_or_administered_by('article_12_transitional_energy_measures_act', 'portuguese_legislature'). % [39]
+adopted_or_administered_by('article_12_transitional_energy_measures_act', 'licensed_network_operators_and_suppliers'). % [44],[46]
+adopted_or_administered_by('future_public_infrastructure_subsidies', 'ministry_of_energy_and_infrastructure'). % [48],[49]
+adopted_or_administered_by('long_term_electricity_import_contracts', 'luselec_sa'). % [12]
+adopted_or_administered_by('biomass_gasification_rd_ventures', 'luselec_sa'). % [13]
+adopted_or_administered_by('interior_region_gas_turbine_facility', 'luselec_sa'). % [7]
+adopted_or_administered_by('universal_access_programme', 'portuguese_government'). % [9]
+public_state_authority('portuguese_government', 'portugal'). % [4],[6],[9]
+public_state_authority('portuguese_legislature', 'portugal'). % [18],[39]
+public_state_authority('ministry_of_energy_and_infrastructure', 'portugal'). % [15],[48],[49]
+was_designated('luselec_sa', 'article_12_transitional_energy_measures_act', 'portuguese_legislature'). % [39],[44],[45]
+is_public_undertaking('four_regional_public_undertakings'). % [2]
+is_public_undertaking('luselec_sa'). % [3]
+public_undertaking_of_state('four_regional_public_undertakings', 'portugal'). % [2]
+public_undertaking_of_state('luselec_sa', 'portugal'). % [3]
+decision_dependence_on_state_or_intra_state('luselec_sa', 'interior_region_gas_turbine_facility'). % [6],[7]
+decision_dependence_on_state_or_intra_state('luselec_sa', 'universal_access_programme'). % [9]
+acted_on_government_directives('luselec_sa', 'interior_region_gas_turbine_facility'). % [7]
+acted_on_government_directives('luselec_sa', 'universal_access_programme'). % [9]
+measure_scope_indicates_involvement('luselec_sa', 'government_resolution_luselec_mandate'). % [4]
+measure_scope_indicates_involvement('luselec_sa', 'interior_region_gas_turbine_facility'). % [7],[8]
+measure_scope_indicates_involvement('luselec_sa', 'universal_access_programme'). % [9],[10]
+organic_link_with_state_or_intra_state('four_regional_public_undertakings'). % [2]
+organic_link_with_state_or_intra_state('luselec_sa'). % [3]
+strategic_sector('four_regional_public_undertakings'). % [1],[2]
+strategic_sector('luselec_sa'). % [1],[3]
+not_competing_under_normal_conditions('four_regional_public_undertakings'). % [14],[15],[16],[17]
+not_competing_under_normal_conditions('luselec_sa'). % [14],[15],[20]

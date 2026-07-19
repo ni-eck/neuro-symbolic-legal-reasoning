@@ -1,0 +1,10 @@
+Case: case16
+Memory (role -> literals):
+  Actor = 'bazestikls', 'lattelegrid', 'lattelegrid_fund', 'latvian_legislature', 'latvian_minister_for_culture'
+  Beneficiary = 'lattelegrid'
+  Designator = 'latvian_legislature', 'latvian_minister_for_culture'
+  Measure = 'advertising_revenue_transfers_2017_2021', 'broadcasting_license_fee_allocation', 'state_loan'
+  Obligation = 'nationwide_public_service_television_content'
+  RegulatoryPurpose = 'nationwide_public_service_television_content'
+  Resource = 'advertising_revenue', 'broadcasting_license_fees', 'state_loan_funds'
+  State = 'latvia'

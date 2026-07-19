@@ -1,0 +1,12 @@
+Case: case12
+Memory (role -> literals):
+  Actor = 'bundestag', 'german_federal_government'
+  Beneficiary = 'fastcharge ag'
+  Designator = 'bundestag', 'german_federal_government', 'ministry_for_economic_affairs_and_climate_action'
+  Effect = 'credit_rating_and_valuation_upgrade', 'major_contracts_with_car_manufacturers', 'regained_momentum'
+  Evaluation = 'vc_due_diligence_2023'
+  Expert = 'two_major_vc_companies'
+  Measure = 'bundestag_2024_resolution_future_equity_investment'
+  RegulatoryPurpose = 'energy_transition_and_electric_vehicle_value_chain'
+  Resource = '2026_federal_budget_equity_investment'
+  State = 'germany'

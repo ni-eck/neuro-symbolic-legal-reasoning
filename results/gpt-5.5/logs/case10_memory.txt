@@ -1,0 +1,13 @@
+Case: case10
+Memory (role -> literals):
+  Actor = 'puglia_regional_authorities'
+  Beneficiary = 'mobilita bari s.p.a.', 'ten_bus_operators', 'trasporti puglia srl'
+  Designator = 'puglia_regional_authorities'
+  Evaluation = 'advance_loss_estimate_documentation'
+  Expert = 'independent_accounting_expert'
+  IntraState = 'puglia'
+  Measure = 'puglia_bus_service_contract_extensions'
+  Obligation = 'regional_passenger_transport_public_service_obligations'
+  RegulatoryPurpose = 'continued_operation_regional_bus_services'
+  Resource = 'puglia_regional_budget_compensation'
+  State = 'italy'

@@ -1,0 +1,10 @@
+Case: case05
+Memory (role -> literals):
+  Actor = 'french_government'
+  Beneficiary = 'small_and_medium_sized_companies', 'specialised_investment_funds', 'specialised_investment_funds_or_managing_entities'
+  Designator = 'french_government'
+  Effect = 'greater_liquidity', 'increased_management_and_entry_fees'
+  Measure = 'dl_153_2011_article_6_preferential_tax_regime'
+  RegulatoryPurpose = 'encourage_investment_in_small_and_medium_sized_companies', 'stimulate_economic_growth_and_improve_public_finances'
+  Resource = 'foregone_tax_revenue'
+  State = 'france'

@@ -1,0 +1,10 @@
+Case: case20
+Memory (role -> literals):
+  Actor = hungarian_orszaggyules
+  Beneficiary = commercial_shipping_operators
+  Designator = hungarian_orszaggyules
+  Measure = excise_duty_exemption_marine_fuel
+  RegulatoryPurpose = transpose_article_14_1_c_directive_2003_96_ec
+  Resource = forgone_excise_duty_revenue
+  State = hungary
+  UnionLawObligation = article_14_1_c_directive_2003_96_ec

@@ -1,0 +1,13 @@
+Case: case21
+Memory (role -> literals):
+  Actor = 'portuguese_ministry_for_maritime_infrastructure'
+  Beneficiary = 'portum energia s.a.'
+  Criteria = 'legal_technical_criteria'
+  Designator = 'portuguese_ministry_for_maritime_infrastructure'
+  Measure = 'offshore_wind_zone_e7_agreement'
+  Process = 'gfumd_access_procedure'
+  RegulatoryPurpose = 'speed_up_green_energy_investment'
+  Resource = 'exclusive_right_to_use_zone_e7'
+  SellPrice = '75000_eur_per_year_plus_1000_eur_per_mw'
+  State = 'portugal'
+  SystemRatesPrice = '150000_eur_per_year_plus_3000_eur_per_mw'
